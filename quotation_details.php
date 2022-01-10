@@ -28,16 +28,20 @@
                 <div class="col-12 mb-3">
                   <a href="img/pdf/MY_CRANIUM.pdf" class="btn btn-sm btn-info">Download</a>
                 </div>
-                <div class="col-12 mb-2">
-                  <label>Comment</label>
-                  <textarea class="form-control"> </textarea>
-                </div>
                 <div class="col-12 mb-3">
+                  <label>CLIENT'S COMMENTS</label>
                   <select class="form-control">
+                    <option >---SELECT---</option>
                     <option >TECHNICAL</option>
                     <option >COMMERCIAL</option>
                   </select>
                 </div>
+                <div class="col-12 mb-2">
+
+                  
+                  <textarea class="form-control"> </textarea>
+                </div>
+                
 
                 <div class="col-12 mb-3">
                   <a href="" class="btn btn-sm btn-success" id="comment">Submit</a>
