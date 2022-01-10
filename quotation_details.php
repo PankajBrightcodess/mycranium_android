@@ -10,7 +10,7 @@
             </svg></a></div>
         <!-- Page Title-->
         <div class="page-heading">
-          <h6 class="mb-0">Assessment Details</h6>
+          <h6 class="mb-0">Quotation Details</h6>
         </div>
         <!-- Navbar Toggler-->
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
@@ -32,6 +32,13 @@
                   <label>Comment</label>
                   <textarea class="form-control"> </textarea>
                 </div>
+                <div class="col-12 mb-3">
+                  <select class="form-control">
+                    <option >TECHNICAL</option>
+                    <option >COMMERCIAL</option>
+                  </select>
+                </div>
+
                 <div class="col-12 mb-3">
                   <a href="" class="btn btn-sm btn-success" id="comment">Submit</a>
                 </div>
