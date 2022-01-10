@@ -25,7 +25,8 @@
               </form>
             </div>
             <!-- Login Meta-->
-            <div class="login-meta-data"><a class="forgot-password d-block mt-3 mb-1" href="forget-password.php">Forgot Password?</a>
+            <div class="login-meta-data"><a class="forgot-password d-block mt-3 mb-1" href="#">Forgot Password?</a>
+              <!-- forget-password.php -->
               <p class="mb-0">Didn't have an account?<a class="ms-1" href="register.php">Register Now</a></p>
             </div>
             <!-- View As Guest-->
