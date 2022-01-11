@@ -157,12 +157,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
-                   <select class="form-control" name="application">
-                    <option value="">---SELECT---</option>
-                    <option value="is">IS 3177</option>
-                    <option value="fem">FEM</option>
-                    <option value="din">DIN</option>
-                  </select>
+                   <input type="text" class="form-control" name="">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPAN (IN METERS)</span></div>
