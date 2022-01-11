@@ -1082,7 +1082,7 @@ textarea:invalid {
   width: 100%;
   min-height: 100vh;
   background: #daaf50;
-  background: -webkit-gradient(linear, right top, left top, from(#100DD1), to(#0d3bd1));
+  background: -webkit-gradient(linear, right top, left top, from(#daaf50), to(#daaf50));
   background: linear-gradient(to left,  #daaf50,  #daaf50);
   z-index: 10;
   overflow-y: auto;
@@ -1317,7 +1317,7 @@ textarea:invalid {
   width: 300px;
   border-right: 0;
   background: #daaf50;
-  background: -webkit-gradient(linear, right top, left top, from(#100DD1), to(#0d3bd1));
+  background: -webkit-gradient(linear, right top, left top, from(#daaf50), to(#daaf50));
   background: linear-gradient(to left, #daaf50, #daaf50); }
   .suha-offcanvas-wrap .btn-close {
     position: absolute;
@@ -1467,7 +1467,7 @@ li.suha-dropdown-menu {
   width: 100%;
   height: 100vh;
   background: #daaf50;
-  background: -webkit-gradient(linear, right top, left top, from(#100DD1), to(#0d3bd1));
+  background: -webkit-gradient(linear, right top, left top, from(#daaf50), to(#daaf50));
   background: linear-gradient(to left, #daaf50, #daaf50);  /*#100DD1, #0d3bd1*/
   z-index: 1; }
   .intro-wrapper .background-shape {
@@ -3524,6 +3524,10 @@ li.suha-dropdown-menu {
     color: #020310;
     font-weight: 500;
     margin-bottom: 0; }
+    .user-data-card ul li{
+       font-size: 12px;
+       font-weight: 600;
+    }
     .user-data-card .title i {
       width: 24px;
       height: 24px;

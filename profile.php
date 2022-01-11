@@ -26,7 +26,7 @@
               <div class="user-profile me-3"><img src="img/bg-img/8.jpg" alt=""></div>
               <div class="user-info">
                 <p class="mb-0 text-white">@designing-world</p>
-                <h5 class="mb-0">Pankaj Mani Tiwari</h5>
+                <h5 class="mb-0">Pankaj</h5>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
               </div>
               <div class="single-profile-data d-flex align-items-center justify-content-between">
                 <div class="title d-flex align-items-center"><i class="lni lni-user"></i><span>Full Name</span></div>
-                <div class="data-content">SUHA JANNAT</div>
+                <div class="data-content">Pankaj Mani Tiwari</div>
               </div>
               <div class="single-profile-data d-flex align-items-center justify-content-between">
                 <div class="title d-flex align-items-center"><i class="lni lni-phone"></i><span>Phone</span></div>

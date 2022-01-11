@@ -16,44 +16,7 @@
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
       </div>
     </div>
-    <div class="offcanvas offcanvas-start suha-offcanvas-wrap" tabindex="-1" id="suhaOffcanvas" aria-labelledby="suhaOffcanvasLabel">
-      <!-- Close button-->
-      <button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      <!-- Offcanvas body-->
-      <div class="offcanvas-body">
-        <!-- Sidenav Profile-->
-        <div class="sidenav-profile">
-          <div class="user-profile"><img src="img/bg-img/9.jpg" alt=""></div>
-          <div class="user-info">
-            <h6 class="user-name mb-1">Suha Sarah</h6>
-            <p class="available-balance">Total balance $<span class="counter">583.67</span></p>
-          </div>
-        </div>
-        <!-- Sidenav Nav-->
-        <ul class="sidenav-nav ps-0">
-          <li><a href="profile.html"><i class="lni lni-user"></i>My Profile</a></li>
-          <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span class="ms-3 badge badge-warning">3</span></a></li>
-          <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-cart"></i>Shop Pages</a>
-            <ul>
-              <li><a href="shop-grid.html">- Shop Grid</a></li>
-              <li><a href="shop-list.html">- Shop List</a></li>
-              <li><a href="single-product.html">- Product Details</a></li>
-              <li><a href="featured-products.html">- Featured Products</a></li>
-              <li><a href="flash-sale.html">- Flash Sale</a></li>
-            </ul>
-          </li>
-          <li><a href="pages.html"><i class="lni lni-empty-file"></i>All Pages</a></li>
-          <li class="suha-dropdown-menu"><a href="wishlist-grid.html"><i class="lni lni-heart"></i>My Wishlist</a>
-            <ul>
-              <li><a href="wishlist-grid.html">- Wishlist Grid</a></li>
-              <li><a href="wishlist-list.html">- Wishlist List</a></li>
-            </ul>
-          </li>
-          <li><a href="settings.html"><i class="lni lni-cog"></i>Settings</a></li>
-          <li><a href="intro.html"><i class="lni lni-power-switch"></i>Sign Out</a></li>
-        </ul>
-      </div>
-    </div>
+   
      <div class="page-content-wrapper">
       <div class="container">
         <!-- Profile Wrapper-->
@@ -105,39 +68,71 @@
               <form action="#" method="">
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY</span></div>
-                  <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select>
+                  <ul>
+                    <li>MH (MAIN HOIST)</li>
+                    <li><input type="text" name="mainhost" placeholder="PLEASE WRITE N/A, IN CASE IT IS NOT APPLICABLE" class="form-control mb-2"></li>
+                    <li>AH (AUX. HOIST)</li>
+                    <li><input type="text" name="auxhoist" placeholder="PLEASE WRITE N/A, IN CASE IT IS NOT APPLICABLE" class="form-control mb-2"></li>
+                  </ul>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span></div>
-                  <input class="form-control" type="text" name="loaction" value="">
+                   <select class="form-control" name="location">
+                    <option value="">---SELECT---</option>
+                    <option value="indoor">INDOOR</option>
+                    <option value="outdoor">OUTDOOR</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span></div>
-                  <input class="form-control" type="text" value="">
+                   <select class="form-control" name="crane_type">
+                    <option value="">---SELECT---</option>
+                    <option value="singlecrane">SINGLE GIRDER EOT CRANE</option>
+                    <option value="doublecrane">DOUBLE GIRDER EOT CRANE</option>
+                    <option value="single_iot">SINGLE GIRDER SEMI EOT CRANE</option>
+                    <option value="double_iot">DOUBLE GIRDER EOT CRANE</option>
+                    <option value="single_semi_iot">SINGLE GIRDER SEMI EOT CRANE</option>
+                    <option value="double_semi_iot">DOUBLE GIRDER SEMI EOT CRANE</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span></div>
-                  <input class="form-control" type="text">
+                   <select class="form-control" name="crane_type">
+                    <option value="">---SELECT---</option>
+                    <option value="m1">M1 (CLASS-I)</option>
+                    <option value="m2">M2 (CLASS-I)</option>
+                    <option value="m3">M3 (CLASS-I)</option>
+                    <option value="m4">M4 (CLASS-II)</option>
+                    <option value="m5">M5 (CLASS-II)</option>
+                    <option value="m6">M6 (CLASS-III)</option>
+                    <option value="m7">M7 (CLASS-IV)</option>
+                    <option value="m8">M8 (CLASS-IV)</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD</span></div>
-                  <input class="form-control" type="text">
+                  <select class="form-control" name="crane_type">
+                    <option value="">---SELECT---</option>
+                    <option value="is">IS 3177</option>
+                    <option value="fem">FEM</option>
+                    <option value="din">DIN</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
-                  <input class="form-control" type="text">
+                  <input class="form-control" type="text" placeholder="TO BE FURNISHED AS PER YOUR APPLICATION">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TYPE OF HOIST</span></div>
-                  <input class="form-control" type="text">
+                  <input class="form-control" type="text" >
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>ARM LENGTH (IN METERS)</span></div>
-                  <input class="form-control" type="text">
+                  <input class="form-control" type="text" placeholder="PLEASE FURNISH IN METERS">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span></div>
-                  <input class="form-control" type="text">
+                  <input class="form-control"  type="text">
                 </div>
                <!--  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
@@ -149,27 +144,62 @@
                 </div> -->
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
-                  <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option><option style="CT">CT(CROSS TRAVEL)</option></select>
+                  <ul>
+                    <li>MH (MAIN HOIST)</li>
+                    <li><input type="text" class="form-control mb-2" placeholder="PLEASE WRITE MANUAL, IN CASE IT IS MANUALLY OPERATED" name=""></li>
+                    
+                    <li>CT (CROSS TRAVEL)</li>
+                    <li><input type="text" class="form-control mb-2" placeholder="PLEASE WRITE MANUAL, IN CASE IT IS MANUALLY OPERATED" name=""></li>
+                    
+
+                  </ul>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SWIVELING</span></div>
-                   <input class="form-control" type="text">
+                   <select class="form-control" name="swivel">
+                    <option value="">---SELECT---</option>
+                    <option value="manual">Manual</option>
+                    <option value="motorized">Motorized</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SWIVELING DEGREE</span></div>
-                   <input class="form-control" type="text">
+                  <select class="form-control" name="swivel_degree">
+                    <option value="">---SELECT---</option>
+                    <option value="fixed">FIXED</option>
+                    <option value="90degree">90 DEGREE</option>
+                    <option value="180degree">180 DEGREE</option>
+                    <option value="270degree">270 DEGREE</option>
+                    <option value="360degree">360 EGREE</option>
+                  </select>
+                   
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
-                   <input class="form-control" type="text">
+                   <select class="form-control" name="scope_of_supply">
+                    <option value="">---SELECT---</option>
+                    <option value="fixed">FIXED</option>
+                    <option value="90degree">90 DEGREE</option>
+                    <option value="180degree">180 DEGREE</option>
+                    <option value="270degree">270 DEGREE</option>
+                    <option value="360degree">360 EGREE</option>
+                  </select>
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span></div>
-                  <input class="form-control" type="text">
+                  <select class="form-control" name="installation">
+                    <option value="">---SELECT---</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>OTHER REMARKS, IF ANY</span></div>
-                   <input class="form-control" type="text">
+                   <select class="form-control" name="other_remarks">
+                    <option value="">---SELECT---</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
                 </div>
                 <button class="btn btn-success w-100" type="submit">Save All Changes</button>
               </form>

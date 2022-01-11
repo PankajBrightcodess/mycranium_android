@@ -52,7 +52,7 @@
               <form action="https://designing-world.com/suha-v2.5.0/forget-password-success.html" method="">
                 <div class="form-group text-start mb-4"><span>Email or Username</span>
                   <label for="email"><i class="lni lni-user"></i></label>
-                  <input class="form-control" id="email" type="text" placeholder="Designing World">
+                  <input class="form-control" id="email" type="text" placeholder="Email or Username">
                 </div>
                 <button class="btn btn-warning btn-lg w-100" type="submit">Reset Password</button>
               </form>
