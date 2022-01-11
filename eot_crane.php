@@ -157,7 +157,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
-                   <input type="text" class="form-control" name="">
+                   <input type="text" class="form-control" placeholder="TO BE FURNISHED AS PER YOUR APPLICATION" name="">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPAN (IN METERS)</span></div>
