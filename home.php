@@ -83,7 +83,7 @@
                   <div class="card-body"><a href="gantry_crane.php">
                       <svg class="bi bi-cup mb-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"></path>
-                      </svg><span>Gantry </span></a></div>
+                      </svg><span>Gantry Crane </span></a></div>
                 </div>
               </div>
               <div class="col-4">
@@ -120,7 +120,7 @@
                   <div class="card-body"><a href="monorail.php">
                       <svg class="bi bi-cup mb-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"></path>
-                      </svg><span>Monorial</span></a></div>
+                      </svg><span>Monorail</span></a></div>
                 </div>
               </div>
              <!--  <div class="col-4">
@@ -136,7 +136,7 @@
                   <div class="card-body"><a href="electricwire.php">
                       <svg class="bi bi-cup mb-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"></path>
-                      </svg><span>Rope</span></a></div>
+                      </svg><span>Electric Wire Rope Hoist</span></a></div>
                 </div>
               </div>
           <!--     <div class="col-4">
@@ -147,14 +147,14 @@
                       </svg><span>Travel</span></a></div>
                 </div>
               </div> -->
-               <div class="col-4">
+             <!--   <div class="col-4">
                 <div class="card catagory-card">
                   <div class="card-body"><a href="#">
                       <svg class="bi bi-cup mb-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"></path>
                       </svg><span>Travel</span></a></div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
