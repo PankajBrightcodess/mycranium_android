@@ -128,7 +128,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span></div>
-                  <input class="form-control" type="text" placeholder="PLEASE FURNISH IN METERS">
+                  <input class="form-control" type="text" placeholder="">
                 </div>
                <!--  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
