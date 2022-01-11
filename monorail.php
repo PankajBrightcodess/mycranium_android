@@ -36,7 +36,11 @@
               <form action="#" method="">
                 <div class="mb-2">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>UPLOAD TECHNICAL SPECIFICATIONS /REQUIREMENTS</span></div>
-                  <input class="form-control" type="file" accept="pdf" value="">
+                  <input class="form-control mb-2" type="file" accept="pdf" value="">
+                  <input class="form-control mb-2" type="file" accept="pdf" value="">
+                  <input class="form-control mb-2" type="file" accept="pdf" value="">
+                  <input class="form-control mb-2" type="file" accept="pdf" value="">
+                  <input class="form-control mb-2" type="file" accept="pdf" value="">
                 </div>
                 <button class="btn btn-success" type="submit">Upload</button>
               </form>
@@ -67,13 +71,11 @@
             <div class="card-body">
               <form action="#" method="">
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY</span></div>
-                  <ul>
-                    <li>MH (MAIN HOIST)</li>
-                    <li><input type="text" name="mainhost" placeholder="PLEASE WRITE N/A, IN CASE IT IS NOT APPLICABLE" class="form-control mb-2"></li>
-                    <li>AH (AUX. HOIST)</li>
-                    <li><input type="text" name="auxhoist" placeholder="PLEASE WRITE N/A, IN CASE IT IS NOT APPLICABLE" class="form-control mb-2"></li>
-                  </ul>
+                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
+                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
+                  <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
+                  <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
+                  <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control mb-2">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span></div>
@@ -83,18 +85,6 @@
                     <option value="outdoor">OUTDOOR</option>
                   </select>
                 </div>
-               <!--  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span></div>
-                   <select class="form-control" name="crane_type">
-                    <option value="">---SELECT---</option>
-                    <option value="singlecrane">SINGLE GIRDER EOT CRANE</option>
-                    <option value="doublecrane">DOUBLE GIRDER EOT CRANE</option>
-                    <option value="single_iot">SINGLE GIRDER SEMI EOT CRANE</option>
-                    <option value="double_iot">DOUBLE GIRDER EOT CRANE</option>
-                    <option value="single_semi_iot">SINGLE GIRDER SEMI EOT CRANE</option>
-                    <option value="double_semi_iot">DOUBLE GIRDER SEMI EOT CRANE</option>
-                  </select>
-                </div> -->
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span></div>
                    <select class="form-control" name="crane_type">
@@ -120,7 +110,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
-                  <input class="form-control" type="text" placeholder="TO BE FURNISHED AS PER YOUR APPLICATION">
+                  <input class="form-control" type="text" placeholder="To be furnished as per your application">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
@@ -130,27 +120,18 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span></div>
                   <input class="form-control" type="text" placeholder="">
                 </div>
-               <!--  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
-                  <input class="form-control" type="text">
-                </div> -->
-                <!-- <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>COLUMN TO COLUMN DISTANCE (IN METERS)</span></div>
-                  <input class="form-control" type="text">
-                </div> -->
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
-                  <ul>
-                    <li>MH (MAIN HOIST)</li>
-                    <li><input type="text" class="form-control mb-2" placeholder="PLEASE WRITE MANUAL, IN CASE IT IS MANUALLY OPERATED" name=""></li>
-                    <li>TRAVEL</li>
-                    <li><input type="text" class="form-control mb-2" placeholder="PLEASE WRITE MANUAL, IN CASE IT IS MANUALLY OPERATED" name=""></li>
-                  </ul>
+                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  <div class="title mb-2"><span>TRAVEL</span></div>
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
                    <select class="form-control" name="scope_of_supply">
-                    <option value="">---SELECT---</option>
+                    <option value="">Multiple selection procedure to be provided</option>
                     <option value="hoist">HOIST</option>
                     <option value="ismb">MONORAIL/ISMB</option>
                     <option value="festooning_cable">FESTOONING CABLE</option>
@@ -173,7 +154,7 @@
                     <option value="no">No</option>
                   </select>
                 </div>
-                <button class="btn btn-success w-100" type="submit">Save All Changes</button>
+                <button class="btn btn-success w-100" type="submit">SUBMIT</button>
               </form>
             </div>
           </div>

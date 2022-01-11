@@ -1,4 +1,4 @@
-<!-- Header Area-->
+Header Area-->
     <div class="header-area" id="headerArea">
       <div class="container h-100 d-flex align-items-center justify-content-between">
         <!-- Logo Wrapper-->
@@ -40,7 +40,7 @@
           </li>
            
           
-          <li><a href="shedule_online.php"><i class="lni lni-heart"></i>Schedule Online For Assessment</a></li>
+          <!-- <li><a href="shedule_online.php"><i class="lni lni-heart"></i>Schedule Online For Assessment</a></li> -->
           <li><a href="assesment_download.php"><i class="lni lni-cloud-download"></i>Download Assessment Report</a></li>
           <li><a href="download_quotation.php"><i class="lni lni-download"></i>Download Your Quotation</a></li>
           <li><a href="#"><i class="lni lni-book"></i>Projects</a></li>
@@ -57,4 +57,4 @@
           <button class="btn-close ms-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
         </div><span class="mb-0 d-block">Add My Cranium on your mobile home screen. Click the<strong class="mx-1">Add to Home Screen</strong>button &amp; enjoy it like a regular app.</span>
       </div>
-    </div> -->
+    </div>
