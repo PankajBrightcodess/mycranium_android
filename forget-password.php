@@ -49,12 +49,13 @@
           <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5"><img class="big-logo" src="img/core-img/logo-white.png" alt="">
             <!-- Register Form-->
             <div class="register-form mt-5 px-4">
-              <form action="https://designing-world.com/suha-v2.5.0/forget-password-success.html" method="">
+              <form action="" method="">
                 <div class="form-group text-start mb-4"><span>Email or Username</span>
                   <label for="email"><i class="lni lni-user"></i></label>
                   <input class="form-control" id="email" type="text" placeholder="Email or Username">
                 </div>
-                <button class="btn btn-warning btn-lg w-100" type="submit">Reset Password</button>
+                 <a href="login.php" class="btn btn-warning btn-lg w-100">Reset Password</a>
+                <!-- <button class="btn btn-warning btn-lg w-100" type="submit"><a href=""></a></button> -->
               </form>
             </div>
           </div>
