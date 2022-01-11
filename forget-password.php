@@ -55,7 +55,6 @@
                   <input class="form-control" id="email" type="text" placeholder="Email or Username">
                 </div>
                  <a href="login.php" class="btn btn-warning btn-lg w-100">Reset Password</a>
-                <!-- <button class="btn btn-warning btn-lg w-100" type="submit"><a href=""></a></button> -->
               </form>
             </div>
           </div>
