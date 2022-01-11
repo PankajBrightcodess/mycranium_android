@@ -40,6 +40,7 @@ Header Area-->
           </li>
            
           
+          <li><a href="#"><i class="lni lni-heart"></i>Subscription</a></li>
           <!-- <li><a href="shedule_online.php"><i class="lni lni-heart"></i>Schedule Online For Assessment</a></li> -->
           <li><a href="assesment_download.php"><i class="lni lni-cloud-download"></i>Download Assessment Report</a></li>
           <li><a href="download_quotation.php"><i class="lni lni-download"></i>Download Your Quotation</a></li>

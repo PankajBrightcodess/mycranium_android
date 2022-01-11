@@ -70,6 +70,10 @@
           <div class="card user-data-card">
             <div class="card-body">
               <form action="#" method="">
+                 <div class="mb-3">
+                    <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span></div>
+                   <input type="text" class="form-control" placeholder="" name="">
+                </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
