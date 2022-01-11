@@ -16,44 +16,7 @@
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
       </div>
     </div>
-    <div class="offcanvas offcanvas-start suha-offcanvas-wrap" tabindex="-1" id="suhaOffcanvas" aria-labelledby="suhaOffcanvasLabel">
-      <!-- Close button-->
-      <button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      <!-- Offcanvas body-->
-      <div class="offcanvas-body">
-        <!-- Sidenav Profile-->
-        <div class="sidenav-profile">
-          <div class="user-profile"><img src="img/bg-img/9.jpg" alt=""></div>
-          <div class="user-info">
-            <h6 class="user-name mb-1">Suha Sarah</h6>
-            <p class="available-balance">Total balance $<span class="counter">583.67</span></p>
-          </div>
-        </div>
-        <!-- Sidenav Nav-->
-        <ul class="sidenav-nav ps-0">
-          <li><a href="profile.html"><i class="lni lni-user"></i>My Profile</a></li>
-          <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span class="ms-3 badge badge-warning">3</span></a></li>
-          <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-cart"></i>Shop Pages</a>
-            <ul>
-              <li><a href="shop-grid.html">- Shop Grid</a></li>
-              <li><a href="shop-list.html">- Shop List</a></li>
-              <li><a href="single-product.html">- Product Details</a></li>
-              <li><a href="featured-products.html">- Featured Products</a></li>
-              <li><a href="flash-sale.html">- Flash Sale</a></li>
-            </ul>
-          </li>
-          <li><a href="pages.html"><i class="lni lni-empty-file"></i>All Pages</a></li>
-          <li class="suha-dropdown-menu"><a href="wishlist-grid.html"><i class="lni lni-heart"></i>My Wishlist</a>
-            <ul>
-              <li><a href="wishlist-grid.html">- Wishlist Grid</a></li>
-              <li><a href="wishlist-list.html">- Wishlist List</a></li>
-            </ul>
-          </li>
-          <li><a href="settings.html"><i class="lni lni-cog"></i>Settings</a></li>
-          <li><a href="intro.html"><i class="lni lni-power-switch"></i>Sign Out</a></li>
-        </ul>
-      </div>
-    </div>
+  
      <div class="page-content-wrapper">
       <div class="container">
         <!-- Profile Wrapper-->
@@ -104,10 +67,10 @@
             <div class="card-body">
               <form action="#" method="">
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY</span></div>
+                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY(IN TON)</span></div>
                   <ul>
                     <li>MH (MAIN HOIST)</li>
-                    <li><input type="text" name="mainhost" placeholder="PLEASE WRITE N/A, IN CASE IT IS NOT APPLICABLE" class="form-control mb-2"></li>
+                    <li><input type="text" name="mainhost" placeholder="" class="form-control mb-2"></li>
                     <li>AH (AUX. HOIST)</li>
                     <li><input type="text" name="auxhoist" placeholder="PLEASE WRITE N/A, IN CASE IT IS NOT APPLICABLE" class="form-control mb-2"></li>
                   </ul>
@@ -167,11 +130,11 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span></div>
                   <ul>
                     <li><span>MH (MAIN HOIST)</span></li>
-                    <input type="text" class="form-control mb-2" placeholder="ABOVE FLOOR LEVEL" name="abv_floor">
-                    <input type="text" class="form-control mb-2" placeholder="BELOW FLOOR LEVEL" name="blw_floor">
+                    <input type="text" class="form-control mb-2" placeholder="" name="abv_floor">
+                    <input type="text" class="form-control mb-2" placeholder="PLEASE WRITE N/A, IN CASE, IT IS NOT APPLICABLE" name="blw_floor">
                     <li><span>AH (MAIN HOIST)</span></li>
-                     <input type="text" class="form-control mb-2" placeholder="ABOVE FLOOR LEVEL" name="abv_floor">
-                    <input type="text" class="form-control mb-2" placeholder="BELOW FLOOR LEVEL" name="blw_floor">
+                     <input type="text" class="form-control mb-2" placeholder="" name="abv_floor">
+                    <input type="text" class="form-control mb-2" placeholder="PLEASE WRITE N/A, IN CASE, IT IS NOT APPLICABLE" name="blw_floor">
                   </ul>
                   <!-- <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select> -->
                 </div>
