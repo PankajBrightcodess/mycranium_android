@@ -45,17 +45,17 @@
                 <tr>
                     <td>2</td>
                     <td>QTY. (IN NOS.)</td>
-                    <td colspan="2"></td>
+                    <td colspan="2"><input type="text" class="form-control" onkeyup="addrecord()" name="qty" id="qty"></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>NOS. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
-                    <td colspan="2"></td>
+                    <td colspan="2"><input type="text" class="form-control" onkeyup="addrecord()" name="days" id="days"></td>
                 </tr>
                  <tr>
                     <td>4</td>
                     <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @ 18% AT PER MAN PER DAY BASIS</td>
-                    <td colspan="2">INR 0.00</td>
+                    <td colspan="2" >INR <span id="total"></span>0.00 </td>
                 </tr>
                  <tr>
                     <td>5</td>
@@ -112,7 +112,8 @@
                 </tr>
                 </thead>
               </table>
-              <a href="" class="btn btn-sm btn-success" onclick="window.print()" style="text-align: center;">Print</a>
+              <a href="" class="btn btn-sm btn-success" style="text-align: center;">SUBMIT</a>
+              <a href="" class="btn btn-sm btn-warning" style="text-align: center; float: right;">PROCEED FOR PAYMENT</a>
             </div>
           </div>
         </div>
@@ -122,3 +123,12 @@
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>
      <?php include 'footer-link.php';?>
+      <script type="text/javascript">
+        function addrecord(){
+           // debugger;
+          var qty = $('#qty').val();
+          var days = $('#days').val();
+          var result = parseFloat(1700)*parseInt(days)*parseInt(qty);
+          $('#total').html(result);
+        };
+     </script>

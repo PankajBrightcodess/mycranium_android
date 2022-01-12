@@ -23,8 +23,8 @@
         <div class="sidenav-profile">
           <div class="user-profile"><img src="img/core-img/logo-white.png" alt=""></div>
           <div class="user-info">
-            <h6 class="user-name mb-1">Pankaj Mani Tiwari</h6>
-            <p class="available-balance">Arunam Pvt. Ltd</p>
+            <!-- <h6 class="user-name mb-1">Pankaj Mani Tiwari</h6> -->
+            <p class="available-balance">CRANIUM SERVICES</p>
           </div>
         </div>
         <!-- Sidenav Nav-->
