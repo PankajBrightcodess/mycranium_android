@@ -29,7 +29,7 @@
         </div>
         <!-- Sidenav Nav-->
         <ul class="sidenav-nav ps-0">
-          <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-slack"></i>Online Quotation Request</a>
+          <!-- <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-slack"></i>Online Quotation Request</a>
             <ul>
               <li><a href="eot_crane.php">- EOT Crane & Semi EOT Crane</a></li>
               <li><a href="gantry_crane.php">- Gantry Crane & Semi Gantry Crane</a></li>
@@ -37,13 +37,13 @@
               <li><a href="monorail.php">- Monorail With Electric Wire Rope Hoist</a></li>
               <li><a href="electricwire.php">- Electric Wire Rope Hoist</a></li>
             </ul>
-          </li>
+          </li> -->
            
           
-          <li><a href="#"><i class="lni lni-heart"></i>Subscription</a></li>
           <!-- <li><a href="shedule_online.php"><i class="lni lni-heart"></i>Schedule Online For Assessment</a></li> -->
           <li><a href="assesment_download.php"><i class="lni lni-cloud-download"></i>Download Assessment Report</a></li>
           <li><a href="download_quotation.php"><i class="lni lni-download"></i>Download Your Quotation</a></li>
+          <li><a href="#"><i class="lni lni-heart"></i>Subscription</a></li>
           <li><a href="#"><i class="lni lni-book"></i>Projects</a></li>
           <li><a href="profile.php"><i class="lni lni-user"></i>My Profile</a></li>
           <li><a href=""><i class="lni lni-power-switch"></i>Sign Out</a></li>
