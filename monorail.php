@@ -134,7 +134,7 @@
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
-                   <select class="form-control" name="scope_of_supply">
+                    <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
                     <option value="">Multiple selection procedure to be provided</option>
                     <option value="hoist">HOIST</option>
                     <option value="ismb">MONORAIL/ISMB</option>

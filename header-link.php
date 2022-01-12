@@ -24,16 +24,20 @@
     <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
     <!-- CSS Libraries-->
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/lineicons.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- Stylesheet-->
+    <link rel="stylesheet" href="css/switchery.css">
+        <!-- Stylesheet-->
     <link rel="stylesheet" href="style.css">
     <!-- Web App Manifest-->
     <link rel="manifest" href="manifest.json">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   </head>
    <body>
     <!-- Preloader-->

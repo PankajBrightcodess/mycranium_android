@@ -168,17 +168,18 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>REQUIREMENT OF VFD</span></div>
-                   <select class="form-control" name="vfd">
-                    <option value="">Multiple selection procedure to be provided</option>
+                
+                  <select class="form-control multipleselect" multiple="multiple"  name="vfd[]">
+                     <option value="">Multiple selection procedure to be provided</option>
                     <option value="mh">MH</option>
                     <option value="ah">AH</option>
                     <option value="ct">CT</option>
                     <option value="lt">LT</option>
-                  </select>
+                 </select> 
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
-                    <select class="form-control" name="scope_supply">
+                    <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
                     <option value="">Multiple selection procedure to be provided</option>
                     <option value="crane">CRANE</option>
                     <option value="shrouded">SHROUDED BUS BAR</option>
@@ -214,4 +215,5 @@
     <div class="space"></div>
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>
-     <?php include 'footer-link.php';?>
+  <?php include 'footer-link.php';?>
+     
