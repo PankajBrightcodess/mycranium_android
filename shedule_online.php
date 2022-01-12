@@ -33,33 +33,37 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <table class="table table-bordered text-center" style="font-size: 10px; border: 1px;">
+              <table class="table table-bordered" style="font-size: 10px; border: 1px; text-align:left;">
                 <thead>
                   <tr>
                     <td>1</td>
                     <td>DETAILS OF ITEMS TO BE ASSESSED</td>
-                    
-                    <td colspan="2">SG- SINGLE GIRDER DG- DOUBLE GIRDER P/M- PILLAR MOUNTED C/M- COLUMN MOUNTED EWRH- ELECTRIC WIRE ROPE HOIST
+                    <td></td>
+                    <td >SG- SINGLE GIRDER DG- DOUBLE GIRDER P/M- PILLAR MOUNTED C/M- COLUMN MOUNTED EWRH- ELECTRIC WIRE ROPE HOIST
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>QTY. (IN NOS.)</td>
-                    <td colspan="2"><input type="text" class="form-control" onkeyup="addrecord()" name="qty" id="qty"></td>
+                    <td></td>
+                    <td><input type="text" class="form-control" onkeyup="addrecord()" name="qty" id="qty"></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>NOS. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
-                    <td colspan="2"><input type="text" class="form-control" onkeyup="addrecord()" name="days" id="days"></td>
+                    <td></td>
+                    <td><input type="text" class="form-control" onkeyup="addrecord()" name="days" id="days"></td>
                 </tr>
                  <tr>
                     <td>4</td>
                     <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @ 18% AT PER MAN PER DAY BASIS</td>
-                    <td colspan="2" >INR <span id="total"></span>0.00 </td>
+                    <td></td>
+                    <td>INR <span id="total"></span>0.00 </td>
                 </tr>
                  <tr>
                     <td>5</td>
                     <td>PAYMENT TERMS</td>
+                    
                     <td colspan="2">100% ADVANCE THROUGH ONLINE MODE</td>
                 </tr>
                  <tr>
@@ -67,17 +71,10 @@
                     <td>SERVICE DELIVERY</td>
                     <td colspan="2">WITHIN 72 HOURS FROM THE DATE OF PAYMENT RECEIPT</td>
                 </tr>
-                 <tr>
-                    <td>7</td>
-                    <td>SERVICE DELIVERY</td>
-                    <td colspan="2">WITHIN 72 HOURS FROM THE DATE OF PAYMENT RECEIPT</td>
-                </tr>
                 <tr>
                     <td colspan="4"></td>
                 </tr>
-                <tr>
-                    <td colspan="4"><strong>AFTER THAT BELOW THINGS TO BE REQUIRED:-</strong></td>
-                </tr>
+               
                 <tr>
                     <td>1</td>
                     <td colspan="3"><strong>PAY ONLINE:-</strong></td>
@@ -85,6 +82,9 @@
                  <tr>
                     <td></td>
                     <td colspan="3">SUBMISSION OF DECLARATION BY THE CLIENT</td>
+                </tr>
+                 <tr>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td>2</td>
