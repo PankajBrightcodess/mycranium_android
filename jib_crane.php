@@ -196,11 +196,7 @@
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>OTHER REMARKS, IF ANY</span></div>
-                   <select class="form-control" name="other_remarks">
-                    <option value="">---SELECT---</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                  </select>
+                   <input type="text" name="other_remarks" class="form-control">
                 </div>
                 <button class="btn btn-success w-100" type="submit">SUBMIT</button>
               </form>
