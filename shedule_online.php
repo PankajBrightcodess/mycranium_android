@@ -45,20 +45,20 @@
                 <tr>
                     <td>2</td>
                     <td>QTY. (IN NOS.)</td>
+                    <td width="20%"><input type="text" class="form-control" onkeyup="addrecord()" style="background: #E5EECF;" name="qty" id="qty"></td>
                     <td></td>
-                    <td><input type="text" class="form-control" onkeyup="addrecord()" name="qty" id="qty"></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>NOS. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
+                    <td width="20%"><input type="text" class="form-control" onkeyup="addrecord()" style="background: #E5EECF;" name="days" id="days"></td>
                     <td></td>
-                    <td><input type="text" class="form-control" onkeyup="addrecord()" name="days" id="days"></td>
                 </tr>
                  <tr>
                     <td>4</td>
                     <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @ 18% AT PER MAN PER DAY BASIS</td>
+                    <td width="20%">INR <span id="total">0.00</span> </td>
                     <td></td>
-                    <td>INR <span id="total"></span>0.00 </td>
                 </tr>
                  <tr>
                     <td>5</td>
