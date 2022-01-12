@@ -755,6 +755,9 @@ textarea:invalid {
   .page-content-wrapper .marg{
     margin-top: 60px;
   }
+  .bottomsize{
+    margin-bottom: 70px;
+  }
 
 .pwa-install-alert {
   position: fixed;

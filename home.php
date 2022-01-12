@@ -147,14 +147,14 @@
                       </svg><span>Travel</span></a></div>
                 </div>
               </div> -->
-               <div class="col-4">
+               <!-- <div class="col-4">
                 <div class="card catagory-card">
                   <div class="card-body"><a href="shedule_online.php">
                       <svg class="bi bi-cup mb-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"></path>
                       </svg><span>Online Assessment</span></a></div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -330,95 +330,65 @@
           </div>
         </div>
       </div> -->
-     <!--  <div class="weekly-best-seller-area py-3">
+   <div class="weekly-best-seller-area py-3">
         <div class="container">
-          <div class="section-heading d-flex align-items-center justify-content-between">
-            <h6>Weekly Best Sellers</h6><a class="btn" href="shop-list.php">View All</a>
-          </div>
+          <!-- <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6></h6><a class="btn" href="shop-list.php">View All</a>
+          </div> -->
           <div class="row g-3">
             <div class="col-12 col-md-6">
               <div class="card horizontal-product-card">
-                <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side">
-                    <span class="badge badge-success">Sale</span>
-                    <a class="wishlist-btn" href="#"><i class="lni lni-heart"></i></a>
-                    <a class="product-thumbnail d-block" href="single-product.php"><img src="img/product/10.png" alt=""></a>
-                  </div>
-                  <div class="product-description">
-                    <a class="product-title d-block" href="single-product.php">Modern Sofa</a>
+                <div class="col-12 text-center">
+                
+                    <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Online Quotation Request
+                    </button>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body ">
 
-                    <p class="sale-price"><i class="lni lni-dollar"></i>$64<span>$89</span></p>
-
-                    <div class="product-rating"><i class="lni lni-star-filled"></i>4.88 (39)</div>
-                    <a class="btn btn-danger btn-sm" href="#"><i class="me-1 lni lni-cart"></i>Buy Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="card horizontal-product-card">
-                <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side">
-                    <span class="badge badge-primary">Sale</span>
-                    <a class="wishlist-btn" href="#"><i class="lni lni-heart"></i></a>
-                    <a class="product-thumbnail d-block" href="single-product.php"><img src="img/product/7.png" alt=""></a>
-                  </div>
-                  <div class="product-description">
-                    <a class="product-title d-block" href="single-product.php">Office Chair</a>
-                    <p class="sale-price"><i class="lni lni-dollar"></i>$100<span>$160</span></p>
-                    <div class="product-rating"><i class="lni lni-star-filled"></i>4.82 (125)</div>
-                    <a class="btn btn-danger btn-sm" href="#"><i class="me-1 lni lni-cart"></i>Buy Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="card horizontal-product-card">
-                <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side">
-                    <span class="badge badge-danger">-10%</span>
-                    <a class="wishlist-btn" href="#"><i class="lni lni-heart"></i></a>
-                    <a class="product-thumbnail d-block" href="single-product.php"><img src="img/product/12.png" alt="">
-                      <ul class="offer-countdown-timer d-flex align-items-center shadow-sm" data-countdown="2022/12/09 23:59:59">
-                        <li><span class="days">0</span>d</li>
-                        <li><span class="hours">0</span>h</li>
-                        <li><span class="minutes">0</span>m</li>
-                        <li><span class="seconds">0</span>s</li>
-                      </ul></a>
-                  </div>
-                  <div class="product-description">
-                    <a class="product-title d-block" href="single-product.php">Sun Glasses</a>
-
-                    <p class="sale-price"><i class="lni lni-dollar"></i>$24<span>$32</span></p>
-
-                    <div class="product-rating"><i class="lni lni-star-filled"></i>4.79 (63)</div>
-                    <a class="btn btn-danger btn-sm" href="#"><i class="me-1 lni lni-cart"></i>Buy Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="card horizontal-product-card">
-                <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side">
-                    <span class="badge badge-warning">New</span>
-                    <a class="wishlist-btn" href="#"><i class="lni lni-heart"></i></a>
-                    <a class="product-thumbnail d-block" href="single-product.php"><img src="img/product/13.png" alt=""></a>
-                  </div>
-                  <div class="product-description">
-                    <a class="product-title d-block" href="single-product.php">Wall Clock</a>
-
-                    <p class="sale-price"><i class="lni lni-dollar"></i>$31<span>$47</span></p>
-
-                    <div class="product-rating"><i class="lni lni-star-filled"></i>4.99 (7)</div>
-                    <a class="btn btn-danger btn-sm" href="#"><i class="me-1 lni lni-cart"></i>Buy Now</a>
+                      <div class="col-12 mb-2" >
+                        <a href="eot_crane.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp;EOT Crane & Semi EOT Crane</a>
+                      </div>
+                      <div class="col-12 mb-2">
+                        <a href="gantry_crane.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp;Gantry Crane & Semi Gantry Crane</a>
+                      </div>
+                      <div class="col-12 mb-2">
+                        <a href="jib_crane.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp;JIB Crane</a>
+                      </div>
+                      <div class="col-12 mb-2">
+                        <a href="monorail.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Monorail With Electric Wire Rope Hoist</a>
+                      </div>
+                       <div class="col-12 mb-2">
+                        <a href="electricwire.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Electric Wire Rope Hoist</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div> 
+         <div class="weekly-best-seller-area py-3">
+        <div class="container">
+          <!-- <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6></h6><a class="btn" href="shop-list.php">View All</a>
+          </div> -->
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="card horizontal-product-card">
+                <div class="col-12 text-center">
+                
+                    <a href="shedule_online.php"><button class="btn btn-primary form-control" type="button" >
+                      Schedule Online For Assessment
+                    </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomsize"></div>
 
       <!-- <div class="container">
         <div class="card discount-coupon-card">
