@@ -96,8 +96,8 @@
                     <option value="singlecrane">SINGLE GIRDER EOT CRANE</option>
                     <option value="doublecrane">DOUBLE GIRDER EOT CRANE</option>
                     <option value="single_iot">SINGLE GIRDER SEMI EOT CRANE</option>
-                    <option value="double_iot">DOUBLE GIRDER EOT CRANE</option>
-                    <option value="single_semi_iot">SINGLE GIRDER SEMI EOT CRANE</option>
+                    <!-- <option value="double_iot">DOUBLE GIRDER EOT CRANE</option> -->
+                    <!-- <option value="single_semi_iot">SINGLE GIRDER SEMI EOT CRANE</option> -->
                     <option value="double_semi_iot">DOUBLE GIRDER SEMI EOT CRANE</option>
                   </select>
                 </div>
