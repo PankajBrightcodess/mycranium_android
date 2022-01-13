@@ -34,7 +34,7 @@
                   <textarea class="form-control"> </textarea>
                 </div>
                 <div class="col-12">
-                  <a href="" class="btn btn-sm btn-success" id="comment">SUBMIT QUOTATION</a>
+                  <a href="" class="btn btn-sm btn-success" id="comment">SUBMIT YOUR QUOTATION</a>
                 </div>
               </div>
             </div>

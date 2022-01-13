@@ -179,8 +179,8 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
-                    <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
-                    <option value="">SELECT ALL</option>
+                    <select class="form-control multipleselect" multiple="multiple" id="myselect" name="scope_supply[]">
+                    <option value=""><a href="javascript:;" onclick="selectAll();">SELECT ALL</a></option>
                     <option value="crane">CRANE</option>
                     <option value="shrouded">SHROUDED BUS BAR</option>
                     <option value="sq">SQ. BAR/RAIL WITH FIXING ITEMS</option>
@@ -212,4 +212,18 @@
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>
   <?php include 'footer-link.php';?>
+  <script type="text/javascript">
+    var select_ids = [];
+    $(document).ready(function(e) {
+    
+      $('#myselect option').each(function(index, element) {
+        select_ids.push($(this).val());
+      })
+    });
+    function selectAll()
+    {
+      $('select#myselect').val(select_ids);
+    }
+
+  </script>
      
