@@ -142,7 +142,6 @@
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
                     <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
-                    <option value="">SELECT ALL</option>
                     <option value="hoist">HOIST</option>
                     <option value="festooning_cable">FESTOONING CABLE</option>
                   </select>

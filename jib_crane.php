@@ -178,7 +178,6 @@
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
                    <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
-                    <option value="">SELECT ALL</option>
                     <option value="fixed">FIXED</option>
                     <option value="90degree">90 DEGREE</option>
                     <option value="180degree">180 DEGREE</option>

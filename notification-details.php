@@ -33,8 +33,8 @@
                   <label>Comment</label>
                   <textarea class="form-control"> </textarea>
                 </div>
-                <div class="col-12">
-                  <a href="" class="btn btn-sm btn-success" id="comment">SUBMIT YOUR QUOTATION</a>
+                <div class="col-12" >
+                  <a href="" class="btn btn-sm btn-success" style="float:right !important;"  id="comment">SUBMIT YOUR QUOTATION</a>
                 </div>
               </div>
             </div>
