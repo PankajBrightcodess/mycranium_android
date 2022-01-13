@@ -380,7 +380,7 @@
                 <div class="col-12 text-center">
                 
                     <a href="shedule_online.php"><button class="btn btn-primary form-control" type="button" >
-                      Schedule Online For Assessment
+                      Online request for Assessment of Cranes/Hoists
                     </button></a>
                 </div>
               </div>

@@ -30,8 +30,8 @@
                 </div>
                 <div class="col-12 mb-3">
                   <label>CLIENT'S COMMENTS</label>
-                  <select class="form-control">
-                    <option >---SELECT---</option>
+                  <select class="form-control multipleselect" multiple="multiple" name="client_comment[]">
+                    <option >---SELECT ALL---</option>
                     <option >TECHNICAL</option>
                     <option >COMMERCIAL</option>
                   </select>
