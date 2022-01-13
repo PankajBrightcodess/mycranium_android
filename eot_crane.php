@@ -167,7 +167,7 @@
                   <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>REQUIREMENT OF VFD</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>MICRO SPEED (OPTIONAL)</span></div>
                 
                   <select class="form-control multipleselect" multiple="multiple"  name="vfd[]">
                     
