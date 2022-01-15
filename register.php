@@ -1,3 +1,21 @@
+<?php 
+session_start();
+include_once('connection.php');
+$msg = "";
+  if (isset($_SESSION['msg'])) {
+    $msg=$_SESSION['msg'];
+    unset($_SESSION['msg']);
+  }
+  // if(!empty($_SESSION['role'])){
+  //    if($_SESSION['role']=='2'){
+  //      header('location:home.php');
+  //   }
+  // }
+  
+  if ($msg != "") {
+    echo "<script> alert('$msg') </script>";
+  }
+?>
 <?php include 'header-link.php'; ?>
     <!-- Login Wrapper Area-->
     <section class="login-wrapper">
@@ -11,7 +29,7 @@
             <!-- <h2 class="text-white">MY CRANIUM</h2> -->
             <!-- Register Form-->
             <div class="register-form mt-5 px-4">
-              <form action="action.php" method="" id="formid">
+              <form action="action.php" method="POST" >  <!-- id="formid" -->
                 <div class="form-group text-start mb-4"><span>Username</span>
                   <label for="username"><i class="lni lni-user"></i></label>
                   <input class="form-control" id="username" name="username" type="text" placeholder="Designing World">
@@ -34,14 +52,14 @@
                 </div>
                  <div class="form-group text-start mb-4"><span>Address</span>
                    <label for="address"><i class="lni lni-postcard"></i></label>
-                   <input class="form-control" id="address" name="address" type="email" placeholder="Address">
+                   <input class="form-control" id="address" name="address" type="text" placeholder="Address">
                 </div>
                 <div class="form-group text-start mb-4"><span>Password</span>
                   <label for="password"><i class="lni lni-lock"></i></label>
                   <input class="input-psswd form-control" name="password" id="registerPassword" type="password" placeholder="Password">
                 </div>
-                <button class="btn btn-warning btn-lg w-100" id="signup" name="signup" type="submit">Sign Up</button>
-              </form>
+                <button class="btn btn-warning btn-lg w-100"  name="signup" type="submit">Sign Up</button>
+              </form> <!-- id="signup" -->
             </div>
             <!-- Login Meta-->
             <div class="login-meta-data">
@@ -57,7 +75,6 @@
      <script type="text/javascript">
        $( document ).ready(function() {
         $('#signup').click(function(e){
-          debugger;
         var data = $('#formid').serializeArray();
         $.ajax({
                  type:'POST',
@@ -66,6 +83,14 @@
                  success: function(result){
                    console.log(result);
                    location.reload();
+                   // if(result!=''){
+                   //  location = "login.php";
+                   // }
+                   // else{
+                   //  location = "register.php";
+                   // }
+                    
+                   // location.reload();
                 },
                   error: function(){ 
                   alert("error");

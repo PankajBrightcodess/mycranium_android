@@ -13,12 +13,23 @@ if(isset($_POST['signup'])){
 	$password = $_POST['password'];
 	$added_on = date('Y-m-d');
 	$query="SELECT `id` FROM `myc_customer` WHERE `email_id`='$email'";
-	// print_r($query);die;
+	
 	$run=mysqli_query($conn,$query);
 	if(mysqli_num_rows($run) == 0){
 		$query = "INSERT INTO `myc_customer`(`name`,`comp_name`,`gst_no`,`contact_no`,`email_id`,`address`,`password`,`added_on`) VALUES ('$username','$company','$gst','$contact','$email','$address','$password','$added_on')";
 		$sql=mysqli_query($conn,$query);
+		if($sql){
+			// $_SESSION['msg']="Registered Successfully!!!";
+		    header("location:login.php");
+		}else{
+			// $_SESSION['msg']="Not Successfully Submitted!!!";
+		    header("location:login.php");
+		}
 		
+	}
+	else{
+		// $_SESSION['msg']="You Are Already Registered!!!";
+		    header("location:register.php");
 	}
  }
  if(isset($_POST['login'])){
@@ -43,8 +54,8 @@ if(isset($_POST['signup'])){
 	    	// header("location:$_SERVER[HTTP_REFERER]");
 	    }
 	    else{
-	    	$_SESSION['msg']="Center Not Deleted!!!";
-		    header("location:$_SERVER[HTTP_REFERER]");
+	    	$_SESSION['msg']="Something Error!";
+		    
 	    }
  	
  }
