@@ -60,18 +60,16 @@
           debugger;
         var data = $('#formid').serializeArray();
         $.ajax({
-                type:'POST',
-                url:'action.php',
-               data:data,
-                success: function(result){
-                   
-                    console.log(result);
-                    location.reload();
-                    },
-
-                    error: function(){ 
-                       alert("error");
-                    },
+                 type:'POST',
+                 url:'action.php',
+                 data:data,
+                 success: function(result){
+                   console.log(result);
+                   location.reload();
+                },
+                  error: function(){ 
+                  alert("error");
+                },
         });
    
     return false;

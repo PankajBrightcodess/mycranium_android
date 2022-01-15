@@ -1,3 +1,27 @@
+<?php 
+session_start();
+include_once('connection.php');
+$msg = "";
+  if (isset($_SESSION['msg'])) {
+    $msg=$_SESSION['msg'];
+    unset($_SESSION['msg']);
+  }
+  if(!empty($_SESSION['role'])){
+     if($_SESSION['role']=='2'){
+       header('location:home.php');
+    }
+  }
+  
+  if ($msg != "") {
+    echo "<script> alert('$msg') </script>";
+  }
+// $query="SELECT * FROM `add_notice` WHERE `status`='1'";
+// $run=mysqli_query($conn,$query);
+// while ($data=mysqli_fetch_assoc($run)) {
+//   $notice[]=$data;
+// }
+// print_r($notice);die;
+?>
 <?php include 'header-link.php'; ?>
     <!-- Login Wrapper Area-->
     <section class="login-wrapper">
@@ -11,17 +35,17 @@
             <!-- <h2 class="text-white">MY CRANIUM</h2> -->
             <!-- Register Form-->
             <div class="register-form mt-5 px-4">
-              <form action="https://designing-world.com/suha-v2.5.0/home.php" method="">
-                <div class="form-group text-start mb-4"><span>Username</span>
+              <form action="action.php" method="POST">
+                <div class="form-group text-start mb-4"><span>Email</span>
                   <label for="username"><i class="lni lni-user"></i></label>
-                  <input class="form-control" id="username" type="text" required placeholder="info@example.com">
+                  <input class="form-control" id="username" name="email" type="text" required placeholder="info@example.com">
                 </div>
                 <div class="form-group text-start mb-4"><span>Password</span>
                   <label for="password"><i class="lni lni-lock"></i></label>
-                  <input class="form-control" id="password" type="password" required placeholder="Password">
+                  <input class="form-control" id="password" name="password" type="password" required placeholder="Password">
                 </div>
-                <a href="home.php" class="btn btn-warning btn-lg w-100">Log In</a>
-                <!-- <button class="btn btn-warning btn-lg w-100" type="submit">Log In</button> -->
+                <input type="submit" name="login" class="btn btn-warning btn-lg w-100" value="Log In">
+                
               </form>
             </div>
             <!-- Login Meta-->

@@ -46,7 +46,7 @@
           <li><a href="#"><i class="lni lni-heart"></i>Subscription</a></li>
           <li><a href="#"><i class="lni lni-book"></i>Projects</a></li>
           <li><a href="profile.php"><i class="lni lni-user"></i>My Profile</a></li>
-          <li><a href=""><i class="lni lni-power-switch"></i>Sign Out</a></li>
+          <li><a href="signout.php"><i class="lni lni-power-switch"></i>Sign Out</a></li>
         </ul>
       </div>
     </div>
