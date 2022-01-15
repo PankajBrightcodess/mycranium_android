@@ -16,7 +16,7 @@
               </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('img/bg-img/ban02.png')">
+            <div class="single-hero-slide" style="background-image: url('img/bg-img/IMG02Double.jpeg')">
               <div class="slide-content h-100 d-flex align-items-center">
                 <div class="slide-text">
                   <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-duration="1000ms">DOUBLE GIRDER EOT CRANE</h4>

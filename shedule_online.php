@@ -33,12 +33,26 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <table class="table table-bordered" style="font-size: 10px; border: 1px; text-align:left;">
+              <table class="table table-bordered table-responsive" style="font-size: 10px; border: 1px; text-align:left;">
                 <thead>
                   <tr>
                     <td>1</td>
                     <td>DETAILS OF ITEMS TO BE ASSESSED</td>
-                    <td></td>
+                    <td><select class="form-control">
+                        <option>--SELECT--</option>
+                        <option>SG EOT CRANE</option>
+                        <option>SG UNDER SLUNG CRANE</option>
+                        <option>SG SEMI EOT CRANE</option>
+                        <option>DG EOT CRANE</option>
+                        <option>DG UNDER SLUNG CRANE</option>
+                        <option>DG SEMI EOT CRANE</option>
+                        <option>SG GANTRY CRANE</option>
+                        <option>SG SEMI GANTRY CRANE</option>
+                        <option>DG GANTRY CRANE</option>
+                        <option>DG SEMI GANTRY CRANE</option>
+                        <option>P/M JIB CRANE</option>
+                        <option>C/M JIB CRANE, EWRH</option>
+                    </select></td>
                     <td >SG- SINGLE GIRDER DG- DOUBLE GIRDER P/M- PILLAR MOUNTED C/M- COLUMN MOUNTED EWRH- ELECTRIC WIRE ROPE HOIST
                     </td>
                 </tr>
