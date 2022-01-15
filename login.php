@@ -15,12 +15,6 @@ $msg = "";
   if ($msg != "") {
     echo "<script> alert('$msg') </script>";
   }
-// $query="SELECT * FROM `add_notice` WHERE `status`='1'";
-// $run=mysqli_query($conn,$query);
-// while ($data=mysqli_fetch_assoc($run)) {
-//   $notice[]=$data;
-// }
-// print_r($notice);die;
 ?>
 <?php include 'header-link.php'; ?>
     <!-- Login Wrapper Area-->
