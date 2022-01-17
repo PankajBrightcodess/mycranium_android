@@ -33,16 +33,16 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <form action="#" method="">
+              <form action="action.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-2">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>UPLOAD TECHNICAL SPECIFICATIONS /REQUIREMENTS</span></div>
-                  <input class="form-control mb-2" type="file" accept="pdf" value="">
-                  <input class="form-control mb-2" type="file" accept="pdf" value="">
-                  <input class="form-control mb-2" type="file" accept="pdf" value="">
-                  <input class="form-control mb-2" type="file" accept="pdf" value="">
-                  <input class="form-control mb-2" type="file" accept="pdf" value="">
+                  <input class="form-control mb-2" type="file" name="file1">
+                  <input class="form-control mb-2" type="file" name="file2">
+                  <input class="form-control mb-2" type="file" name="file3">
+                  <input class="form-control mb-2" type="file" name="file4">
+                  <input class="form-control mb-2" type="file" name="file5">
                 </div>
-                <button class="btn btn-success" type="submit">Upload</button>
+                <button class="btn btn-success" name="gantry_upload" type="submit">Upload</button>
               </form>
             </div>
           </div>
@@ -69,10 +69,10 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <form action="#" method="">
+              <form action="action.php" method="POST" enctype="multipart/form-data">
                   <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span></div>
-                   <input type="text" class="form-control" placeholder="" name="">
+                   <input type="text" class="form-control" placeholder="" name="project_loc">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
@@ -89,6 +89,7 @@
                     <option value="outdoor">OUTDOOR</option>
                   </select>
                 </div>
+                <div class="mb-0"><input type="hidden" name="id" value="<?php echo $_COOKIE['Cookie']?>"></div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span></div>
                   <select class="form-control" name="crane_type">
@@ -103,7 +104,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span></div>
-                   <select class="form-control" name="crane_type">
+                   <select class="form-control" name="class_duty">
                     <option value="">---SELECT---</option>
                     <option value="m1">M1 (CLASS-I)</option>
                     <option value="m2">M2 (CLASS-I)</option>
@@ -117,7 +118,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD</span></div>
-                   <select class="form-control" name="crane_type">
+                   <select class="form-control" name="design_standered">
                     <option value="">---SELECT---</option>
                     <option value="is">IS 3177</option>
                     <option value="fem">FEM</option>
@@ -134,34 +135,34 @@
                 </div>
                   <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>CANTILEVERS- IF ANY (IN METERS)</span></div>
-                  <input class="form-control" placeholder="Please Furnish Details With Both/One Side" type="text">
+                  <input class="form-control" name="cantilever" placeholder="Please Furnish Details With Both/One Side" type="text">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor">
-                  <input type="text" class="form-control mb-2" placeholder="Please write N/A, in case, it is not applicable" name="blw_floor">
+                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
+                  <input type="text" class="form-control mb-2" placeholder="Please write N/A, in case, it is not applicable" name="blw_floor_mh">
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor">
-                    <input type="text" class="form-control mb-2" placeholder="please write N/A, in case, it is not application" name="blw_floor">
+                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_ah">
+                    <input type="text" class="form-control mb-2" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
                   <!-- <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select> -->
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
-                  <input class="form-control" type="text">
+                  <input class="form-control" type="text" name="travel_length">
                 </div>
               
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
 
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_mh">
                   <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_ah">
                   <div class="title mb-2"><span>CT (CROSS TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_ct">
                   <div class="title mb-2"><span>LT (LONG TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_lt">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>MICRO SPEED (OPTIONAL)</span></div>
@@ -197,7 +198,7 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>OTHER REMARKS, IF ANY</span></div>
                    <input type="text" name="other_remarks" class="form-control">
                 </div>
-                <button class="btn btn-success w-100" type="submit">Submit</button>
+                <button class="btn btn-success w-100" name="gantry_text" type="submit">Submit</button>
               </form>
             </div>
           </div>

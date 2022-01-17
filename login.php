@@ -1,19 +1,17 @@
+
 <?php 
+if(!empty($_GET['check'])){
+    unset($_COOKIE["Cookie"]);
+    unset($_COOKIE["Brightcodess_com"]);
+    unset($_COOKIE["PHPSESSID"]);
+} 
 session_start();
+
 include_once('connection.php');
-$msg = "";
-  if (isset($_SESSION['msg'])) {
-    $msg=$_SESSION['msg'];
-    unset($_SESSION['msg']);
-  }
-  if(!empty($_SESSION['role'])){
-     if($_SESSION['role']=='2'){
+  if(!empty($_COOKIE['Cookie'])){
+     if($_COOKIE['Cookie']=='2'){
        header('location:home.php');
     }
-  }
-  
-  if ($msg != "") {
-    echo "<script> alert('$msg') </script>";
   }
 ?>
 <?php include 'header-link.php'; ?>

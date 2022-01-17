@@ -1,3 +1,4 @@
+
 <?php include 'header-link.php'; ?>
 <?php include 'header.php'; ?>
 
@@ -94,6 +95,7 @@
                       </svg><span>JIB Crane </span></a></div>
                 </div>
               </div>
+              <!-- <?php echo print_r($_COOKIE);?> -->
 
              <!--  <div class="col-4">
                 <div class="card catagory-card">
