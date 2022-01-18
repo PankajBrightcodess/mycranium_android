@@ -35,7 +35,7 @@
                   <textarea class="form-control" name="comment"> </textarea>
                 </div>
                 <div class="col-12" >
-                  <input type="submit" name="SendMessage" id="comment" class="btn btn-sm btn-success" value="SUBMIT YOUR QUOTATION" style="float:right !important;">
+                  <input type="submit" name="assessmentDetails" id="comment" class="btn btn-sm btn-success" value="SUBMIT YOUR QUOTATION" style="float:right !important;">
                 </div> 
               </div>
               </form>

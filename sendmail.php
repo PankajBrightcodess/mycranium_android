@@ -4,13 +4,13 @@ include 'connection.php';
 
 // '''''''''''''''''''''''''''''''''''''''
 
-   if(isset($_POST['SendMessage'])){
+   if(isset($_POST['assessmentDetails'])){
    	  // echo '<pre>';
    	  // print_r($_COOKIE);die;
 	    $to="pankaj.tiwari@brightcodess.com"; 
 	    $email = $_COOKIE['EmailId'];
 	    $comment = $_POST['comment'];
-	    $selectedProjects  = 'None';
+	    $selectedProjects  = '';
 	    $body = 'My Cranium Services: '.$selectedProjects;
 	    $subject = "Inquiry Regarding";
 	    $from = $email;
