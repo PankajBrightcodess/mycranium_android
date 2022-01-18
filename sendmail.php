@@ -5,8 +5,8 @@ include 'connection.php';
 // '''''''''''''''''''''''''''''''''''''''
 
    if(isset($_POST['SendMessage'])){
-   	echo '<pre>';
-   		print_r($_COOKIE);die;
+   	  echo '<pre>';
+   	  print_r($_COOKIE);die;
 	    $to="pankaj.tiwari@brightcodess.com"; 
 	    $email = $_COOKIE['EmailId'];
 	    $comment = $_POST['comment'];
