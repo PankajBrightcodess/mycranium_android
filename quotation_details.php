@@ -28,24 +28,23 @@
                 <div class="col-12 mb-3">
                   <a href="img/pdf/MY_CRANIUM.pdf" class="btn btn-sm btn-info">Download</a>
                 </div>
-                <div class="col-12 mb-3">
+                <form method="POST" action="sendmail.php">
+                <div class="col-12 col-md-12 mb-3">
                   <label>CLIENT'S COMMENTS</label>
                   <select class="form-control multipleselect" multiple="multiple" name="client_comment[]">
-                    <option >---SELECT ALL---</option>
-                    <option >TECHNICAL</option>
-                    <option >COMMERCIAL</option>
+                    <option value="">---SELECT ALL---</option>
+                    <option value="TECHNICAL">TECHNICAL</option>
+                    <option value="COMMERCIAL">COMMERCIAL</option>
                   </select>
                 </div>
-                <div class="col-12 mb-2">
-
-                  
-                  <textarea class="form-control"> </textarea>
+                <div class="col-12 col-md-12 mb-2">
+                  <textarea class="form-control" name="comment"> </textarea>
                 </div>
-                
-
-                <div class="col-12 mb-3">
-                  <a href="" class="btn btn-sm btn-success" id="comment">Submit</a>
+                <div class="col-12 col-md-12 mb-3">
+                  <input type="submit" name="quotationDetails" id="comment" class="btn btn-sm btn-success" value="SUBMIT">
+                  <!-- <a href="" class="btn btn-sm btn-success" name="quotation_details" id="comment">Submit</a> -->
                 </div>
+              </form>
               </div>
             </div>
           </div>
