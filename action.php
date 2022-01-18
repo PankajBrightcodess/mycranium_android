@@ -123,7 +123,7 @@ if(isset($_POST['signup'])){
  	  $cookie_value['role'] = $data['role'];
  	  $cookie_value['email_id']=$data['email_id'];
  	  setcookie("Cookie",$cookie_value,time() + (86400 * 30),"/" );
- 	 print_r($_COOKIE);die;
+ 	 print_r($_COOKIE['email_id']);die;
       echo "COOKIE IS CREATED SUCCESSFULLY !";
  	 if(!empty($data)){
 	    	header('Location:home.php?id='.$id.'&name='.$name.'&company_name='.$comp_name.'&gst_no='.$gst_no.'&contact_no='.$contact_no.'&email_id='.$email_id.'&address='.$address.'');
