@@ -37,7 +37,6 @@ include 'connection.php';
 	    $email = $_COOKIE['EmailId'];
 	    $technical = $_POST['client_comment'][0];
 	    $commercial = $_POST['client_comment'][1];
-	    print_r($technical);
 	    $comment = $_POST['comment'];
 	    $selectedProjects  = '';
 	    $body = 'My Cranium Services: '.$selectedProjects;
@@ -50,7 +49,6 @@ include 'connection.php';
 	    // print_r($message);die;
 
 	    $send =mail($to, $subject, $message, $headers);
-	    print_r($send);die;
 	    if ($send){
 	     $_SESSION['msg']="Sent Succesfully!!! Thank You ".$name."";
 	      header("location:$_SERVER[HTTP_REFERER]");
