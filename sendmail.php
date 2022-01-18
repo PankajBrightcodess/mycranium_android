@@ -39,7 +39,6 @@ include 'connection.php';
 	    $commercial = $_POST['client_comment'][1];
 	    print_r($technical);
 	    $comment = $_POST['comment'];
-
 	    $selectedProjects  = '';
 	    $body = 'My Cranium Services: '.$selectedProjects;
 	    $subject = "Inquiry Regarding";
