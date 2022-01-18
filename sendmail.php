@@ -9,7 +9,6 @@ include 'connection.php';
    	  // print_r($_COOKIE);die;
 	    $to="pankaj.tiwari@brightcodess.com"; 
 	    $email = $_COOKIE['EmailId'];
-	    print_r($email);die;
 	    $comment = $_POST['comment'];
 	    $selectedProjects  = 'None';
 	    $body = 'My Cranium Services: '.$selectedProjects;
