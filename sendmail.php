@@ -33,7 +33,7 @@ include 'connection.php';
 
    if(isset($_POST['quotationDetails'])){
    	  
-	    $to="pankaj.tiwari@brightcodess.com"; 
+	    $to="info@craniumservices.in"; 
 	    $email = $_COOKIE['EmailId'];
 	    $technical = $_POST['client_comment'][0];
 	    $commercial = $_POST['client_comment'][1];

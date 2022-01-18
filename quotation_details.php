@@ -70,9 +70,26 @@
     <div class="internet-connection-status" id="internetStatus"></div>
     <!-- Footer Nav-->
      <?php include 'footer.php';?>
-     <script type="text/javascript">
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.passwordstrength.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/no-internet.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/pwa.js"></script>
+    <script type="text/javascript">
       $('#comment').click(function(e){
          swal("Good job!", " RECEIVE THE QUOTATION WITHIN 72 HOURS..!", "success");
        });
     </script>
-     <?php include 'footer-link.php';?>
+  </body>
+
+<!-- Mirrored from designing-world.com/suha-v2.5.0/notification-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Sep 2021 12:08:45 GMT -->
+</html>
