@@ -70,11 +70,7 @@
     <div class="internet-connection-status" id="internetStatus"></div>
     <!-- Footer Nav-->
      <?php include 'footer.php';?>
-     <script type="text/javascript">
-      $('#comment').click(function(e){
-         swal("Good job!", " RECEIVE THE QUOTATION WITHIN 72 HOURS..!", "success");
-       });
-    </script>
+
        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="js/bootstrap.bundle.min.js"></script>
@@ -96,6 +92,11 @@
         $('.multipleselect').select2();
        });
      </script>
+     <script type="text/javascript">
+      $('#comment').click(function(e){
+         swal("Good job!", " RECEIVE THE QUOTATION WITHIN 72 HOURS..!", "success");
+       });
+    </script>
   </body>
 
 <!-- Mirrored from designing-world.com/suha-v2.5.0/intro.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Sep 2021 12:08:13 GMT -->
