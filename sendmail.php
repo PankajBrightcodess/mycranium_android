@@ -49,6 +49,7 @@ include 'connection.php';
 	    // print_r($message);die;
 
 	    $send =mail($to, $subject, $message, $headers);
+	    print_r($send);die;
 	    if ($send){
 	     $_SESSION['msg']="Sent Succesfully!!! Thank You ".$name."";
 	      header("location:$_SERVER[HTTP_REFERER]");
