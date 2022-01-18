@@ -3,6 +3,7 @@
 if(!empty($_GET['check'])){
     unset($_COOKIE["Cookie"]);
     unset($_COOKIE["Brightcodess_com"]);
+    unset($_COOKIE["EmailId"]);
     unset($_COOKIE["PHPSESSID"]);
 } 
 session_start();

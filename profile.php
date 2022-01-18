@@ -1,5 +1,6 @@
 <?php include 'header-link.php'; ?>
 <?php include 'header.php'; ?>
+
     <!-- Header Area-->
     <div class="header-area" id="headerArea">
       <div class="container h-100 d-flex align-items-center justify-content-between">
@@ -26,7 +27,7 @@
               <div class="user-profile me-3"><img src="img/bg-img/8.jpg" alt=""></div>
               <div class="user-info">
                 <p class="mb-0 text-white">@designing-world</p>
-                <h5 class="mb-0">Pankaj</h5>
+                <h5 class="mb-0">Pankaj <?php echo '<pre>'; print_r($_COOKIE);?></h5>
               </div>
             </div>
           </div>
