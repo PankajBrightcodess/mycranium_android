@@ -25,18 +25,20 @@
           <!-- Notification Details-->
           <div class="list-group-item d-flex py-3">
             <div class="noti-info" >
-              <div class="row">
+              <form method="POST" action="sendmail.php">
+              <div class="row" >
                 <div class="col-12 mb-3">
                   <a href="img/pdf/MY_CRANIUM.pdf" class="btn btn-sm btn-info">Download</a>
                 </div>
                 <div class="col-12 mb-2">
                   <label>Comment</label>
-                  <textarea class="form-control"> </textarea>
+                  <textarea class="form-control" name="comment"> </textarea>
                 </div>
                 <div class="col-12" >
-                  <a href="" class="btn btn-sm btn-success" style="float:right !important;"  id="comment">SUBMIT YOUR QUOTATION</a>
-                </div>
+                  <input type="submit" name="SendMessage" id="comment" class="btn btn-sm btn-success" value="SUBMIT YOUR QUOTATION" style="float:right !important;">
+                </div> 
               </div>
+              </form>
             </div>
           </div>
         </div>

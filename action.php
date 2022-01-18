@@ -120,7 +120,8 @@ if(isset($_POST['signup'])){
  	  $password = $data['password'];
  	  $added_on = $data['added_on'];
  	
- 	  $cookie_value = $data['role'];
+ 	  $cookie_value['role'] = $data['role'];
+ 	  $cookie_value['email_id']=$data['email_id'];
  	  setcookie("Cookie",$cookie_value,time() + (86400 * 30),"/" );
  	 
       echo "COOKIE IS CREATED SUCCESSFULLY !";
@@ -463,6 +464,227 @@ if(isset($_POST['jib_text'])){
 	$other_remarks = $_POST['other_remarks'];
 	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks')";
 	
+		$sql=mysqli_query($conn,$query);
+		if($sql){
+			 header("Location:$_SERVER[HTTP_REFERER]");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+}
+// ''''''''''''''''''''''''''''''''''''''JIB CRANE''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+if(isset($_POST['monorail_upload'])){
+
+	 	$photo1 = $_FILES['file1']['name'];
+		$photo1 = explode('.',$photo1);
+		$image1= time().$photo1[0];
+		$extension1 = $photo1[1];
+		$imagename1 = $_FILES['file1']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file1']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check1 = Imageupload($dir,'file1',$allext,"1800000","1800000",'100000000',$image1,$extension1);
+		// '''''''''''file 1''''''''''''''''''''''
+		$photo2 = $_FILES['file2']['name'];
+		$photo2 = explode('.',$photo2);
+		$image2= time().$photo2[0];
+		$extension2 = $photo2[1];
+		$imagename2 = $_FILES['file2']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file2']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check2 = Imageupload($dir,'file2',$allext,"1800000","1800000",'100000000',$image2,$extension2);
+		// '''''''''''file 2''''''''''''''''''''''
+		$photo3 = $_FILES['file3']['name'];
+		$photo3 = explode('.',$photo3);
+		$image3= time().$photo3[0];
+		$extension3 = $photo3[1];
+		$imagename3 = $_FILES['file3']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file3']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check3 = Imageupload($dir,'file3',$allext,"1800000","1800000",'100000000',$image3,$extension3);
+		// '''''''''''file 3''''''''''''''''''''''
+		$photo4 = $_FILES['file4']['name'];
+		$photo4 = explode('.',$photo4);
+		$image4= time().$photo4[0];
+		$extension4 = $photo4[1];
+		$imagename4 = $_FILES['file4']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file4']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check4 = Imageupload($dir,'file4',$allext,"1800000","1800000",'100000000',$image4,$extension4);
+		// '''''''''''file 4''''''''''''''''''''''
+		$photo5 = $_FILES['file5']['name'];
+		$photo5 = explode('.',$photo5);
+		$image5= time().$photo5[0];
+		$extension5 = $photo5[1];
+		$imagename5 = $_FILES['file5']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file5']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check5 = Imageupload($dir,'file5',$allext,"1800000","1800000",'100000000',$image5,$extension5);
+		// '''''''''''file 5''''''''''''''''''''''
+		if($check1===true || $check2===true || $check3===true || $check4===true || $check5===true){
+
+		$image1 = $image1.".jpg";	
+		$image2 = $image2.".jpg";
+		$image3 = $image3.".jpg";	
+		$image4 = $image4.".jpg";	
+		$image5 = $image5.".jpg";	
+		$added_on = date('Y-m-d');
+		$cstmr_id = $_COOKIE['Cookie'];
+		$device= "MONORAIL WITH ELECTRIC WIRE ROPE HOIST";
+		// echo '<pre>';
+		// print_r($device);die;
+		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$added_on')";
+		$sql=mysqli_query($conn,$query);
+		if($sql){
+			 header("Location:$_SERVER[HTTP_REFERER]");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+    }
+}
+
+
+
+
+if(isset($_POST['monorail_text'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
+	$project_loc = $_POST['project_loc'];
+	$mainhost = $_POST['mainhost'];
+	$auxhoist = $_POST['auxhoist'];
+	$location = $_POST['location'];
+	$class_duty = $_POST['class_duty'];
+	$design_standered = $_POST['design_standered'];
+	$application = $_POST['application'];
+	$travel_length = $_POST['travel_length'];
+	$lifting_height = $_POST['lifting_height'];
+	$MH = $_POST['MH'];
+	$travel = $_POST['travel'];
+	
+	$scope_supply = json_encode($_POST['scope_supply']);
+	$cust_id = $_COOKIE['Cookie'];
+	$installation = $_POST['installation'];
+	$other_remarks = $_POST['other_remarks'];
+	$query="INSERT INTO `myc_monorailcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`class_duty`,`design_standered`,`application`,`travel_length`,`lifting_height`,`MH`,`travel`,`scope_supply`,`cust_id`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$class_duty','$design_standered','$application','$travel_length','$lifting_height ','$MH','$travel','$scope_supply','$cust_id','$installation','$other_remarks')";
+
+		$sql=mysqli_query($conn,$query);
+		if($sql){
+			 header("Location:$_SERVER[HTTP_REFERER]");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+}
+// ''''''''''''''''''''''''''''''''''''''ELECTRIC WIRE''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+if(isset($_POST['electric_upload'])){
+
+	 	$photo1 = $_FILES['file1']['name'];
+		$photo1 = explode('.',$photo1);
+		$image1= time().$photo1[0];
+		$extension1 = $photo1[1];
+		$imagename1 = $_FILES['file1']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file1']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check1 = Imageupload($dir,'file1',$allext,"1800000","1800000",'100000000',$image1,$extension1);
+		// '''''''''''file 1''''''''''''''''''''''
+		$photo2 = $_FILES['file2']['name'];
+		$photo2 = explode('.',$photo2);
+		$image2= time().$photo2[0];
+		$extension2 = $photo2[1];
+		$imagename2 = $_FILES['file2']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file2']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check2 = Imageupload($dir,'file2',$allext,"1800000","1800000",'100000000',$image2,$extension2);
+		// '''''''''''file 2''''''''''''''''''''''
+		$photo3 = $_FILES['file3']['name'];
+		$photo3 = explode('.',$photo3);
+		$image3= time().$photo3[0];
+		$extension3 = $photo3[1];
+		$imagename3 = $_FILES['file3']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file3']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check3 = Imageupload($dir,'file3',$allext,"1800000","1800000",'100000000',$image3,$extension3);
+		// '''''''''''file 3''''''''''''''''''''''
+		$photo4 = $_FILES['file4']['name'];
+		$photo4 = explode('.',$photo4);
+		$image4= time().$photo4[0];
+		$extension4 = $photo4[1];
+		$imagename4 = $_FILES['file4']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file4']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check4 = Imageupload($dir,'file4',$allext,"1800000","1800000",'100000000',$image4,$extension4);
+		// '''''''''''file 4''''''''''''''''''''''
+		$photo5 = $_FILES['file5']['name'];
+		$photo5 = explode('.',$photo5);
+		$image5= time().$photo5[0];
+		$extension5 = $photo5[1];
+		$imagename5 = $_FILES['file5']['tmp_name'];
+		list($width,$height)=getimagesize($_FILES['file5']['tmp_name']);
+		$dir="uploads/upload_files/";
+		$allext=array("png","PNG","jpg","JPG","jpeg","JPEG","GIF","gif","pdf");
+		$check5 = Imageupload($dir,'file5',$allext,"1800000","1800000",'100000000',$image5,$extension5);
+		// '''''''''''file 5''''''''''''''''''''''
+		if($check1===true || $check2===true || $check3===true || $check4===true || $check5===true){
+
+		$image1 = $image1.".jpg";	
+		$image2 = $image2.".jpg";
+		$image3 = $image3.".jpg";	
+		$image4 = $image4.".jpg";	
+		$image5 = $image5.".jpg";	
+		$added_on = date('Y-m-d');
+		$cstmr_id = $_COOKIE['Cookie'];
+		$device= "ELECTRIC WIRE ROPE HOIST";
+		// echo '<pre>';
+		// print_r($device);die;
+		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$added_on')";
+		$sql=mysqli_query($conn,$query);
+		if($sql){
+			 header("Location:$_SERVER[HTTP_REFERER]");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+    }
+}
+
+
+
+
+if(isset($_POST['electric_text'])){
+
+	$project_loc = $_POST['project_loc'];
+	$mainhost = $_POST['mainhost'];
+	$auxhoist = $_POST['auxhoist'];
+	$location = $_POST['location'];
+	$crane_type = $_POST['crane_type'];
+	$design_standered = $_POST['design_standered'];
+	$application = $_POST['application'];
+	$travel_length = $_POST['travel_length'];
+	$lifting_height = $_POST['lifting_height'];
+	$MH = $_POST['MH'];
+	$travel = $_POST['travel'];
+	$scope_supply = json_encode($_POST['scope_supply']);
+	$cust_id = $_COOKIE['Cookie'];
+	$installation = $_POST['installation'];
+	$other_remarks = $_POST['other_remarks'];
+	$query="INSERT INTO `myc_electricwire`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`design_standered`,`application`,`travel_length`,`lifting`,`MH`,`travel`,`scope_supply`,`cust_id`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$design_standered','$application','$travel_length','$lifting_height ','$MH','$travel','$scope_supply','$cust_id','$installation','$other_remarks')";
 		$sql=mysqli_query($conn,$query);
 		if($sql){
 			 header("Location:$_SERVER[HTTP_REFERER]");
