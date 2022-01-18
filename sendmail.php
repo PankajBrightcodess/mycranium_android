@@ -10,7 +10,7 @@ include 'connection.php';
 	    $email = $_COOKIE['EmailId'];
 	    $comment = $_POST['comment'];
 	    $selectedProjects  = 'None';
-	    $body = 'My Cranium Services: ' . $selectedProjects;
+	    $body = 'My Cranium Services: '.$selectedProjects;
 	    $subject = "Inquiry Regarding";
 	    $from = $email;
 	    $message = "E-mail: ".$email."\n".$body."\n Comment: ".$comment;
