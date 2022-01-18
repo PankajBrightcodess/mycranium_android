@@ -6,7 +6,7 @@ include 'connection.php';
 
    if(isset($_POST['SendMessage'])){
 
-	    $to="Pankaj.tiwari@brightcode.com"; 
+	    $to="pankaj.tiwari@brightcodess.com"; 
 	    $email = $_COOKIE['EmailId'];
 	    $comment = $_POST['comment'];
 	    $selectedProjects  = 'None';
