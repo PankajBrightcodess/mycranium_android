@@ -46,10 +46,8 @@ include 'connection.php';
 	    $headers = "MIME-Version: 1.0" . "\r\n";
        $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
 	    $headers = "From:".$from;
-	    // print_r($message);die;
 
 	    $send =mail($to, $subject, $message, $headers);
-	    print_r($send);die;
 	    if ($send){
 	     $_SESSION['msg']="Sent Succesfully!!! Thank You ".$name."";
 	      header("location:$_SERVER[HTTP_REFERER]");

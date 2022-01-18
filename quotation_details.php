@@ -71,3 +71,8 @@
     <!-- Footer Nav-->
      <?php include 'footer.php';?>
      <?php include 'footer-link.php';?>
+      <script type="text/javascript">
+      $('#comment').click(function(e){
+         swal("Good job!", " RECEIVE THE QUOTATION WITHIN 72 HOURS..!", "success");
+       });
+    </script>
