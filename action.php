@@ -119,6 +119,7 @@ if(isset($_POST['signup'])){
  	  $address = $data['address'];
  	  $password = $data['password'];
  	  $added_on = $data['added_on'];
+ 	  $cookie_value['id'] = $data['id'];
  	  $cookie_value['role'] = $data['role'];
  	  $cookie_value['name']= $data['name'];
  	  $cookie_value['comp_name']= $data['comp_name'];
@@ -126,7 +127,10 @@ if(isset($_POST['signup'])){
  	  $cookie_value['contact_no']= $data['contact_no'];
  	  $cookie_value['email_id']= $data['email_id'];
  	  $cookie_value['address']= $data['address'];
- 	  setcookie("Cookie",$cookie_value,time() + (86400 * 30),"/");
+ 	  echo '<pre>';
+ 	  $cookie_values = json_encode($cookie_value);
+ 	  setcookie("Cookie",$cookie_values,time() + (86400 * 30),"/");
+ 	 
        echo "COOKIE IS CREATED SUCCESSFULLY !";
  	  if(!empty($data)){
 	    	header('Location:home.php?id='.$id.'&name='.$name.'&company_name='.$comp_name.'&gst_no='.$gst_no.'&contact_no='.$contact_no.'&email_id='.$email_id.'&address='.$address.'');
@@ -697,6 +701,27 @@ if(isset($_POST['electric_text'])){
 			$_SESSION['msg']="Not added result !!!";
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
+}
+
+if(isset($_POST['update'])){
+	echo '<pre>';
+	$id = $_POST['id'];
+	$name = $_POST['name'];		
+	$comp_name = $_POST['comp_name'];		
+	$contact_no = $_POST['contact_no'];		
+	$email_id = $_POST['email_id'];		
+	$gst_no = $_POST['gst_no'];		
+	$address = $_POST['address'];		
+	$password = $_POST['password'];		
+	
+   	 $query="UPDATE `myc_customer` SET `name`='$name',`comp_name`='$comp_name',`gst_no`='$gst_no',`contact_no`='$contact_no',`email_id`='$email_id',`address`='$address',`password`='$password' WHERE `id`='$id'";
+	$run=mysqli_query($conn,$query);
+	if($run){
+		 header("location:$_SERVER[HTTP_REFERER]");
+	}
+	else{
+		header("location:$_SERVER[HTTP_REFERER]");
+	}	
 }
 
 ?>

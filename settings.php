@@ -143,15 +143,14 @@
             </div>
           </div>
           <!-- Single Setting Card-->
-          <div class="card settings-card">
+        <!--   <div class="card settings-card">
             <div class="card-body">
-              <!-- Single Settings-->
               <div class="single-settings d-flex align-items-center justify-content-between">
                 <div class="title"><i class="lni lni-lock"></i><span>Password<span>Updated 1 month ago</span></span></div>
                 <div class="data-content"><a href="change-password.php">Change<i class="lni lni-chevron-right"></i></a></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
