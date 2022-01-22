@@ -534,7 +534,11 @@ if(isset($_POST['jib_upload'])){
 
 
 if(isset($_POST['jib_text'])){
-	
+	$qry = "SELECT `id` FROM `myc_jibcrane` ORDER BY `id` DESC LIMIT 1";
+	$run=mysqli_query($conn,$qry);
+	$data=mysqli_fetch_assoc($run);
+	if(!empty($data)){
+		$refno = 'REF-300'.$data['id'];
 	$project_loc = $_POST['project_loc'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
@@ -554,7 +558,7 @@ if(isset($_POST['jib_text'])){
 	$cust_id = $_COOKIE['Cookie'];
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks')";
+	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks','$refno')";
 	
 		$sql=mysqli_query($conn,$query);
 		if($sql){
@@ -565,6 +569,41 @@ if(isset($_POST['jib_text'])){
 			$_SESSION['msg']="Not added result !!!";
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
+     }
+     else{
+     	$refno = 'REF-300';
+	$project_loc = $_POST['project_loc'];
+	$mainhost = $_POST['mainhost'];
+	$auxhoist = $_POST['auxhoist'];
+	$location = $_POST['location'];
+	$crane_type = $_POST['crane_type'];
+	$class_duty = $_POST['class_duty'];
+	$design_standered = $_POST['design_standered'];
+	$application = $_POST['application'];
+	$hoist_type = $_POST['hoist_type'];
+	$arm = $_POST['arm'];
+	$lifting_height = $_POST['lifting_height'];
+	$MH = $_POST['MH'];
+	$CT = $_POST['CT'];
+	$swivel = $_POST['swivel'];
+	$swivel_degree = $_POST['swivel_degree'];
+	$scope_supply = json_encode($_POST['scope_supply']);
+	$cust_id = $_COOKIE['Cookie'];
+	$installation = $_POST['installation'];
+	$other_remarks = $_POST['other_remarks'];
+	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks','$refno')";
+	
+		$sql=mysqli_query($conn,$query);
+		if($sql){
+			 header("Location:$_SERVER[HTTP_REFERER]");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+
+     }
 }
 // ''''''''''''''''''''''''''''''''''''''JIB CRANE''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 if(isset($_POST['monorail_upload'])){
@@ -789,7 +828,7 @@ if(isset($_POST['electric_text'])){
 }
 
 if(isset($_POST['update'])){
-	echo '<pre>';
+
 	$id = $_POST['id'];
 	$name = $_POST['name'];		
 	$comp_name = $_POST['comp_name'];		
@@ -797,8 +836,7 @@ if(isset($_POST['update'])){
 	$email_id = $_POST['email_id'];		
 	$gst_no = $_POST['gst_no'];		
 	$address = $_POST['address'];		
-	$password = $_POST['password'];		
-	
+	$password = $_POST['password'];
    	 $query="UPDATE `myc_customer` SET `name`='$name',`comp_name`='$comp_name',`gst_no`='$gst_no',`contact_no`='$contact_no',`email_id`='$email_id',`address`='$address',`password`='$password' WHERE `id`='$id'";
 	$run=mysqli_query($conn,$query);
 	if($run){
