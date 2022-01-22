@@ -1,3 +1,26 @@
+<?php 
+session_start();
+ include_once('connection.php');
+$msg = "";
+    if (isset($_SESSION['msg'])) {
+        $msg = $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    if ($msg != "") {
+        echo "<script> alert('$msg')</script>";
+    }
+    $abcd =  json_decode($_COOKIE['Cookie'],true); 
+    $id=$abcd['id'];
+    // print_r($id);die;
+    $query="SELECT * FROM `myc_sendquotation` WHERE `cust_id`='$id' ORDER BY 'id' DESC;";
+    $run=mysqli_query($conn,$query);
+    while ($data=mysqli_fetch_assoc($run)) {
+      $quotation[]=$data;
+    }
+    // echo '<pre>';
+    // print_r($quotation);die;
+    
+  ?>
 <?php include 'header-link.php'; ?>
 <?php include 'header.php'; ?>
     <!-- Header Area-->
@@ -28,56 +51,21 @@
         <!-- Notifications Area-->
         <div class="notification-area pb-2">
           <div class="list-group" style="margin-bottom: 56px;">
-            <!-- Single Notification--><a class="list-group-item d-flex align-items-center"  href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 1</h6><span>12 min ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 2</h6><span>49 min ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 3</h6><span>58 min ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 4</h6><span>Yesterday</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 5</h6><span>2 days ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 6</h6><span>2 days ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 7</h6><span>3 days ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 8</h6><span>Yesterday</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 9</h6><span>2 days ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 9</h6><span>2 days ago</span>
-              </div></a>
-            <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center" href="quotation_details.php"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
-              <div class="noti-info">
-                <h6 class="mb-0">Quotation 10</h6><span>3 days ago</span>
-              </div></a>
+            <?php 
+            if(!empty($quotation)){
+              foreach ($quotation as $key => $value) {
+                ?>
+                <a class="list-group-item readed d-flex align-items-center" href="quotation_details.php?id=<?php echo $value['id'];?>"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
+                <div class="noti-info">
+                   <h6 class="mb-0"><?php echo $value['quotation'];?></h6><span>2 days ago</span>
+                </div></a>
+                <?php
+              }}
+            ?>
           </div>
         </div>
       </div>
     </div>
-    <!-- Internet Connection Status-->
     <div class="internet-connection-status" id="internetStatus"></div>
-    <!-- Footer Nav-->
    <?php include 'footer.php';?>
      <?php include 'footer-link.php';?>

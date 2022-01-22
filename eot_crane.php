@@ -74,13 +74,7 @@
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span></div>
                    <input type="text" class="form-control" placeholder="" name="project_loc">
                 </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
-                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
-                  <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
-                  <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control mb-2">
-                </div>
+               
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span></div>
                   <select class="form-control" name="location">
@@ -101,6 +95,13 @@
                     <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
                     <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option>
                   </select>
+                </div>
+                 <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
+                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
+                  <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
+                  <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
+                  <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control mb-2">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span></div>
@@ -167,7 +168,8 @@
                   <div class="title mb-2"><span>LT (LONG TRAVEL)</span></div>
                   <input type="text" class="form-control mb-2" name="speed_lt" placeholder="Please Fill Manual In Case Of Manual Operation" >
                 </div>
-                <div class="mb-0"><input type="hidden" name="id" value="<?php echo $_COOKIE['Cookie']?>"></div>
+                <?php $abcd =  json_decode($_COOKIE['Cookie'],true); $id=$abcd['id'];?>
+                <div class="mb-0"><input type="hidden" name="id" value="<?php echo $id;?>"></div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>MICRO SPEED (OPTIONAL)</span></div>
                   

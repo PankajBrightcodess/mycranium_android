@@ -222,38 +222,82 @@ if(isset($_POST['signup'])){
 }
 
 if(isset($_POST['eotcrane_text'])){
-	$project_loc = $_POST['project_loc'];
-	$mainhost = $_POST['mainhost'];
-	$auxhoist = $_POST['auxhoist'];
-	$location = $_POST['location'];
-	$crane_type = $_POST['crane_type'];
-	$class_duty = $_POST['class_duty'];
-	$design_standered = $_POST['design_standered'];
-	$application = $_POST['application'];
-	$span = $_POST['span'];
-	$abv_floor_mh = $_POST['abv_floor_mh'];
-	$blw_floor_ah = $_POST['blw_floor_ah'];
-	$travel_length = $_POST['travel_length'];
-	$column_to_column = $_POST['column_to_column'];
-	$speed_mh = $_POST['speed_mh'];
-	$speed_ah = $_POST['speed_ah'];
-	$speed_ct = $_POST['speed_ct'];
-	$speed_lt = $_POST['speed_lt'];
-	$cust_id = $_POST['id'];
-	$vfd = json_encode($_POST['vfd']);
-	$scope_supply = json_encode($_POST['scope_supply']);
-	$installation = $_POST['installation'];
-	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `eot_requestform`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks')";
-		$sql=mysqli_query($conn,$query);
-		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
-			$_SESSION['msg']="Successfully Added!!!";	
-		}
-		else{
-			$_SESSION['msg']="Not added result !!!";
-			header("Location:$_SERVER[HTTP_REFERER]");
-		}
+	$qry = "SELECT `id` FROM `myc_eotrequestform` ORDER BY `id` DESC LIMIT 1";
+	$run=mysqli_query($conn,$qry);
+	$data=mysqli_fetch_assoc($run);
+	if(!empty($data)){
+		$refno = 'REF-100'.$data['id'];
+		$project_loc = $_POST['project_loc'];
+		$mainhost = $_POST['mainhost'];
+		$auxhoist = $_POST['auxhoist'];
+		$location = $_POST['location'];
+		$crane_type = $_POST['crane_type'];
+		$class_duty = $_POST['class_duty'];
+		$design_standered = $_POST['design_standered'];
+		$application = $_POST['application'];
+		$span = $_POST['span'];
+		$abv_floor_mh = $_POST['abv_floor_mh'];
+		$blw_floor_ah = $_POST['blw_floor_ah'];
+		$travel_length = $_POST['travel_length'];
+		$column_to_column = $_POST['column_to_column'];
+		$speed_mh = $_POST['speed_mh'];
+		$speed_ah = $_POST['speed_ah'];
+		$speed_ct = $_POST['speed_ct'];
+		$speed_lt = $_POST['speed_lt'];
+		$cust_id = $_POST['id'];
+		$vfd = json_encode($_POST['vfd']);
+		$scope_supply = json_encode($_POST['scope_supply']);
+		$installation = $_POST['installation'];
+		$other_remarks = $_POST['other_remarks'];
+		$query="INSERT INTO `myc_eotrequestform`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
+			$sql=mysqli_query($conn,$query);
+			if($sql){
+				 header("Location:$_SERVER[HTTP_REFERER]");
+				$_SESSION['msg']="Successfully Added!!!";	
+			}
+			else{
+				$_SESSION['msg']="Not added result !!!";
+				header("Location:$_SERVER[HTTP_REFERER]");
+			}
+
+	}
+	else{
+		$refno = 'REF-100';
+		$project_loc = $_POST['project_loc'];
+		$mainhost = $_POST['mainhost'];
+		$auxhoist = $_POST['auxhoist'];
+		$location = $_POST['location'];
+		$crane_type = $_POST['crane_type'];
+		$class_duty = $_POST['class_duty'];
+		$design_standered = $_POST['design_standered'];
+		$application = $_POST['application'];
+		$span = $_POST['span'];
+		$abv_floor_mh = $_POST['abv_floor_mh'];
+		$blw_floor_ah = $_POST['blw_floor_ah'];
+		$travel_length = $_POST['travel_length'];
+		$column_to_column = $_POST['column_to_column'];
+		$speed_mh = $_POST['speed_mh'];
+		$speed_ah = $_POST['speed_ah'];
+		$speed_ct = $_POST['speed_ct'];
+		$speed_lt = $_POST['speed_lt'];
+		$cust_id = $_POST['id'];
+		$vfd = json_encode($_POST['vfd']);
+		$scope_supply = json_encode($_POST['scope_supply']);
+		$installation = $_POST['installation'];
+		$other_remarks = $_POST['other_remarks'];
+		$query="INSERT INTO `myc_eotrequestform`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
+			$sql=mysqli_query($conn,$query);
+			if($sql){
+				 header("Location:$_SERVER[HTTP_REFERER]");
+				$_SESSION['msg']="Successfully Added!!!";	
+			}
+			else{
+				$_SESSION['msg']="Not added result !!!";
+				header("Location:$_SERVER[HTTP_REFERER]");
+			}
+
+	}
+	
 }
 
  if(isset($_POST['gantry_upload'])){
@@ -335,7 +379,12 @@ if(isset($_POST['eotcrane_text'])){
 }
 
 if(isset($_POST['gantry_text'])){
-	
+
+	$qry = "SELECT `id` FROM `myc_gantrycrane` ORDER BY `id` DESC LIMIT 1";
+	$run=mysqli_query($conn,$qry);
+	$data=mysqli_fetch_assoc($run);
+	if(!empty($data)){
+	$refno = 'REF-200'.$data['id'];	
 	$project_loc = $_POST['project_loc'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
@@ -358,7 +407,7 @@ if(isset($_POST['gantry_text'])){
 	$scope_supply = json_encode($_POST['scope_supply']);
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks')";
+	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
 		$sql=mysqli_query($conn,$query);
 		if($sql){
 			 header("Location:$_SERVER[HTTP_REFERER]");
@@ -368,6 +417,42 @@ if(isset($_POST['gantry_text'])){
 			$_SESSION['msg']="Not added result !!!";
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
+	}else{
+	$refno = 'REF-200';	
+	$project_loc = $_POST['project_loc'];
+	$mainhost = $_POST['mainhost'];
+	$auxhoist = $_POST['auxhoist'];
+	$location = $_POST['location'];
+	$crane_type = $_POST['crane_type'];
+	$class_duty = $_POST['class_duty'];
+	$design_standered = $_POST['design_standered'];
+	$application = $_POST['application'];
+	$span = $_POST['span'];
+	$cantilever = $_POST['cantilever'];
+	$abv_floor_mh = $_POST['abv_floor_mh'];
+	$blw_floor_ah = $_POST['blw_floor_ah'];
+	$travel_length = $_POST['travel_length'];
+	$speed_mh = $_POST['speed_mh'];
+	$speed_ah = $_POST['speed_ah'];
+	$speed_ct = $_POST['speed_ct'];
+	$speed_lt = $_POST['speed_lt'];
+	$cust_id = $_POST['id'];
+	$vfd = json_encode($_POST['vfd']);
+	$scope_supply = json_encode($_POST['scope_supply']);
+	$installation = $_POST['installation'];
+	$other_remarks = $_POST['other_remarks'];
+	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refnoss')";
+		$sql=mysqli_query($conn,$query);
+		if($sql){
+			 header("Location:$_SERVER[HTTP_REFERER]");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+
+	}
 }
 // ''''''''''''''''''''''''''''''''''''''Gantry Crane End''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 if(isset($_POST['jib_upload'])){
