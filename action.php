@@ -441,7 +441,7 @@ if(isset($_POST['gantry_text'])){
 	$scope_supply = json_encode($_POST['scope_supply']);
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refnoss')";
+	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
 		$sql=mysqli_query($conn,$query);
 		if($sql){
 			 header("Location:$_SERVER[HTTP_REFERER]");
