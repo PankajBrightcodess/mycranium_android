@@ -55,7 +55,7 @@ $msg = "";
             if(!empty($quotation)){
               foreach ($quotation as $key => $value) {
                 ?>
-                <a class="list-group-item readed d-flex align-items-center" href="quotation_details.php?id=<?php echo $value['id'];?>"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
+                <a class="list-group-item readed d-flex align-items-center" href="quotation_details.php?id=<?php echo $value['id'];?>(<?php echo $value['refno'];?>)"><span class="noti-icon"><i class="lni lni-angle-double-right"></i></span>
                 <div class="noti-info">
                    <h6 class="mb-0"><?php echo $value['quotation'];?></h6><span>2 days ago</span>
                 </div></a>
