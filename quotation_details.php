@@ -47,7 +47,7 @@ $msg = "";
             <div class="noti-info" >
               <div class="row">
                 <div class="col-12 mb-3">
-                  <a href="<?php echo '../mycranium/'.$data['image']?>" download="true" class="btn btn-sm btn-info">Download</a>  <!-- img/pdf/MY_CRANIUM.pdf -->
+                  <a href="<?php echo 'https://demo.softwarebss.com/myc/'.$data['image']?>" download="true" class="btn btn-sm btn-info">Download</a>  <!-- img/pdf/MY_CRANIUM.pdf -->
                 </div>
                 <form method="POST" action="sendmail.php">
                 <div class="col-12 col-md-12 mb-3">
