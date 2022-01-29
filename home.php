@@ -116,14 +116,14 @@
                       </svg><span>Monorial</span></a></div>
                 </div>
               </div> -->
-              <div class="col-4">
+             <!--  <div class="col-4">
                 <div class="card catagory-card">
                   <div class="card-body"><a href="monorail.php">
                       <svg class="bi bi-cup mb-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"></path>
                       </svg><span>Monorail</span></a></div>
                 </div>
-              </div>
+              </div> -->
              <!--  <div class="col-4">
                 <div class="card catagory-card">
                   <div class="card-body"><a class="text-danger" href="catagory.php">
@@ -342,7 +342,7 @@
                 <div class="col-12 text-center">
                 
                     <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      Online Quotation Request
+                      Online Quotation Request For Cranes And Hoists
                     </button>
                   <div class="collapse" id="collapseExample">
                     <div class="card card-body ">
@@ -381,7 +381,47 @@
                 <div class="col-12 text-center">
                 
                     <a href="shedule_online.php"><button class="btn btn-primary form-control" type="button" >
-                      Online request for Assessment of Cranes/Hoists
+                      Online request for Assessment/Health Check-up/inspection Of Your Cranes & Hoists 
+                    </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weekly-best-seller-area py-3">
+        <div class="container">
+          <!-- <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6></h6><a class="btn" href="shop-list.php">View All</a>
+          </div> -->
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="card horizontal-product-card">
+                <div class="col-12 text-center">
+                
+                    <a href="#"><button class="btn btn-primary form-control" type="button" >
+                      Standard Price List Of Electric Chain Hoist (500kg to 2000kg) 
+                    </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weekly-best-seller-area py-3">
+        <div class="container">
+          <!-- <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6></h6><a class="btn" href="shop-list.php">View All</a>
+          </div> -->
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="card horizontal-product-card">
+                <div class="col-12 text-center">
+                
+                    <a href="#"><button class="btn btn-primary form-control" type="button" >
+                      Standard Price List Of Claim Pulley Blocks and Other Accessories 
                     </button></a>
                 </div>
               </div>

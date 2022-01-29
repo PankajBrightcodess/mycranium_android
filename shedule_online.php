@@ -39,7 +39,7 @@
                     <td>1</td>
                     <td>DETAILS OF ITEMS TO BE ASSESSED</td>
                     <td><select class="form-control">
-                        <option>--SELECT--</option>
+                        <option >SELECT</option>
                         <option>SG EOT CRANE</option>
                         <option>SG UNDER SLUNG CRANE</option>
                         <option>SG SEMI EOT CRANE</option>
@@ -51,9 +51,10 @@
                         <option>DG GANTRY CRANE</option>
                         <option>DG SEMI GANTRY CRANE</option>
                         <option>P/M JIB CRANE</option>
-                        <option>C/M JIB CRANE, EWRH</option>
+                        <option>W/M JIB CRANE</option>
+                        <option>EWRH</option>
                     </select></td>
-                    <td >SG- SINGLE GIRDER DG- DOUBLE GIRDER P/M- PILLAR MOUNTED C/M- COLUMN MOUNTED EWRH- ELECTRIC WIRE ROPE HOIST
+                    <td >SG- SINGLE GIRDER<br> DG- DOUBLE GIRDER <br>P/M- PILLAR MOUNTED<br> W/M- WALL MOUNTED<br> EWRH- ELECTRIC WIRE ROPE HOIST
                     </td>
                 </tr>
                 <tr>
@@ -142,7 +143,7 @@
            // debugger;
           var qty = $('#qty').val();
           var days = $('#days').val();
-          var result = parseFloat(1700)*parseInt(days)*parseInt(qty);
+          var result = ((parseFloat(1700)*parseInt(days))*18/100)*parseInt(qty);
           $('#total').html(result);
         };
      </script>

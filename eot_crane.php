@@ -1,3 +1,28 @@
+<?php 
+  session_start();
+  include_once('connection.php');
+  $msg = "";
+    if (isset($_SESSION['msg'])) {
+        $msg = $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    if ($msg != "") {
+        echo "<script> alert('$msg')</script>";
+    }
+    $abcd =  json_decode($_COOKIE['Cookie'],true); 
+    $id=$abcd['id'];
+    // print_r($id);die;
+    $query="SELECT * FROM `myc_country`";
+    $run=mysqli_query($conn,$query);
+    while ($data=mysqli_fetch_assoc($run)) {
+      $country[]=$data;
+    } 
+    $qry="SELECT * FROM `myc_area` where `type`='state'";
+    $runs=mysqli_query($conn,$qry);
+    while ($data=mysqli_fetch_assoc($runs)) {
+      $state[]=$data;
+    }
+?>
 <?php include 'header-link.php'; ?>
 <?php include 'header.php'; ?>
     <!-- Header Area-->
@@ -69,42 +94,67 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
+              <div class="mb-3">
+                <span style="color: red;"><strong>*</strong></span> Marked are mandatory to be filled.<hr>
+              </div>
               <form action="action.php" method="POST" enctype="multipart/form-data">
                  <div class="mb-3">
-                    <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span></div>
-                   <input type="text" class="form-control" placeholder="" name="project_loc">
+                    <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
+                   <div class="title "><span>Country</span></div>
+                  <select class="form-control" name="country" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($country)){
+                            foreach ($country as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['country']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select>
+                  <div class="title "><span>State</span></div>
+                  <select class="form-control state" name="state" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($state)){
+                            foreach ($state as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select>
+                  <div class="title "><span>City/Dist</span></div>
+                  <select class="form-control city" id="city" name="dist" required>
+                  </select>
                 </div>
-               
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span></div>
+                  <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span> <span style="color: red;">*</span></div>
                   <select class="form-control" name="location">
                     <option value="">---SELECT---</option>
                     <option value="indoor">INDOOR</option>
                     <option value="outdoor">OUTDOOR</option>
                   </select>
                 </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span></div>
-                  
+                 <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
                   <select class="form-control" name="crane_type">
                     <option value="">---SELECT---</option>
                     <option value="single_girder_eot_crane">SINGLE GIRDER EOT CRANE</option>
                     <option value="double_girder_eot_crane">DOUBLE GIRDER EOT CRANE</option>
                     <option value="single_girder_semi_eot_crane">SINGLE GIRDER SEMI EOT CRANE</option>
                     <option value="double_girder_semi_eot_crane">DOUBLE GIRDER SEMI EOT CRANE</option>
-                    <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
-                    <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option>
+                   <!--  <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
+                    <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
                   </select>
                 </div>
-                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
-                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
+                  <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span> <span style="color: red;">*</span></div>
+                  <div class="title mb-2"><span>MH (MAIN HOIST)</span> <span style="color: red;">*</span></div>
                   <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
                   <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
                   <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control mb-2">
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span></div>
+                  <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span> <span style="color: red;">*</span></div>
                    <select class="form-control" name="class_duty">
                     <option value="">---SELECT---</option>
                     <option value="m1">M1 (CLASS-I)</option>
@@ -117,8 +167,8 @@
                     <option value="m8">M8 (CLASS-IV)</option>
                   </select>
                 </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD</span></div>
+                 <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD</span> <span style="color: red;">*</span></div>
                    <select class="form-control" name="design_standered">
                     <option value="">---SELECT---</option>
                     <option value="is">IS 3177</option>
@@ -126,32 +176,31 @@
                     <option value="din">DIN</option>
                   </select>
                 </div>
-                <div class="mb-3">
+                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
-                   <input type="text" class="form-control"  placeholder="To be furnished as per your application" name="application">
+                   <input type="text" class="form-control" name="application" placeholder="To be furnished as per your application/usage.">
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPAN (IN METERS)</span></div>
-                  <input class="form-control" type="text" name="span" placeholder="Please furnish in meters">
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPAN (IN METERS)</span> <span style="color: red;">*</span></div>
+                  <input class="form-control" name="span" placeholder="Please Furnish in Meters" type="text">
                 </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span></div>
-                  <div class="mb-3">
-                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
+                 <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span><span style="color: red;">*</span></div>
+                  <div class="title mb-2"><span>MH (MAIN HOIST)</span><span style="color: red;">*</span></div>
                   <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
-                  <input type="text" class="form-control mb-2" placeholder="Please write N/A, in case, it is not applicable" name="blw_floor_mh">
+                  <input type="text" class="form-control mb-2" placeholder="" name="blw_floor_mh">
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
                   <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_ah">
-                  <input type="text" class="form-control mb-2" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
+                    <input type="text" class="form-control mb-2" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
                   <!-- <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select> -->
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
                   <input class="form-control" type="text" name="travel_length">
                 </div>
-                <div class="mb-3">
+                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>COLUMN TO COLUMN DISTANCE (IN METERS)</span></div>
-                  <input class="form-control" name="column_to_column" placeholder="To be filled in case of Gantry Girder requirement" type="text">
+                  <input class="form-control" type="text" placeholder="To be filled in case of Gantry Girder Requirement" name="travel_length">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
@@ -177,13 +226,13 @@
                   <select class="form-control multipleselect" multiple="multiple"  name="vfd[]">
                     
                     <option value="mh">MH</option>
-                    <option value="ah">AH</option>
+                    <!-- <option value="ah">AH</option> -->
                     <option value="ct">CT</option>
                     <option value="lt">LT</option>
                  </select> 
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>
                     <select class="form-control multipleselect" multiple="multiple" id="myselect" name="scope_supply[]">
                     
                     <option value="crane">CRANE</option>
@@ -195,7 +244,7 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span> <span style="color: red;">*</span></div>
                    <select class="form-control" name="installation">
                     <option value="">---SELECT---</option>
                     <option value="yes">YES</option>
@@ -225,6 +274,26 @@
         select_ids.push($(this).val());
       })
     });
+    $('.state').change(function(e){
+   
+         var id=$(this).val();
+        $.ajax({
+                type:'POST',
+                url:'action.php',
+               data:{id:id,city:'city'},
+                success: function(data){
+                      // console.log(data);
+                    $('#city').html(data);
+                    },
+
+                    error: function(){ 
+                       alert("error");
+                    },
+        });
+    return false;
+    });
+
+
     function selectAll()
     {
       $('select#myselect').val(select_ids);

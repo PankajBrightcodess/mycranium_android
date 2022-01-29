@@ -847,4 +847,25 @@ if(isset($_POST['update'])){
 	}	
 }
 
+if(isset($_POST['city'])){
+	$state_id = $_POST['id'];
+	$qury="SELECT * FROM `myc_area` where `state_id`='$state_id' ";
+      $run=mysqli_query($conn,$qury);
+      $dist=array();
+      while ($data=mysqli_fetch_assoc($run)){
+      $dist[]=$data;
+    }
+    // print_r($dist); die;
+    $html='<option value="">---SELECT---</option>';
+    
+    foreach ($dist as $key => $value) {
+    	$html.='<option value="'.$value['id'].'">'.$value['name'].'</option>';
+    }
+    echo $html;
+
+
+  
+
+}
+
 ?>

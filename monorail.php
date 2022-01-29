@@ -1,3 +1,28 @@
+<?php 
+  session_start();
+  include_once('connection.php');
+  $msg = "";
+    if (isset($_SESSION['msg'])) {
+        $msg = $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    if ($msg != "") {
+        echo "<script> alert('$msg')</script>";
+    }
+    $abcd =  json_decode($_COOKIE['Cookie'],true); 
+    $id=$abcd['id'];
+    // print_r($id);die;
+    $query="SELECT * FROM `myc_country`";
+    $run=mysqli_query($conn,$query);
+    while ($data=mysqli_fetch_assoc($run)) {
+      $country[]=$data;
+    } 
+    $qry="SELECT * FROM `myc_area` where `type`='state'";
+    $runs=mysqli_query($conn,$qry);
+    while ($data=mysqli_fetch_assoc($runs)) {
+      $state[]=$data;
+    }
+?>
 <?php include 'header-link.php'; ?>
 <?php include 'header.php'; ?>
     <!-- Header Area-->
@@ -69,20 +94,47 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
+              <div class="mb-3">
+                <span style="color: red;"><strong>*</strong></span> Marked are mandatory to be filled.<hr>
+              </div>
               <form action="action.php" method="POST">
-                  <div class="mb-3">
-                    <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span></div>
-                   <input type="text" class="form-control" placeholder="" name="project_loc">
+                   <div class="mb-3">
+                    <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
+                   <div class="title "><span>Country</span></div>
+                  <select class="form-control" name="country" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($country)){
+                            foreach ($country as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['country']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select>
+                  <div class="title "><span>State</span></div>
+                  <select class="form-control state" name="state" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($state)){
+                            foreach ($state as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select>
+                  <div class="title "><span>City/Dist</span></div>
+                  <select class="form-control city" id="city" name="dist" required>
+                  </select>
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
+                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span> <span style="color: red;">*</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
                   <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
                   <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
                   <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control mb-2">
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span></div>
+                  <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span> <span style="color: red;">*</span></div>
                    <select class="form-control" name="location">
                     <option value="">---SELECT---</option>
                     <option value="indoor">INDOOR</option>
@@ -90,7 +142,7 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span></div>
+                  <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span> <span style="color: red;">*</span></div>
                    <select class="form-control" name="class_duty">
                     <option value="">---SELECT---</option>
                     <option value="m1">M1 (CLASS-I)</option>
@@ -104,7 +156,7 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD OF HOIST</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD OF HOIST</span> <span style="color: red;">*</span></div>
                   <select class="form-control" name="design_standered">
                     <option value="">---SELECT---</option>
                     <option value="is">IS 3938</option>
@@ -113,7 +165,7 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span> </div>
                   <input class="form-control" type="text" name="application" placeholder="To be furnished as per your application">
                 </div>
                 <div class="mb-3">
@@ -133,7 +185,7 @@
                   
                 </div>
                  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>
                     <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
                     <option value="hoist">HOIST</option>
                     <option value="ismb">MONORAIL/ISMB</option>
@@ -142,7 +194,7 @@
                   </select>
                 </div>
                  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span> <span style="color: red;">*</span></div>
                   <select class="form-control" name="installation">
                     <option value="">---SELECT---</option>
                     <option value="yes">Yes</option>
@@ -166,3 +218,38 @@
     <!-- Footer Nav-->
     <?php include 'footer.php';?>
      <?php include 'footer-link.php';?>
+     <script type="text/javascript">
+    var select_ids = [];
+    $(document).ready(function(e) {
+    
+      $('#myselect option').each(function(index, element) {
+        select_ids.push($(this).val());
+      })
+    });
+    $('.state').change(function(e){
+   
+         var id=$(this).val();
+        $.ajax({
+                type:'POST',
+                url:'action.php',
+               data:{id:id,city:'city'},
+                success: function(data){
+                      // console.log(data);
+                    $('#city').html(data);
+                    },
+
+                    error: function(){ 
+                       alert("error");
+                    },
+        });
+    return false;
+    });
+
+
+    function selectAll()
+    {
+      $('select#myselect').val(select_ids);
+    }
+
+  </script>
+     
