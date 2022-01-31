@@ -183,7 +183,7 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
                   <input type="text" class="form-control mb-2" name="MH"  >
-                  <div class="title mb-2"><span>TRAVEL</span></div>
+                  <div class="title mb-2"><span>TRAVEL (CROSS TRAVEL)</span></div>
                   <input type="text" class="form-control mb-2" name="travel" >
                 </div>
                 <!--  <div class="mb-3">
