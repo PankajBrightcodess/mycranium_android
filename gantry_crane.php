@@ -101,7 +101,7 @@
                     <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
                    <div class="title "><span>Country</span></div>
-                  <select class="form-control" name="country" required> 
+                  <select class="form-control country" name="country" required> 
                     <option value="">---SELECT---</option>
                     <?php 
                           if(!empty($country)){
@@ -125,6 +125,9 @@
                   <div class="title "><span>City/Dist</span></div>
                   <select class="form-control city" id="city" name="dist" required>
                   </select>
+                   <div class="title other"><span>Other country Details</span>
+                  <input type="text" class="form-control " id="other" name="other_country_details" placeholder="to be mention other country details">
+                  </div>
                 </div>
                
                 <div class="mb-3">
@@ -139,7 +142,7 @@
                 <div class="mb-0"><input type="hidden" name="id" value="<?php echo $id;?>"></div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
-                  <select class="form-control" name="crane_type">
+                  <select class="form-control crane_type" name="crane_type">
                     <option value="">---SELECT---</option>
                     <option value="single_girder_eot_crane">SINGLE GIRDER EOT CRANE</option>
                     <option value="double_girder_eot_crane">DOUBLE GIRDER EOT CRANE</option>
@@ -154,7 +157,7 @@
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
                   <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
                   <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control mb-2">
+                  <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control ahaux mb-2">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span> <span style="color: red;">*</span></div>
@@ -197,8 +200,8 @@
                   <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
                   <input type="text" class="form-control mb-2" placeholder="Please write N/A, in case, it is not applicable" name="blw_floor_mh">
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_ah">
-                    <input type="text" class="form-control mb-2" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
+                  <input type="text" class="form-control mb-2 abv_floor_ah" placeholder="" name="abv_floor_ah">
+                    <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
                   <!-- <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select> -->
                 </div>
                 <div class="mb-3">
@@ -212,7 +215,7 @@
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
                   <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_mh">
                   <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_ah">
+                  <input type="text" class="form-control mb-2 speed_ah" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_ah">
                   <div class="title mb-2"><span>CT (CROSS TRAVEL)</span></div>
                   <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="speed_ct">
                   <div class="title mb-2"><span>LT (LONG TRAVEL)</span></div>
@@ -220,18 +223,17 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>MICRO SPEED (OPTIONAL)</span></div>
-                    <select class="form-control multipleselect" multiple="multiple"  name="vfd[]">
+                    <select class="form-control multipleselect vpd_ah" multiple="multiple"  name="vfd[]">
                      
-                    <option value="mh">MH</option>
+                    <!-- <option value="mh">MH</option>
                     <option value="ah">AH</option>
                     <option value="ct">CT</option>
-                    <option value="lt">LT</option>
+                    <option value="lt">LT</option> -->
                  </select> 
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>
                      <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
-                    
                     <option value="crane">CRANE</option>
                     <option value="shrouded">SHROUDED BUS BAR</option>
                     <option value="sq">SQ. BAR/RAIL WITH FIXING ITEMS</option>
@@ -242,7 +244,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span> <span style="color: red;">*</span></div>
-                   <select class="form-control" name="installation">
+                   <select class="form-control install" name="installation">
                     <option value="">---SELECT---</option>
                     <option value="yes">YES</option>
                     <option value="no">NO</option>
@@ -282,12 +284,84 @@
                       // console.log(data);
                     $('#city').html(data);
                     },
-
                     error: function(){ 
                        alert("error");
                     },
         });
     return false;
+    });
+ $(".other").hide(true);
+    $('.crane_type').change(function(e){
+   
+         var id=$(this).val();
+          if(id=='single_girder_eot_crane'){
+             $(".ahaux").prop("readonly", true); 
+             $(".abv_floor_ah").prop("readonly", true);
+             $(".blw_floor_ah").prop("readonly", true);
+             
+             $(".speed_ah").prop("readonly", true);
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+          }
+          else if(id=='double_girder_eot_crane'){
+             $(".ahaux").prop("readonly", false);
+             $(".abv_floor_ah").prop("readonly", false);
+             $(".blw_floor_ah").prop("readonly", false);
+             $(".speed_ah").prop("readonly", false);
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
+          }
+          else if(id=='single_girder_semi_eot_crane'){
+
+              $(".ahaux").prop("readonly", true); 
+             $(".abv_floor_ah").prop("readonly", true);
+             $(".blw_floor_ah").prop("readonly", true);
+             $(".speed_ah").prop("readonly", true);
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+          }
+           else if(id=='double_girder_semi_eot_crane'){
+              $(".ahaux").prop("readonly", false);
+             $(".abv_floor_ah").prop("readonly", false);
+             $(".blw_floor_ah").prop("readonly", false);
+             $(".speed_ah").prop("readonly", false);
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
+          }
+          else{
+             $(".ahaux").prop("readonly", false);
+             $(".abv_floor_ah").prop("readonly", false);
+             $(".blw_floor_ah").prop("readonly", false);
+             $(".speed_ah").prop("readonly", false);
+             $('.vpd_ah').append(`<option value="ah">AH</option>`);   //doubt
+          }
+    return false;
+    });
+
+    $('.country').change(function(e){
+   
+         var id=$(this).val();
+            if(id!='India'){
+               // $(".state").prop("readonly", true); 
+               // $(".city").prop("readonly", true); 
+               $('.state').prop('disabled', true);
+               $('.city').prop('disabled', true);
+               $(".other").show(true);
+               $('.install').append(` <option value="lt" selected='selected'>Supervision</option>`);
+              
+            }else{
+               $('.state').prop('disabled', false);
+               $('.city').prop('disabled', false);
+                $(".other").hide(true);
+               
+            }
+         return false;
     });
 
 

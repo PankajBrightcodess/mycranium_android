@@ -101,7 +101,7 @@
                     <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
                    <div class="title "><span>Country</span></div>
-                  <select class="form-control" name="country" required> 
+                  <select class="form-control country" name="country" required> 
                     <option value="">---SELECT---</option>
                     <?php 
                           if(!empty($country)){
@@ -125,6 +125,9 @@
                   <div class="title "><span>City/Dist</span></div>
                   <select class="form-control city" id="city" name="dist" required>
                   </select>
+                  <div class="title other"><span>Other country Details</span>
+                     <input type="text" class="form-control " id="other" name="other_country_details" placeholder="to be mention other country details">
+                  </div>
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span></div>
@@ -192,7 +195,7 @@
                 </div> -->
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span> <span style="color: red;">*</span></div>
-                  <select class="form-control" name="installation">
+                  <select class="form-control install" name="installation">
                     <option value="">---SELECT---</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -240,6 +243,23 @@
                     },
         });
     return false;
+    });
+$(".other").hide(true);
+    $('.country').change(function(e){
+   
+         var id=$(this).val();
+            if(id!='India'){ 
+               $('.state').prop('disabled', true);
+               $('.city').prop('disabled', true);
+               $(".other").show(true);
+               $('.install').append(` <option value="Supervision" selected='selected'>Supervision</option>`);
+              
+            }else{
+               $('.state').prop('disabled', false);
+               $('.city').prop('disabled', false);
+                $(".other").hide(true);
+            }
+         return false;
     });
 
 
