@@ -106,7 +106,7 @@
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {
-                              ?><option value="<?php echo $value['id']?>"><?php echo $value['country']?></option><?php
+                              ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?></option><?php
                             }
                           }
                     ?>

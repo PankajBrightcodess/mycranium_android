@@ -106,7 +106,7 @@
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {
-                              ?><option value="<?php echo $value['id']?>"><?php echo $value['country']?></option><?php
+                              ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?></option><?php
                             }
                           }
                     ?>
@@ -299,9 +299,7 @@
      $('.country').change(function(e){
    
          var id=$(this).val();
-            if(id!='India'){
-               // $(".state").prop("readonly", true); 
-               // $(".city").prop("readonly", true); 
+            if(id!='India'){ 
                $('.state').prop('disabled', true);
                $('.city').prop('disabled', true);
                $(".other").show(true);

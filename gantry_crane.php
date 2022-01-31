@@ -106,7 +106,7 @@
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {
-                              ?><option value="<?php echo $value['id']?>"><?php echo $value['country']?></option><?php
+                              ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?></option><?php
                             }
                           }
                     ?>
@@ -309,10 +309,12 @@
              $(".abv_floor_ah").prop("readonly", false);
              $(".blw_floor_ah").prop("readonly", false);
              $(".speed_ah").prop("readonly", false);
-             $('.vpd_ah').append(`<option value="mh">MH</option>`);
-             $('.vpd_ah').append(`<option value="ct">CT</option>`);
-             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+             // $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             // $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             // $('.vpd_ah').append(` <option value="lt">LT</option>`);
              $('.vpd_ah').append(`<option value="ah">AH</option>`); 
+             // $('.vpd_ah').append(` <option value="lt">LT</option>`);
+
           }
           else if(id=='single_girder_semi_eot_crane'){
 
@@ -320,18 +322,20 @@
              $(".abv_floor_ah").prop("readonly", true);
              $(".blw_floor_ah").prop("readonly", true);
              $(".speed_ah").prop("readonly", true);
-             $('.vpd_ah').append(`<option value="mh">MH</option>`);
-             $('.vpd_ah').append(`<option value="ct">CT</option>`);
-             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+             // $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             // $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             // $('.vpd_ah').append(` <option value="lt">LT</option>`);
+             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
+             
           }
            else if(id=='double_girder_semi_eot_crane'){
               $(".ahaux").prop("readonly", false);
              $(".abv_floor_ah").prop("readonly", false);
              $(".blw_floor_ah").prop("readonly", false);
              $(".speed_ah").prop("readonly", false);
-             $('.vpd_ah').append(`<option value="mh">MH</option>`);
-             $('.vpd_ah').append(`<option value="ct">CT</option>`);
-             $('.vpd_ah').append(` <option value="lt">LT</option>`);
+             // $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             // $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             // $('.vpd_ah').append(` <option value="lt">LT</option>`);
              $('.vpd_ah').append(`<option value="ah">AH</option>`); 
           }
           else{
