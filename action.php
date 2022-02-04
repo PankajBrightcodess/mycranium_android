@@ -849,7 +849,7 @@ if(isset($_POST['update'])){
 
 if(isset($_POST['city'])){
 	$state_id = $_POST['id'];
-	$qury="SELECT * FROM `myc_area` where `state_id`='$state_id' ";
+	$qury="SELECT * FROM `myc_area` where `state_id`='$state_id' ORDER BY `name` ASC";
       $run=mysqli_query($conn,$qury);
       $dist=array();
       while ($data=mysqli_fetch_assoc($run)){

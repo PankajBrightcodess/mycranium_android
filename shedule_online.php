@@ -143,7 +143,8 @@
            // debugger;
           var qty = $('#qty').val();
           var days = $('#days').val();
-          var result = Math.round(((parseFloat(1700)*parseInt(days))+18/100)*parseInt(qty),2);
+          var value = (parseFloat(1700)*parseInt(days));
+          var result = value+(value*18/100);
           $('#total').html(result);
         };
      </script>

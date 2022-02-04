@@ -191,7 +191,7 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span><span style="color: red;">*</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span><span style="color: red;">*</span></div>
                   <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
-                  <input type="text" class="form-control mb-2" placeholder="" name="blw_floor_mh">
+                  <!-- <input type="text" class="form-control mb-2" placeholder="" name="blw_floor_mh"> -->
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
                   <input type="text" class="form-control mb-2 abv_floor_ah" placeholder=""  name="abv_floor_ah">
                     <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">

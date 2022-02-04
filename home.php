@@ -356,9 +356,9 @@
                       <div class="col-12 mb-2">
                         <a href="jib_crane.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp;JIB Crane</a>
                       </div>
-                      <div class="col-12 mb-2">
+                      <!-- <div class="col-12 mb-2">
                         <a href="monorail.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Monorail With Electric Wire Rope Hoist</a>
-                      </div>
+                      </div> -->
                        <div class="col-12 mb-2">
                         <a href="electricwire.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Electric Wire Rope Hoist</a>
                       </div>

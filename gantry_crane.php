@@ -144,10 +144,10 @@
                   <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
                   <select class="form-control crane_type" name="crane_type">
                     <option value="">---SELECT---</option>
-                    <option value="single_girder_eot_crane">SINGLE GIRDER EOT CRANE</option>
-                    <option value="double_girder_eot_crane">DOUBLE GIRDER EOT CRANE</option>
-                    <option value="single_girder_semi_eot_crane">SINGLE GIRDER SEMI EOT CRANE</option>
-                    <option value="double_girder_semi_eot_crane">DOUBLE GIRDER SEMI EOT CRANE</option>
+                    <option value="single_girder_gntry_crane">SINGLE GIRDER GANTRY CRANE</option>
+                    <option value="double_girder_gntry_crane">DOUBLE GIRDER GANTRY CRANE</option>
+                    <option value="single_girder_semi_gntry_crane">SINGLE GIRDER SEMI GANTRY CRANE</option>
+                    <option value="double_girder_semi_gntry_crane">DOUBLE GIRDER SEMI GANTRY CRANE</option>
                    <!--  <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
                     <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
                   </select>
