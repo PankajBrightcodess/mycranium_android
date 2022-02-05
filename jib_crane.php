@@ -12,7 +12,7 @@
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
     // print_r($id);die;
-    $query="SELECT * FROM `myc_country`";
+    $query="SELECT * FROM `myc_country` where `status`='1'";
     $run=mysqli_query($conn,$query);
     while ($data=mysqli_fetch_assoc($run)) {
       $country[]=$data;
@@ -103,6 +103,7 @@
                    <div class="title "><span>Country</span></div>
                   <select class="form-control country" name="country" required> 
                     <option value="">---SELECT---</option>
+                    <option value="India">India</option>
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {
@@ -142,10 +143,10 @@
                   <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
                   <select class="form-control" name="crane_type">
                     <option value="">---SELECT---</option>
-                     <option value="single_girder_eot_crane">SINGLE GIRDER JIB CRANE</option>
-                    <option value="double_girder_eot_crane">DOUBLE GIRDER JIB CRANE</option>
-                    <option value="single_girder_semi_eot_crane">SINGLE GIRDER SEMI JIB CRANE</option>
-                    <option value="double_girder_semi_eot_crane">DOUBLE GIRDER SEMI JIB CRANE</option> 
+                     <option value="single_girder_jib_crane">SINGLE GIRDER JIB CRANE</option>
+                    <option value="double_girder_jib_crane">DOUBLE GIRDER JIB CRANE</option>
+                    <option value="single_girder_semi_jib_crane">SINGLE GIRDER SEMI JIB CRANE</option>
+                    <option value="double_girder_semi_jib_crane">DOUBLE GIRDER SEMI JIB CRANE</option> 
                     <option value="pillar_mounted_jib_crane">PILLAR MOUNTED JIB CRANE</option>
                     <option value="wall_mounted_jib_crane">WALL MOUNTED JIB CRANE</option>
                     <!-- <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
@@ -229,7 +230,7 @@
                     <option value="90degree">90 DEGREE</option>
                     <option value="180degree">180 DEGREE</option>
                     <option value="270degree">270 DEGREE</option>
-                    <option value="360degree">360 EGREE</option>
+                    <option value="360degree">360 DEGREE</option>
                   </select>
                    
                 </div>

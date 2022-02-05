@@ -421,7 +421,7 @@
                 <div class="col-12 text-center">
                 
                     <a href="#"><button class="btn btn-primary form-control" type="button" >
-                      Standard Price List Of Claim Pulley Blocks and Other Accessories 
+                      Standard Price List Of Chain Pulley Blocks and Other Accessories 
                     </button></a>
                 </div>
               </div>

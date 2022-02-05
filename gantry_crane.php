@@ -12,7 +12,7 @@
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
     // print_r($id);die;
-    $query="SELECT * FROM `myc_country`";
+     $query="SELECT * FROM `myc_country` where `status`='1'";
     $run=mysqli_query($conn,$query);
     while ($data=mysqli_fetch_assoc($run)) {
       $country[]=$data;
@@ -103,6 +103,7 @@
                    <div class="title "><span>Country</span></div>
                   <select class="form-control country" name="country" required> 
                     <option value="">---SELECT---</option>
+                    <option value="India">India</option>
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {
@@ -294,38 +295,25 @@
     $('.crane_type').change(function(e){
    
          var id=$(this).val();
-          if(id=='single_girder_eot_crane'){
+         if(id=='single_girder_gntry_crane'){
+             $(".ahaux").prop("readonly", true); 
+             $(".abv_floor_ah").prop("readonly",true);
+             $(".blw_floor_ah").prop("readonly",true);
+             $(".speed_ah").prop("readonly", true);
+             $(".vpd_ah").html('');
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(`<option value="lt">LT</option>`);
+          }
+          else if(id=='single_girder_semi_gntry_crane'){
              $(".ahaux").prop("readonly", true); 
              $(".abv_floor_ah").prop("readonly", true);
              $(".blw_floor_ah").prop("readonly", true);
-             
              $(".speed_ah").prop("readonly", true);
+             $(".vpd_ah").html('');
              $('.vpd_ah').append(`<option value="mh">MH</option>`);
              $('.vpd_ah').append(`<option value="ct">CT</option>`);
-             $('.vpd_ah').append(` <option value="lt">LT</option>`);
-          }
-          else if(id=='double_girder_eot_crane'){
-             $(".ahaux").prop("readonly", false);
-             $(".abv_floor_ah").prop("readonly", false);
-             $(".blw_floor_ah").prop("readonly", false);
-             $(".speed_ah").prop("readonly", false);
-             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
-
-          }
-          else if(id=='single_girder_semi_eot_crane'){
-
-              $(".ahaux").prop("readonly", true); 
-             $(".abv_floor_ah").prop("readonly", true);
-             $(".blw_floor_ah").prop("readonly", true);
-             $(".speed_ah").prop("readonly", true);
-             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
-
-          }
-           else if(id=='double_girder_semi_eot_crane'){
-              $(".ahaux").prop("readonly", false);
-             $(".abv_floor_ah").prop("readonly", false);
-             $(".blw_floor_ah").prop("readonly", false);
-             $(".speed_ah").prop("readonly", false);
+             $('.vpd_ah').append(`<option value="lt">LT</option>`);
              $('.vpd_ah').append(`<option value="ah">AH</option>`); 
           }
           else{
@@ -333,6 +321,10 @@
              $(".abv_floor_ah").prop("readonly", false);
              $(".blw_floor_ah").prop("readonly", false);
              $(".speed_ah").prop("readonly", false);
+             $(".vpd_ah").html('');
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(`<option value="lt">LT</option>`);
              $('.vpd_ah').append(`<option value="ah">AH</option>`);   //doubt
           }
     return false;

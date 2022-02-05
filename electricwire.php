@@ -12,7 +12,7 @@
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
     // print_r($id);die;
-    $query="SELECT * FROM `myc_country`";
+    $query="SELECT * FROM `myc_country` where `status`='1'";
     $run=mysqli_query($conn,$query);
     while ($data=mysqli_fetch_assoc($run)) {
       $country[]=$data;
@@ -103,6 +103,7 @@
                    <div class="title "><span>Country</span></div>
                   <select class="form-control country" name="country" required> 
                     <option value="">---SELECT---</option>
+                    <option value="India">India</option>
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {

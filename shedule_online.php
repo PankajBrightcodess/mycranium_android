@@ -36,9 +36,9 @@
               <table class="table table-bordered table-responsive" style="font-size: 10px; border: 1px; text-align:left;">
                 <thead>
                   <tr>
-                    <td>1</td>
-                    <td>DETAILS OF ITEMS TO BE ASSESSED</td>
-                    <td><select class="form-control">
+                    <td width="2%">1</td>
+                    <td width="10%">DETAILS OF ITEMS TO BE ASSESSED</td>
+                    <td width="80%"><select class="form-control">
                         <option >SELECT</option>
                         <option>SG EOT CRANE</option>
                         <option>SG UNDER SLUNG CRANE</option>
@@ -54,7 +54,7 @@
                         <option>W/M JIB CRANE</option>
                         <option>EWRH</option>
                     </select></td>
-                    <td >SG- SINGLE GIRDER<br> DG- DOUBLE GIRDER <br>P/M- PILLAR MOUNTED<br> W/M- WALL MOUNTED<br> EWRH- ELECTRIC WIRE ROPE HOIST
+                    <td width="8%">SG- SINGLE GIRDER<br> DG- DOUBLE GIRDER <br>P/M- PILLAR MOUNTED<br> W/M- WALL MOUNTED<br> EWRH- ELECTRIC WIRE ROPE HOIST
                     </td>
                 </tr>
                 <tr>

@@ -12,7 +12,7 @@
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
     // print_r($id);die;
-    $query="SELECT * FROM `myc_country`";
+    $query="SELECT * FROM `myc_country` where `status`='1'";
     $run=mysqli_query($conn,$query);
     while ($data=mysqli_fetch_assoc($run)) {
       $country[]=$data;
@@ -103,10 +103,11 @@
                    <div class="title "><span>Country</span></div>
                   <select class="form-control country" name="country" required> 
                     <option value="">---SELECT---</option>
+                    <option value="India">India</option>
                     <?php 
                           if(!empty($country)){
                             foreach ($country as $key => $value) {
-                              ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?></option><?php
+                              ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?> </option><?php
                             }
                           }
                     ?>
@@ -125,8 +126,8 @@
                   <div class="title "><span>City/Dist</span></div>
                   <select class="form-control city" id="city" name="dist" required>
                   </select>
-                  <div class="title other"><span>Other country Details</span>
-                  <input type="text" class="form-control " id="other" name="other_country_details" placeholder="to be mention other country details">
+                  <div class="title other"><span>City</span>
+                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To the fill Manually">
                   </div>
                 </div>
                 <div class="mb-3">
@@ -145,8 +146,8 @@
                     <option value="double_girder_eot_crane">DOUBLE GIRDER EOT CRANE</option>
                     <option value="single_girder_semi_eot_crane">SINGLE GIRDER SEMI EOT CRANE</option>
                     <option value="double_girder_semi_eot_crane">DOUBLE GIRDER SEMI EOT CRANE</option>
-                   <!--  <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
-                    <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
+                    <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
+                    <!-- <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
                   </select>
                 </div>
                   <div class="mb-3">
@@ -191,11 +192,9 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span><span style="color: red;">*</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span><span style="color: red;">*</span></div>
                   <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
-                  <!-- <input type="text" class="form-control mb-2" placeholder="" name="blw_floor_mh"> -->
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
                   <input type="text" class="form-control mb-2 abv_floor_ah" placeholder=""  name="abv_floor_ah">
                     <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
-                  <!-- <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select> -->
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
@@ -296,40 +295,27 @@
     });
   $(".other").hide(true);
     $('.crane_type').change(function(e){
-   
+      // debugger;
          var id=$(this).val();
           if(id=='single_girder_eot_crane'){
              $(".ahaux").prop("readonly", true); 
-             $(".abv_floor_ah").prop("readonly", true);
-             $(".blw_floor_ah").prop("readonly", true);
-             
+             $(".abv_floor_ah").prop("readonly",true);
+             $(".blw_floor_ah").prop("readonly",true);
              $(".speed_ah").prop("readonly", true);
+             $(".vpd_ah").html('');
              $('.vpd_ah').append(`<option value="mh">MH</option>`);
              $('.vpd_ah').append(`<option value="ct">CT</option>`);
-             $('.vpd_ah').append(` <option value="lt">LT</option>`);
-          }
-          else if(id=='double_girder_eot_crane'){
-             $(".ahaux").prop("readonly", false);
-             $(".abv_floor_ah").prop("readonly", false);
-             $(".blw_floor_ah").prop("readonly", false);
-             $(".speed_ah").prop("readonly", false);
-             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
-
+             $('.vpd_ah').append(`<option value="lt">LT</option>`);
           }
           else if(id=='single_girder_semi_eot_crane'){
-
-              $(".ahaux").prop("readonly", true); 
+             $(".ahaux").prop("readonly", true); 
              $(".abv_floor_ah").prop("readonly", true);
              $(".blw_floor_ah").prop("readonly", true);
              $(".speed_ah").prop("readonly", true);
-             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
-
-          }
-           else if(id=='double_girder_semi_eot_crane'){
-              $(".ahaux").prop("readonly", false);
-             $(".abv_floor_ah").prop("readonly", false);
-             $(".blw_floor_ah").prop("readonly", false);
-             $(".speed_ah").prop("readonly", false);
+             $(".vpd_ah").html('');
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(`<option value="lt">LT</option>`);
              $('.vpd_ah').append(`<option value="ah">AH</option>`); 
           }
           else{
@@ -337,6 +323,10 @@
              $(".abv_floor_ah").prop("readonly", false);
              $(".blw_floor_ah").prop("readonly", false);
              $(".speed_ah").prop("readonly", false);
+             $(".vpd_ah").html('');
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(`<option value="lt">LT</option>`);
              $('.vpd_ah').append(`<option value="ah">AH</option>`);   //doubt
           }
     return false;
@@ -345,18 +335,14 @@
    
          var id=$(this).val();
             if(id!='India'){
-               // $(".state").prop("readonly", true); 
-               // $(".city").prop("readonly", true); 
                $('.state').prop('disabled', true);
                $('.city').prop('disabled', true);
                $(".other").show(true);
-               $('.install').append(` <option value="lt" selected='selected'>Supervision</option>`);
-              
+               $('.install').append(` <option value="lt" selected='selected'>Supervision</option>`); 
             }else{
                $('.state').prop('disabled', false);
                $('.city').prop('disabled', false);
-                $(".other").hide(true);
-               
+               $(".other").hide(true);
             }
          return false;
     });
