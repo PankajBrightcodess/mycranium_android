@@ -1,18 +1,17 @@
-
 <?php 
+
 if(!empty($_GET['check'])){
-    unset($_COOKIE["Cookie"]);
+ unset($_COOKIE['Cookie']);
+   
     unset($_COOKIE["Brightcodess_com"]);
     unset($_COOKIE["EmailId"]);
     unset($_COOKIE["PHPSESSID"]);
 } 
-session_start();
+// session_start();
 
 include_once('connection.php');
   if(!empty($_COOKIE['Cookie'])){
-     if($_COOKIE['Cookie']=='2'){
-       header('location:home.php');
-    }
+    header('location:home.php');
   }
 ?>
 <?php include 'header-link.php'; ?>

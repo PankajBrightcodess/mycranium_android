@@ -127,7 +127,6 @@ if(isset($_POST['signup'])){
  	  $cookie_value['contact_no']= $data['contact_no'];
  	  $cookie_value['email_id']= $data['email_id'];
  	  $cookie_value['address']= $data['address'];
- 	  echo '<pre>';
  	  $cookie_values = json_encode($cookie_value);
  	  setcookie("Cookie",$cookie_values,time() + (86400 * 30),"/");
  	 
