@@ -37,7 +37,7 @@
                 <thead>
                   <tr>
                     <td width="2%">1</td>
-                    <td width="10%">DETAILS OF ITEMS TO BE ASSESSED</td>
+                    <td width="10%">DETAIL OF ITEMS TO BE ASSESSED</td>
                     <td width="80%"><select class="form-control">
                         <option >SELECT</option>
                         <option>SG EOT CRANE</option>
@@ -65,13 +65,13 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>NOS. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
+                    <td>NO. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
                     <td width="20%"><input type="text" class="form-control" onkeyup="addrecord()"  name="days" id="days"></td>
                     <td></td>
                 </tr>
                  <tr>
                     <td>4</td>
-                    <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @ 18% AT PER MAN PER DAY BASIS</td>
+                    <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @18% PER MAN PER DAY BASIS</td>
                     <td width="20%">INR <span id="total">0.00</span></td>
                     <td></td>
                 </tr>
