@@ -15,9 +15,9 @@ if(!empty($_GET['check'])){
     </div>
     <?php
         if(!empty($CHECK)){
-          ?><div class="get-started-btn"><a class="btn btn-warning btn-lg w-100" href="login.php?check=<?php echo $CHECK;?>">Get Start</a></div><?php
+          ?><div class="get-started-btn"><a class="btn btn-warning btn-lg w-100" href="login.php?check=<?php echo $CHECK;?>">Get Started</a></div><?php
         }else{
-          ?><div class="get-started-btn"><a class="btn btn-warning btn-lg w-100" href="login.php">Get Start</a></div><?php
+          ?><div class="get-started-btn"><a class="btn btn-warning btn-lg w-100" href="login.php">Get Started</a></div><?php
         }
     ?>
     
