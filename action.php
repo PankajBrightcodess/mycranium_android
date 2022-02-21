@@ -861,10 +861,17 @@ if(isset($_POST['city'])){
     	$html.='<option value="'.$value['id'].'">'.$value['name'].'</option>';
     }
     echo $html;
+}
 
+if(isset($_POST['state'])){
+	$id = $_POST['id'];
+	$qury="SELECT `state_code` FROM `myc_area` where `id`='$id'AND `type`='state' ORDER BY `name` ASC";
+      $run=mysqli_query($conn,$qury);
+      $data=mysqli_fetch_assoc($run);
+      print_r($data['state_code']);
 
-  
 
 }
+
 
 ?>

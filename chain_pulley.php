@@ -81,7 +81,7 @@
                        <td>INR 6,300.00</td>
                        <td>CS-GT-0103</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="chain_pulley_details_1.php" style="color:red;">BUY NOW</a></td> 
                     </tr> 
                     <tr>
                        <td>03 TONS</td>

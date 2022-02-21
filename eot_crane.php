@@ -63,7 +63,7 @@
                         <input type="text" name="comp_name" placeholder="Company Name" class="form-control">
                 </div>
                 <div class="mb-3">
-                        <div class="title "><i class="lni lni-map-marker"></i><span>Addrrss</span></div>
+                        <div class="title "><i class="lni lni-map-marker"></i><span>Address</span></div>
                         <textarea class="form-control" name="address" placeholder="Address" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
