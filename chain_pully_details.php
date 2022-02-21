@@ -192,6 +192,7 @@
                      <td colspan="2"> </td> 
                   </tr>
                   <tr>
+
                      <td colspan="3"><span><strong>AMOUNT(IN WORD)</strong></span></td>
                      <td colspan="3"><span><!-- TWENTY EIGHT THOUSAND FIVE HUNDRED THIRTEEN POINT ONE TWO --></span> </td>
                   </tr>
@@ -328,14 +329,14 @@
 
          $('.state_new').change(function(e){
    
-         var id=$(this).val();
+         var amount=$('#total_amounts').html();
         $.ajax({
                 type:'POST',
                 url:'action.php',
-               data:{id:id,state:'state'},
+               data:{amount:amount,inword:'inword'},
                 success: function(data){
                       console.log(data);
-                    $('#state_code_optional').val(data);
+                    // $('#state_code_optional').val(data);
                     },
                     error: function(){ 
                        alert("error");
@@ -343,4 +344,18 @@
         });
     return false;
     });
+        var id=$(this).val();
+        $.ajax({
+                type:'POST',
+                url:'action.php',
+               data:{id:id,state:'state'},
+                success: function(data){
+                      console.log(data);
+                    $('#state_code').val(data);
+
+                    },
+                    error: function(){ 
+                       alert("error");
+                    },
+        });
      </script>

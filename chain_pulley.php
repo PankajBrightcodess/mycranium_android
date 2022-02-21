@@ -64,7 +64,7 @@
                 </thead>
                 <tbody>
                    <tr>
-                       <td>01 TONS</td>
+                       <td>01 TON</td>
                        <td>CS-CPB-1T</td>
                        <td>INR 3,795.00</td>
                        <td>INR 484.00</td>
@@ -74,7 +74,7 @@
                        <td><a href="chain_pully_details.php" style="color:red;">BUY NOW</a></td> 
                     </tr> 
                     <tr>
-                       <td>02 TONS</td>
+                       <td>02 TON</td>
                        <td>CS-CPB-2T</td>
                        <td>INR 5,880.00</td>
                        <td>INR 484.00</td>
@@ -84,7 +84,7 @@
                        <td><a href="chain_pulley_details_1.php" style="color:red;">BUY NOW</a></td> 
                     </tr> 
                     <tr>
-                       <td>03 TONS</td>
+                       <td>03 TON</td>
                        <td>CS-CPB-3T</td>
                        <td>INR 6,900.00</td>
                        <td>INR 855.00</td>
@@ -94,7 +94,7 @@
                        <td><a href="chain_pully_details_2.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                     <tr>
-                       <td>05 TONS</td>
+                       <td>05 TON</td>
                        <td>CS-CPB-5T</td>
                        <td>INR 9,150.00</td>
                        <td>INR 965.00</td>
@@ -104,7 +104,7 @@
                        <td><a href="chain_pully_details_3.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                     <tr>
-                       <td>10 TONS</td>
+                       <td>10 TON</td>
                        <td>CS-CPB-10T</td>
                        <td>INR 20,600.00</td>
                        <td>INR 2,000.00</td>

@@ -1,3 +1,30 @@
+<?php 
+  session_start();
+  include_once('connection.php');
+  $msg = "";
+    if (isset($_SESSION['msg'])) {
+        $msg = $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    if ($msg != "") {
+        echo "<script> alert('$msg')</script>";
+    }
+    $abcd =  json_decode($_COOKIE['Cookie'],true); 
+    $id=$abcd['id'];
+    // print_r($id);die;
+    $query="SELECT * FROM `myc_country` where `status`='1'";
+    $run=mysqli_query($conn,$query);
+    while ($data=mysqli_fetch_assoc($run)) {
+      $country[]=$data;
+    } 
+    $qry="SELECT * FROM `myc_area` where `type`='state' AND `name`='Delhi' OR `name`='Haryana' OR `name`='Uttar Pradesh' OR `name`='Bihar' OR `name`='Jharkhand' OR `name`='West Bengal' OR `name`='Odisha' OR `name`='Chhattisgarh'";
+    $runs=mysqli_query($conn,$qry);
+    while ($data=mysqli_fetch_assoc($runs)) {
+       $state[]=$data;
+    }
+    // echo '<pre>';
+    // print_r($state);die;
+?>
 <?php include 'header-link.php'; ?>
 <?php include 'header.php'; ?>
     <!-- Header Area-->
@@ -31,6 +58,103 @@
           </div>
           
           <!-- User Meta Data-->
+          <div class="card user-data-card">
+            <div class="card-body">
+              <table class="table table-bordered table-responsive" style="font-size: 10px; border: 1px; text-align:left;">
+                <thead>
+                  <tr>
+                  <td><span>COMPANY NAME</span></td>
+                  <td colspan="3"><input type="text" name="comp_name" class="form-control" placeholder="COMPANY NAME"></td>
+                </tr>
+                <tr>
+                  <td><span>ADDRESS</span></td>
+                  <td colspan="3"><textarea class="form-control" name="address" rows="2" placeholder="ADDRESS"></textarea></td>
+                </tr>
+                <tr>
+                     <td><span>Country</span></td>
+                    <td colspan="3"><select class="form-control"><option value="">--SELECT--</option><option value="india">India</option></select></td>
+                </tr>
+                 <tr>
+                     <td><span>State</span></td>
+                    <td colspan="3"><select class="form-control state" name="state" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($state)){
+                            foreach ($state as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>NO. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
+                    <td width="20%"><input type="text" class="form-control" onkeyup="addrecord()"  name="days" id="days"></td>
+                    <td></td>
+                </tr>
+                 <tr>
+                    <td>4</td>
+                    <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @18% PER MAN PER DAY BASIS</td>
+                    <td width="20%">INR <span id="total">0.00</span></td>
+                    <td></td>
+                </tr>
+                 <tr>
+                    <td>5</td>
+                    <td>PAYMENT TERMS</td>
+                    
+                    <td colspan="2">100% ADVANCE THROUGH ONLINE MODE</td>
+                </tr>
+                 <tr>
+                    <td>6</td>
+                    <td>SERVICE DELIVERY</td>
+                    <td colspan="2">WITHIN 72 HOURS FROM THE DATE OF PAYMENT RECEIPT</td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                </tr>
+               
+                <tr>
+                    <td>1</td>
+                    <td colspan="3"><strong>PAY ONLINE:-</strong></td>
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td colspan="3">SUBMISSION OF DECLARATION BY THE CLIENT</td>
+                </tr>
+                 <tr>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td colspan="3"><strong>PAYMENT MODE:-</strong></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="3">DEBIT CARD/CREDIT CARD</td>
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td colspan="3">NET BANKING</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="3">UPI</td>
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td colspan="3">WALLETS</td>
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td colspan="3">OTHERS</td>
+                </tr>
+                </thead>
+              </table>
+              <a href="" class="btn btn-sm btn-success" style="text-align: center;">SUBMIT</a>
+              <a href="" class="btn btn-sm btn-warning" style="text-align: center; float: right;">PROCEED FOR PAYMENT</a>
+            </div>
+          </div>
           <div class="card user-data-card">
             <div class="card-body">
               <table class="table table-bordered table-responsive" style="font-size: 10px; border: 1px; text-align:left;">
