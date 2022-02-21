@@ -869,8 +869,11 @@ if(isset($_POST['state'])){
       $run=mysqli_query($conn,$qury);
       $data=mysqli_fetch_assoc($run);
       print_r($data['state_code']);
+}
 
-
+if(isset($_POST['preview'])){
+	echo '<pre>';
+	print_r($_POST);die;
 }
 
 ?>

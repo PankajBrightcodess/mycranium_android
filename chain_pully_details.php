@@ -62,17 +62,17 @@
                 <thead>
                   <tr>
                      <td colspan="1"><span><strong style="color:red;">BILLING ADDRESS WITH COMPANY/PERSON'S NAME</strong></span></td>
-                     <td colspan="2"><input type="text" style="width: 150px;" class="form-control" placeholder="Company/Person Name" name="company_name"><br>
-                      <input type="text" name="address" placeholder="Address" class="form-control"><br>
-                      <input type="text" name="contact" placeholder="Mobile No" class="form-control"></td>
+                     <td colspan="2"><input type="text" style="width: 150px;" class="form-control" placeholder="Company/Person Name" id="company_name" name="company_name"><br>
+                      <input type="text" name="address" id="address" placeholder="Address" class="form-control"><br>
+                      <input type="text" name="contact" id="contact_no" placeholder="Mobile No" class="form-control"></td>
                      <td colspan="1"><span><strong style="color:red;">DELIVERY/PROJECT ADDRESS WITH COMPANY/PERSON'S NAME</strong></span></td>
-                      <td colspan="2" style="width: 50%;"><input type="text" class="form-control" placeholder="Company/Person Name" style="width: 150px;" name="company_name"><br>
-                      <input type="text" name="address" placeholder="Address" class="form-control"><br>
-                      <input type="text" name="contact" placeholder="Mobile No" class="form-control"></td>
+                      <td colspan="2" style="width: 50%;"><input type="text" id="comp_name_2" class="form-control" placeholder="Company/Person Name" style="width: 150px;" name="company_name"><br>
+                      <input type="text" name="address" id="address_2" placeholder="Address" class="form-control"><br>
+                      <input type="text" name="contact" id="contact_2" placeholder="Mobile No" class="form-control"></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong style="color:red;">COUNTRY</strong></span></td>
-                     <td colspan="2" ><select class="form-control country" name="country" required> 
+                     <td colspan="2" ><select class="form-control country" id="country" name="country" required> 
                           <option value="">---SELECT---</option>
                           <option value="India">India</option>
                           <?php 
@@ -84,7 +84,7 @@
                           ?>
                         </select></td>
                     <td colspan="1"><span><strong style="color:red;">COUNTRY</strong></span></td>
-                     <td colspan="2" ><select class="form-control country" name="country" required> 
+                     <td colspan="2" ><select class="form-control country" id="country_2" name="country" required> 
                           <option value="">---SELECT---</option>
                           <option value="India">India</option>
                           <?php 
@@ -99,14 +99,14 @@
                   <tr>
                      <td colspan="1"><span><strong style="color:red;">GSTIN</strong></span></td>
                      <td colspan="2" >                      
-                      <input type="text" class="form-control" name="gstin_optional"></td>
+                      <input type="text" class="form-control" id="gstin" name="gstin"></td>
                     <td colspan="1"><span><strong style="color:red;">GSTIN(Optional)</strong></span></td>
                      <td colspan="2" >
-                      <input type="text" class="form-control" name="gstin_optional"></td>
+                      <input type="text" class="form-control" id="gstin_optional" name="gstin_optional"></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong style="color:red;">STATE</strong></span></td>
-                     <td colspan="2" ><select class="form-control state" name="state" required> 
+                     <td colspan="2" ><select class="form-control state" id="state" name="state" required> 
                     <option value="">---SELECT---</option>
                     <?php 
                           if(!empty($state)){
@@ -117,7 +117,7 @@
                     ?>
                   </select></td>
                     <td colspan="1"><span><strong style="color:red;">STATE</strong></span></td>
-                     <td colspan="2" ><select class="form-control state_new" name="state_new" required> 
+                     <td colspan="2" ><select class="form-control state_new" id="state_2" name="state_new" required> 
                     <option value="">---SELECT---</option>
                     <?php 
                           if(!empty($state)){
@@ -131,7 +131,7 @@
                    <tr>
                      <td colspan="1"><span><strong style="color:red;">STATE CODE(AS PER GST RULE)</strong></span></td>
                      <td colspan="2" >                      
-                      <input type="text" class="form-control " id="state_code" name="statecode_optional"></td>
+                      <input type="text" class="form-control "  id="state_code" name="statecode_optional"></td>
                     <td colspan="1"><span><strong style="color:red;">STATE CODE(AS PER GST RULE)</strong></span></td>
                      <td colspan="2" >
                       <input type="text" class="form-control" id="state_code_optional" name="state_code_optional"></td>
@@ -145,8 +145,8 @@
                    <tr>
                      <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
                      <td colspan="2" >                      
-                      <span><strong>CS-CPB-1T</strong></span></td>
-                    <td colspan="1"><span><strong>INR 3,795.00</strong></span></td>
+                      <span><strong id="model_no">CS-CPB-1T</strong></span></td>
+                    <td colspan="1"><span><strong id="rate">INR 3,795.00</strong></span></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
@@ -163,7 +163,7 @@
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
                         <input type="hidden" value="4800" name="column_e" id="column_e">
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong></td>
-                     <td colspan="2" >CS-GT-0103</td>
+                     <td colspan="2" id="traviling_moter_no">CS-GT-0103</td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
@@ -197,7 +197,10 @@
                      <td colspan="3"><span><!-- TWENTY EIGHT THOUSAND FIVE HUNDRED THIRTEEN POINT ONE TWO --></span> </td>
                   </tr>
                   <tr>
-                     <td colspan="6"><input type="submit" class="btn btn-sm btn-success text-white form-control"  value="Payment Now" name=""></td> 
+                     <td colspan="6">
+                      <!-- <input type="button" class="btn btn-sm btn-success text-white form-control preview"  value="" data-toggle="modal" data-target="#exampleModalCenter" name=""> -->
+                      <button type="button" class="btn btn-success text-white form-control" data-toggle="modal" data-target="#exampleModalCenter">Pay Now</button>
+                    </td> 
                   </tr>
                 </thead>
                
@@ -208,10 +211,74 @@
       </div>
     </div>
     <div class="space"></div>
+    <!-- ''''''''''''''''''''''''''''''''''''model'''''''''''''''''''''''''''''''''' -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- ''''''''''''''''''''''''''''''''''''model end'''''''''''''''''''''''''''''' -->
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>
      <?php include 'footer-link.php';?>
       <script type="text/javascript">
+         // $("body").on("click","#preview",function(){
+    //        $('.preview').click(function(e){
+    //       debugger;
+    //       var company_name = $('#company_name').val();
+    //       var address = $('#address').val();
+    //       var contact_no = $('#contact_no').val();  
+    //       var comp_name_2 = $('#comp_name_2').val();  
+    //       var address_2 = $('#address_2').val();  
+    //       var contact_2 = $('#contact_2').val();  
+    //       var country = $('#country').val();  
+    //       var country_2 = $('#country_2').val();  
+    //       var gstin = $('#gstin').val();  
+    //       var gstin_optional = $('#gstin_optional').val();  
+    //       var state = $('#state').val();  
+    //       var state_2 = $('#state_2').val();  
+    //       var state_code = $('#state_code').val();  
+    //       var state_code_optional = $('#state_code_optional').val();  
+    //       var model_no = $('#model_no').html();  
+    //       var rate = $('#rate').html();  
+    //       var qnty = $('#qnty').html();  
+    //       var total = $('#total').html();  
+    //       var true_false = $('#true_false').html();  
+    //       var coumne_e_total = $('#coumne_e_total').html();  
+    //       var traviling_moter_no = $('#traviling_moter_no').html();  
+    //       var basic_total = $('#basic_total').html();  
+    //       var igst_18 = $('#igst_18').html();  
+    //       var cgst_9 = $('#cgst_9').html();  
+    //       var sgst_9 = $('#sgst_9').html();  
+    //       var total_amounts = $('#total_amounts').html(); 
+    //       var data[] = {company_name:company_name,address:address,contact_no:contact_no,comp_name_2:comp_name_2,address_2:address_2,contact_2:contact_2,country:country,country_2:country_2,gstin:gstin,gstin_optional:gstin_optional,state:state,state_2:state_2,state_code:state_code,state_code_optional:state_code_optional,model_no:model_no,rate:rate,qnty:qnty,total:total,true_false:true_false,coumne_e_total:coumne_e_total,traviling_moter_no:traviling_moter_no,basic_total:basic_total,igst_18:igst_18,cgst_9:cgst_9,sgst_9:sgst_9,total_amounts:total_amounts,}
+    //        $.ajax({
+    //             type:'POST',
+    //             url:'action.php',
+    //            data:{data:data,preview:'preview'},
+    //             success: function(data){
+    //                   console.log(data);
+    //                 // $('#state_code_optional').val(data);
+    //                 },
+    //                 error: function(){ 
+    //                    alert("error");
+    //                 },
+    //     });
+    // });
         function addrecord(){
            // debugger;
           var qty = $('#qty').val();
@@ -267,19 +334,15 @@
            var c18 = 3795;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
-
            var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
            $('#basic_total').html(total_basic);
-
            // ''''''''basic total 18%''''
            var basic_18 = parseFloat(total_basic) + (parseFloat(total_basic)*18/100);
            $('#igst_18').html(basic_18);
            // ''''''''basic total 9%''''
            var basic_9 = parseFloat(total_basic) + (parseFloat(total_basic)*9/100);
            $('#cgst_9').html(basic_9);
-
            ////total amount
-            
            if(state_code==20){
                var cgst_9= $('#cgst_9').html();
               var sgst_9= $('#sgst_9').html();
@@ -296,7 +359,6 @@
                $('#cgst').hide();
                $('#sgst').hide();
                $('#igst').show();
-              
              }
          });
 
@@ -395,4 +457,39 @@
                        alert("error");
                     },
         });
+
+        // $("body").on("click",".preview",function(){
+    //       $('.preview').click(function(e){
+    //       debugger;
+    //       var company_name = $('#company_name').val();
+    //       var address = $('#address').val();
+    //       var contact_no = $('#contact_no').val();  
+    //       var comp_name_2 = $('#comp_name_2').val();  
+    //       var address_2 = $('#address_2').val();  
+    //       var contact_2 = $('#contact_2').val();  
+    //       var country = $('#country').val();  
+    //       var country_2 = $('#country_2').val();  
+    //       var gstin = $('#gstin').val();  
+    //       var gstin_optional = $('#gstin_optional').val();  
+    //       var state = $('#state').val();  
+    //       var state_2 = $('#state_2').val();  
+    //       var state_code = $('#state_code').val();  
+    //       var state_code_optional = $('#state_code_optional').val();  
+    //       var model_no = $('#model_no').html();  
+    //       var rate = $('#rate').html();  
+    //       var qnty = $('#qnty').html();  
+    //       var total = $('#total').html();  
+    //       var true_false = $('#true_false').html();  
+    //       var coumne_e_total = $('#coumne_e_total').html();  
+    //       var traviling_moter_no = $('#traviling_moter_no').html();  
+    //       var basic_total = $('#basic_total').html();  
+    //       var igst_18 = $('#igst_18').html();  
+    //       var cgst_9 = $('#cgst_9').html();  
+    //       var sgst_9 = $('#sgst_9').html();  
+    //       var total_amounts = $('#total_amounts').html();  
+    //       var total_amounts = $('#total_amounts').html(); 
+    //   else{
+    //     alert('Record Deletion Cancel!');
+    //   }
+    // });
      </script>
