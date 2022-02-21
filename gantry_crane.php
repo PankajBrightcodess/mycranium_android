@@ -41,6 +41,77 @@
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
       </div>
     </div>
+
+    <div class="page-content-wrapper">
+      <div class="container">
+        <!-- Profile Wrapper-->
+        <div class="profile-wrapper-area py-5" style="padding-bottom: 1rem!important">
+          <!-- User Information-->
+          <div class="card user-info-card">
+            <div class="card-body p-4 d-flex align-items-center">
+             
+              <div class="user-info">
+                <h5 class="mb-0 text-center">Company Details</h5>
+              </div>
+            </div>
+          </div>
+          <!-- User Meta Data-->
+          <div class="card user-data-card">
+            <div class="card-body">
+              <form action="action.php" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                       <div class="title "><i class="lni lni-map-marker"></i><span>Company Name</span></div>
+                        <input type="text" name="comp_name" placeholder="Company Name" class="form-control">
+                </div>
+                <div class="mb-3">
+                        <div class="title "><i class="lni lni-map-marker"></i><span>Address</span></div>
+                        <textarea class="form-control" name="address" placeholder="Address" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                     <div class="title "><i class="lni lni-map-marker"></i><span>Country</span>
+                     </div>
+                    <select class="form-control country" name="country" required> 
+                      <option value="">---SELECT---</option>
+                      <option value="India">India</option>
+                      <?php 
+                            if(!empty($country)){
+                              foreach ($country as $key => $value) {
+                                ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?> </option><?php
+                              }
+                            }
+                      ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <div class="title "><i class="lni lni-map-marker"></i><span>State</span></div>
+                  <select class="form-control state" name="state" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($state)){
+                            foreach ($state as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select>
+                </div> 
+                <div class="mb-3">
+                  <div class="title "><i class="lni lni-map-marker"></i><span>Province/City</span></div>
+                  <select class="form-control city" id="city" name="dist" required>
+                  </select>
+                </div> 
+                <div class="mb-3">
+                  <div class="title other"><i class="lni lni-map-marker"></i><span>Province/City </span>
+                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To the fill Manually">
+                  </div>
+                 </div>
+                <!-- <button class="btn btn-success" name="eotcrane_upload" type="submit">Upload</button> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
    
      <div class="page-content-wrapper">
       <div class="container">
@@ -98,7 +169,7 @@
                 <span style="color: red;"><strong>*</strong></span> Marked are mandatory to be filled.<hr>
               </div>
               <form action="action.php" method="POST" enctype="multipart/form-data">
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
                    <div class="title "><span>Country</span></div>
                   <select class="form-control country" name="country" required> 
@@ -129,7 +200,7 @@
                    <div class="title other"><span>Other country Details</span>
                   <input type="text" class="form-control " id="other" name="other_country_details" placeholder="to be mention other country details">
                   </div>
-                </div>
+                </div> -->
                
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span> <span style="color: red;">*</span></div>
@@ -145,10 +216,10 @@
                   <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
                   <select class="form-control crane_type" name="crane_type">
                     <option value="">---SELECT---</option>
-                    <option value="single_girder_gntry_crane">SINGLE GIRDER GANTRY CRANE</option>
-                    <option value="double_girder_gntry_crane">DOUBLE GIRDER GANTRY CRANE</option>
-                    <option value="single_girder_semi_gntry_crane">SINGLE GIRDER SEMI GANTRY CRANE</option>
-                    <option value="double_girder_semi_gntry_crane">DOUBLE GIRDER SEMI GANTRY CRANE</option>
+                    <option value="single_girder_gntry_crane">SINGLE GIRDER GANTRY CRANE(UPTO 15T)</option>
+                    <option value="double_girder_gntry_crane">DOUBLE GIRDER GANTRY CRANE(UPTO 110T)</option>
+                    <option value="single_girder_semi_gntry_crane">SINGLE GIRDER SEMI GANTRY CRANE(UPTO 15T)</option>
+                    <option value="double_girder_semi_gntry_crane">DOUBLE GIRDER SEMI GANTRY CRANE(UPTO 25T)</option>
                    <!--  <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
                     <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
                   </select>
@@ -198,10 +269,10 @@
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span> <span style="color: red;">*</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span> <span style="color: red;">*</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
+                  <!-- <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh"> -->
                   <input type="text" class="form-control mb-2" placeholder="Please write N/A, in case, it is not applicable" name="blw_floor_mh">
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2 abv_floor_ah" placeholder="" name="abv_floor_ah">
+                  <!-- <input type="text" class="form-control mb-2 abv_floor_ah" placeholder="" name="abv_floor_ah"> -->
                     <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
                   <!-- <select class="form-control"><option>---SELECT---</option> <option style="MH">MH (MAIN HOIST)</option><option style="AH">AH (AUX. HOIST)</option></select> -->
                 </div>
@@ -233,12 +304,13 @@
                  </select> 
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DSL</span> <span style="color: red;">*</span></div>  <!-- SCOPE OF SUPPLY -->
                      <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
                     <option value="crane">CRANE</option>
-                    <option value="shrouded">SHROUDED BUS BAR</option>
+                    <!-- <option value="shrouded">SHROUDED BUS BAR</option> -->
+                    <option value="cable_rolling_drum">CABLE ROLLING DRUM</option>
                     <option value="sq">SQ. BAR/RAIL WITH FIXING ITEMS</option>
-                    <option value="gg">GANTRY GIRDER</option>
+                    <!-- <option value="gg">GANTRY GIRDER</option> -->
                     <option value="recommended">RECOMMENDED SPARE PARTS</option>
                     <option value="mandatory">MANDATORY SPARE PARTS</option>
                   </select>
@@ -313,8 +385,17 @@
              $(".vpd_ah").html('');
              $('.vpd_ah').append(`<option value="mh">MH</option>`);
              $('.vpd_ah').append(`<option value="ct">CT</option>`);
+             $('.vpd_ah').append(`<option value="lt">LT</option>`); 
+          }
+          else if(id=='single_girder_gntry_crane'){
+             $(".ahaux").prop("readonly", true); 
+             $(".abv_floor_ah").prop("readonly",true);
+             $(".blw_floor_ah").prop("readonly",true);
+             $(".speed_ah").prop("readonly", true);
+             $(".vpd_ah").html('');
+             $('.vpd_ah').append(`<option value="mh">MH</option>`);
+             $('.vpd_ah').append(`<option value="ct">CT</option>`);
              $('.vpd_ah').append(`<option value="lt">LT</option>`);
-             $('.vpd_ah').append(`<option value="ah">AH</option>`); 
           }
           else{
              $(".ahaux").prop("readonly", false);

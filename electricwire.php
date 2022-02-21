@@ -41,6 +41,77 @@
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
       </div>
     </div>
+
+    <div class="page-content-wrapper">
+      <div class="container">
+        <!-- Profile Wrapper-->
+        <div class="profile-wrapper-area py-5" style="padding-bottom: 1rem!important">
+          <!-- User Information-->
+          <div class="card user-info-card">
+            <div class="card-body p-4 d-flex align-items-center">
+             
+              <div class="user-info">
+                <h5 class="mb-0 text-center">Company Details</h5>
+              </div>
+            </div>
+          </div>
+          <!-- User Meta Data-->
+          <div class="card user-data-card">
+            <div class="card-body">
+              <form action="action.php" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                       <div class="title "><i class="lni lni-map-marker"></i><span>Company Name</span></div>
+                        <input type="text" name="comp_name" placeholder="Company Name" class="form-control">
+                </div>
+                <div class="mb-3">
+                        <div class="title "><i class="lni lni-map-marker"></i><span>Address</span></div>
+                        <textarea class="form-control" name="address" placeholder="Address" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                     <div class="title "><i class="lni lni-map-marker"></i><span>Country</span>
+                     </div>
+                    <select class="form-control country" name="country" required> 
+                      <option value="">---SELECT---</option>
+                      <option value="India">India</option>
+                      <?php 
+                            if(!empty($country)){
+                              foreach ($country as $key => $value) {
+                                ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?> </option><?php
+                              }
+                            }
+                      ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <div class="title "><i class="lni lni-map-marker"></i><span>State</span></div>
+                  <select class="form-control state" name="state" required> 
+                    <option value="">---SELECT---</option>
+                    <?php 
+                          if(!empty($state)){
+                            foreach ($state as $key => $value) {
+                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+                            }
+                          }
+                    ?>
+                  </select>
+                </div> 
+                <div class="mb-3">
+                  <div class="title "><i class="lni lni-map-marker"></i><span>Province/City</span></div>
+                  <select class="form-control city" id="city" name="dist" required>
+                  </select>
+                </div> 
+                <div class="mb-3">
+                  <div class="title other"><i class="lni lni-map-marker"></i><span>Province/City </span>
+                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To the fill Manually">
+                  </div>
+                 </div>
+                <!-- <button class="btn btn-success" name="eotcrane_upload" type="submit">Upload</button> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
    
      <div class="page-content-wrapper">
       <div class="container">
@@ -98,7 +169,7 @@
                 <span style="color: red;"><strong>*</strong></span> Marked are mandatory to be filled.<hr>
               </div>
               <form action="action.php" method="POST">
-                    <div class="mb-3">
+                   <!--  <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
                    <div class="title "><span>Country</span></div>
                   <select class="form-control country" name="country" required> 
@@ -129,7 +200,7 @@
                   <div class="title other"><span>Other country Details</span>
                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="to be mention other country details">
                   </div>
-                </div>
+                </div> -->
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span> <span style="color: red;"><strong>*</strong></span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>

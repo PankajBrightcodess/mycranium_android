@@ -34,14 +34,14 @@ $msg = "";
                   <label for="username"><i class="lni lni-user"></i></label>
                   <input class="form-control" id="username" name="username" type="text" placeholder="Designing World">
                 </div>
-                <div class="form-group text-start mb-4"><span>Company Name</span>
+                <div class="form-group text-start mb-4"><span>Name</span>
                   <label for="company"><i class="lni lni-apartment"></i></label>
-                  <input class="form-control" id="company_name" name="company_name" type="text" placeholder="Company Name">
+                  <input class="form-control" id="company_name" name="company_name" type="text" placeholder="Name">
                 </div>
-                <div class="form-group text-start mb-4"><span>GST No.</span>
+              <!--   <div class="form-group text-start mb-4"><span>GST No.</span>
                   <label for="gst"><i class="lni lni-money-protection"></i></label>
                   <input class="form-control" id="gst_no" name="gst_no" type="text" placeholder="GST Number">
-                </div>
+                </div> -->
                  <div class="form-group text-start mb-4"><span>Contact No.</span>
                   <label for="contact"><i class="lni lni-phone-set"></i></label>
                   <input class="form-control" id="contact_no" name="contact_no" type="text" placeholder="Contact Number">

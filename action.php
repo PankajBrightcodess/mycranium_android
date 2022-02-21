@@ -78,7 +78,7 @@ if(isset($_POST['signup'])){
 	// print_r($_POST);die;
 	$username = $_POST['username'];
 	$company = $_POST['company_name'];
-	$gst = $_POST['gst_no'];
+	// $gst = $_POST['gst_no'];
 	$contact = $_POST['contact_no'];
 	$email = $_POST['email'];
 	$address = $_POST['address'];
@@ -88,7 +88,7 @@ if(isset($_POST['signup'])){
 	
 	$run=mysqli_query($conn,$query);
 	if(mysqli_num_rows($run) == 0){
-		$query = "INSERT INTO `myc_customer`(`name`,`comp_name`,`gst_no`,`contact_no`,`email_id`,`address`,`password`,`added_on`) VALUES ('$username','$company','$gst','$contact','$email','$address','$password','$added_on')";
+		$query = "INSERT INTO `myc_customer`(`name`,`comp_name`,`contact_no`,`email_id`,`address`,`password`,`added_on`) VALUES ('$username','$company','$contact','$email','$address','$password','$added_on')";
 		$sql=mysqli_query($conn,$query);
 		if($sql){
 			// $_SESSION['msg']="Registered Successfully!!!";

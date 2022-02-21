@@ -420,7 +420,7 @@
               <div class="card horizontal-product-card">
                 <div class="col-12 text-center">
                 
-                    <a href="#"><button class="btn btn-primary form-control" type="button" >
+                    <a href="chain_pulley.php"><button class="btn btn-primary form-control" type="button" >
                       Standard Price List Of Chain Pulley Blocks and Other Accessories 
                     </button></a>
                 </div>
