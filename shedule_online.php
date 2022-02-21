@@ -17,7 +17,7 @@
     while ($data=mysqli_fetch_assoc($run)) {
       $country[]=$data;
     } 
-    $qry="SELECT * FROM `myc_area` where `type`='state' AND `name`='Delhi' OR `name`='Haryana' OR `name`='Uttar Pradesh' OR `name`='Bihar' OR `name`='Jharkhand' OR `name`='West Bengal' OR `name`='Odisha' OR `name`='Chhattisgarh'";
+    $qry="SELECT * FROM `myc_area` where `type`='state'";
     $runs=mysqli_query($conn,$qry);
     while ($data=mysqli_fetch_assoc($runs)) {
        $state[]=$data;
@@ -81,10 +81,21 @@
                     <?php 
                           if(!empty($state)){
                             foreach ($state as $key => $value) {
-                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+                                if($value['name']=='Delhi'||$value['name']=='Jharkhand'||$value['name']=='Haryana'||$value['name']=='Bihar'||$value['name']=='Uttar Pradesh'||$value['name']=='West Bengal'||$value['name']=='Odisha'||$value['name']=='Chhattisgarh'){
+                                     ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
+
+                                }
+
+
+                             
                             }
                           }
                     ?>
+                  </select></td>
+                </tr>
+                <tr>
+                     <td><span>Dist</span></td>
+                    <td colspan="3"><select class="form-control city" id="city" name="dist" required>
                   </select></td>
                 </tr>
                 <tr>
@@ -271,4 +282,22 @@
           var result = value+(value*18/100);
           $('#total').html(result);
         };
+
+      $('.state').change(function(e){
+         var id=$(this).val();
+        $.ajax({
+                type:'POST',
+                url:'action.php',
+               data:{id:id,city:'city'},
+                success: function(data){
+                      // console.log(data);
+                    $('#city').html(data);
+                    },
+
+                    error: function(){ 
+                       alert("error");
+                    },
+        });
+    return false;
+    });
      </script>

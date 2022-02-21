@@ -44,9 +44,9 @@
                 <tr>
                    <td>CAPICITY IN TONS</td>
                    <td>MODEL NO.</td>
-                   <td>RATE(INR)</td>
-                   <td>EXTRA LIFT PER MTR(INR)</td>
-                   <td>RATE OF TRAVELLING GEARED TROLLEY(INR)</td>
+                   <td>RATE<br>(INR)</td>
+                   <td>EXTRA LIFT PER MTR<br>(INR)</td>
+                   <td>RATE OF TRAVELLING GEARED TROLLEY<br>(INR)</td>
                    <td>MODEL NO. OF TRAVELLING GEARED TROLLEY</td>
                    <td>DISPATCH TIME</td>
                    <td>ACTION</td>

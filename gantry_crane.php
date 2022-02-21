@@ -96,12 +96,12 @@
                   </select>
                 </div> 
                 <div class="mb-3">
-                  <div class="title "><i class="lni lni-map-marker"></i><span>Province/City</span></div>
+                  <div class="title "><i class="lni lni-map-marker"></i><span>City</span></div>
                   <select class="form-control city" id="city" name="dist" required>
                   </select>
                 </div> 
                 <div class="mb-3">
-                  <div class="title other"><i class="lni lni-map-marker"></i><span>Province/City </span>
+                  <div class="title other"><i class="lni lni-map-marker"></i><span>City </span>
                       <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To the fill Manually">
                   </div>
                  </div>
@@ -137,6 +137,9 @@
                   <input class="form-control mb-2" type="file" name="file3">
                   <input class="form-control mb-2" type="file" name="file4">
                   <input class="form-control mb-2" type="file" name="file5">
+                </div>
+                <div class="mb-4">
+                  <textarea class="form-control" rows="2" placeholder="Remarks"></textarea>
                 </div>
                 <button class="btn btn-success" name="gantry_upload" type="submit">Upload</button>
               </form>

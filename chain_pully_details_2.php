@@ -171,17 +171,17 @@
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="basic_total">0.00</span></strong></td>
                      <td colspan="2" ></td>
                   </tr>
-                   <tr>
+                   <tr id="igst">
                      <td colspan="3"><span><strong>IGST @ 18%</strong></span></td>
                      <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18">0.00</span></strong></td>
                      <td colspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
-                  <tr>
+                  <tr id="cgst">
                      <td colspan="3"><span><strong>CGST @ 9%</strong></span></td>
                      <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9">0.00</span></strong> </td>
                      <td colspan="2" rowspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
-                   <tr>
+                   <tr id="sgst">
                      <td colspan="3"><span><strong>SGST @ 9%</strong></span></td>
                      <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="sgst_9">0.00</span></strong> </td>
                      
@@ -230,6 +230,18 @@
                 success: function(data){
                       console.log(data);
                     $('#state_code').val(data);
+                     var state_code = $('#state_code').val();
+                    if(state_code==20){
+                          $('#cgst').show();
+                          $('#sgst').show();
+                          $('#igst').hide();
+                       }
+                       else{
+                         $('#cgst').hide();
+                         $('#sgst').hide();
+                         $('#igst').show();
+                        
+                       }
 
                     },
                     error: function(){ 
@@ -259,15 +271,22 @@
 
            ////total amount
            if(state_code==20){
-               var basic_18= $('#sgst_9').html();
+               var cgst_9= $('#cgst_9').html();
+               var sgst_9= $('#sgst_9').html();
+               var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
+               $('#total_amounts').html(total_amount);
+                $('#cgst').show();
+                $('#sgst').show();
+                $('#igst').hide();
+             }
+             else{
+               var basic_18= $('#igst_18').html();
                var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
                $('#total_amounts').html(total_amount);
-             }
-           else{
-              var cgst_9= $('#cgst_9').html();
-              var sgst_9= $('#sgst_9').html();
-              var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
-               $('#total_amounts').html(total_amount);
+               $('#cgst').hide();
+               $('#sgst').hide();
+               $('#igst').show();
+              
              }
          });
 
@@ -290,15 +309,22 @@
 
            // .....total amount.........
            if(state_code==20){
-               var basic_18= $('#sgst_9').html();
+               var cgst_9= $('#cgst_9').html();
+               var sgst_9= $('#sgst_9').html();
+               var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
+               $('#total_amounts').html(total_amount);
+                $('#cgst').show();
+                $('#sgst').show();
+                $('#igst').hide();
+             }
+             else{
+               var basic_18= $('#igst_18').html();
                var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
                $('#total_amounts').html(total_amount);
-             }
-           else{
-              var cgst_9= $('#cgst_9').html();
-              var sgst_9= $('#sgst_9').html();
-              var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
-               $('#total_amounts').html(total_amount);
+               $('#cgst').hide();
+               $('#sgst').hide();
+               $('#igst').show();
+              
              }
 
 
@@ -309,22 +335,7 @@
 
          var total  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
          $('#basic_total').html(total);
-          $('.state').change(function(e){
-         var state_code = $('#state_code').val();
-         if(state_code==20){
-
-           var basic_18= $('#sgst_9').html();
-           var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
-           $('#total_amounts').html(total_amount);
-
-         }
-         else{
-          var cgst_9= $('#cgst_9').html();
-          var sgst_9= $('#sgst_9').html();
-          var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
-           $('#total_amounts').html(total_amount);
-         }
-       });
+        
 
          $('.state_new').change(function(e){
    
