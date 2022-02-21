@@ -91,7 +91,7 @@
                        <td>INR 8,000.00</td>
                        <td>CS-GT-0303</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="chain_pully_details_2.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                     <tr>
                        <td>05 TONS</td>
@@ -101,7 +101,7 @@
                        <td>INR 13,750.00</td>
                        <td>CS-GT-0503</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="chain_pully_details_3.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                     <tr>
                        <td>10 TONS</td>
@@ -111,7 +111,7 @@
                        <td>INR 31,000.00</td>
                        <td>CS-GT-1003</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="chain_pully_details_4.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                 </tbody>
               </table>

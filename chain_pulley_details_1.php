@@ -117,7 +117,7 @@
                     ?>
                   </select></td>
                     <td colspan="1"><span><strong style="color:red;">STATE</strong></span></td>
-                     <td colspan="2" ><select class="form-control state_code_newxstate_code_new" name="state" required> 
+                     <td colspan="2" ><select class="form-control state_new" name="state_new" required> 
                     <option value="">---SELECT---</option>
                     <?php 
                           if(!empty($state)){
@@ -131,10 +131,10 @@
                    <tr>
                      <td colspan="1"><span><strong style="color:red;">STATE CODE(AS PER GST RULE)</strong></span></td>
                      <td colspan="2" >                      
-                      <input type="text" class="form-control" name="statecode_optional"></td>
+                      <input type="text" class="form-control " id="state_code" name="statecode_optional"></td>
                     <td colspan="1"><span><strong style="color:red;">STATE CODE(AS PER GST RULE)</strong></span></td>
                      <td colspan="2" >
-                      <input type="text" class="form-control" name="gstin_optional"></td>
+                      <input type="text" class="form-control" id="state_code_optional" name="state_code_optional"></td>
                   </tr>
                   <tr style="background: yellow; color: red;">
                     <td colspan="1"><span><strong style="color:red;">DESCRIPTIONS</strong></span></td>
@@ -151,47 +151,49 @@
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
-                     <td colspan="2" >                      
-                      <span><strong>CS-CPB-1T</strong></span></td>
-                    <td colspan="1"><span><strong>484.00</strong></span><span>*</span><select><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
+                     <td colspan="2" >
+                     <input type="hidden" name="extralift" id="extralift" value="484">                      
+                     <select class="form-control" name="qnty" id="qnty"><option>--SELECT--</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total">0.00</span></strong></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
                      <td colspan="2" >                      
-                      <span><select class="form-control" name="option"><option value="yes">Yes</option><option value="no">No</option></select></td>
-                    <td colspan="1">6,300.00</td>
+                      <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
+                        <input type="hidden" value="6300" name="column_e" id="column_e">
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong></td>
                      <td colspan="2" >CS-GT-0203</td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
                      
-                    <td colspan="1">10,256.00</td>
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="basic_total">0.00</span></strong></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>IGST @ 18%</strong></span></td>
-                     <td colspan="1">INR 12,102.08 </td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18">0.00</span></strong></td>
                      <td colspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
                   <tr>
                      <td colspan="3"><span><strong>CGST @ 9%</strong></span></td>
-                     <td colspan="1">INR 11,179.04 </td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9">0.00</span></strong> </td>
                      <td colspan="2" rowspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>SGST @ 9%</strong></span></td>
-                     <td colspan="1">INR 5232.00 </td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="sgst_9">0.00</span></strong> </td>
                      
                   </tr>
                   <tr>
                      <td colspan="3"><span><strong>TOTAL AMOUNT</strong></span></td>
-                     <td colspan="1">INR 28,513.12 </td>
-                     <td colspan="2">RANCHI </td> 
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total_amounts">0.00</span></strong> </td>
+                     <td colspan="2"> </td> 
                   </tr>
                   <tr>
                      <td colspan="3"><span><strong>AMOUNT(IN WORD)</strong></span></td>
-                     <td colspan="3"><span>TWENTY EIGHT THOUSAND FIVE HUNDRED THIRTEEN POINT ONE TWO</span> </td>
+                     <td colspan="3"><span><!-- TWENTY EIGHT THOUSAND FIVE HUNDRED THIRTEEN POINT ONE TWO --></span> </td>
                   </tr>
                   <tr>
                      <td colspan="6"><input type="submit" class="btn btn-sm btn-success text-white form-control"  value="Payment Now" name=""></td> 
@@ -217,4 +219,128 @@
           var result = value+(value*18/100);
           $('#total').html(result);
         };
+
+         $('.state').change(function(e){
+   
+         var id=$(this).val();
+        $.ajax({
+                type:'POST',
+                url:'action.php',
+               data:{id:id,state:'state'},
+                success: function(data){
+                      console.log(data);
+                    $('#state_code').val(data);
+
+                    },
+                    error: function(){ 
+                       alert("error");
+                    },
+        });
+    return false;  
+    });
+         $('#qnty').change(function(e){
+          var qnty = $(this).val();
+          var extralift = $('#extralift').val();
+          var total = parseFloat(extralift)*parseInt(qnty);
+          $('#total').html(total);
+           var c18 = 5880;
+           var c19 = $('#total').html();
+           var c20 = $('#coumne_e_total').html();
+
+           var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
+           $('#basic_total').html(total_basic);
+
+           // ''''''''basic total 18%''''
+           var basic_18 = parseFloat(total_basic) + (parseFloat(total_basic)*18/100);
+           $('#igst_18').html(basic_18);
+           // ''''''''basic total 9%''''
+           var basic_9 = parseFloat(total_basic) + (parseFloat(total_basic)*9/100);
+           $('#cgst_9').html(basic_9);
+
+           ////total amount
+           if(state_code==20){
+               var basic_18= $('#sgst_9').html();
+               var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
+               $('#total_amounts').html(total_amount);
+             }
+           else{
+              var cgst_9= $('#cgst_9').html();
+              var sgst_9= $('#sgst_9').html();
+              var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
+               $('#total_amounts').html(total_amount);
+             }
+         });
+
+         $('#true_false').change(function(e){
+          var true_false = $(this).val();
+          var column_e = $('#column_e').val();
+          var total = parseFloat(column_e)*parseInt(true_false);
+          $('#coumne_e_total').html(total);
+
+           var c18 = 5880;
+           var c19 = $('#total').html();
+           var c20 = $('#coumne_e_total').html();
+
+           var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
+           $('#basic_total').html(total_basic);
+
+           //''''''''sgst 9%'''''''
+            var basic_09 = parseFloat(c20) + (parseFloat(c20)*9/100);
+           $('#sgst_9').html(basic_09);
+
+           // .....total amount.........
+           if(state_code==20){
+               var basic_18= $('#sgst_9').html();
+               var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
+               $('#total_amounts').html(total_amount);
+             }
+           else{
+              var cgst_9= $('#cgst_9').html();
+              var sgst_9= $('#sgst_9').html();
+              var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
+               $('#total_amounts').html(total_amount);
+             }
+
+
+         });
+         var c18 = 5880;
+         var c19 = $('#total').html();
+         var c20 = $('#coumne_e_total').html();
+
+         var total  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
+         $('#basic_total').html(total);
+          $('.state').change(function(e){
+         var state_code = $('#state_code').val();
+         if(state_code==20){
+
+           var basic_18= $('#sgst_9').html();
+           var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
+           $('#total_amounts').html(total_amount);
+
+         }
+         else{
+          var cgst_9= $('#cgst_9').html();
+          var sgst_9= $('#sgst_9').html();
+          var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
+           $('#total_amounts').html(total_amount);
+         }
+       });
+
+         $('.state_new').change(function(e){
+   
+         var id=$(this).val();
+        $.ajax({
+                type:'POST',
+                url:'action.php',
+               data:{id:id,state:'state'},
+                success: function(data){
+                      console.log(data);
+                    $('#state_code_optional').val(data);
+                    },
+                    error: function(){ 
+                       alert("error");
+                    },
+        });
+    return false;
+    });
      </script>

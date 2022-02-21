@@ -261,7 +261,13 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TYPE OF HOIST</span></div>
-                  <input class="form-control" name="hoist_type" type="text" >
+                  <select class="form-control">
+                    <option value="">--SELECT--</option>
+                    <option value="ele_wire_rope_hoist">ELECTRIC WIRE ROPE HOIST</option>
+                    <option value="ele_chain_hoist">ELECTRIC CHAIN HOIST</option>
+                    <option value="manual_hoist">MANUAL HOIST</option>
+                  </select>
+                  <!-- <input class="form-control" name="hoist_type" type="text" > -->
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>ARM LENGTH (IN METERS)</span></div>

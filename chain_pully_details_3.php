@@ -145,14 +145,14 @@
                    <tr>
                      <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
                      <td colspan="2" >                      
-                      <span><strong>CS-CPB-1T</strong></span></td>
-                    <td colspan="1"><span><strong>INR 3,795.00</strong></span></td>
+                      <span><strong>CS-CPB-5T</strong></span></td>
+                    <td colspan="1"><span><strong>INR 9,150.00</strong></span></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
                      <td colspan="2" >
-                     <input type="hidden" name="extralift" id="extralift" value="484">                      
+                     <input type="hidden" name="extralift" id="extralift" value="965">                      
                      <select class="form-control" name="qnty" id="qnty"><option>--SELECT--</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total">0.00</span></strong></td>
                      <td colspan="2" ></td>
@@ -161,9 +161,9 @@
                      <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
                      <td colspan="2" >                      
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
-                        <input type="hidden" value="4800" name="column_e" id="column_e">
+                        <input type="hidden" value="13750" name="column_e" id="column_e">
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong></td>
-                     <td colspan="2" >CS-GT-0103</td>
+                     <td colspan="2" >CS-GT-0503</td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
@@ -243,7 +243,7 @@
           var extralift = $('#extralift').val();
           var total = parseFloat(extralift)*parseInt(qnty);
           $('#total').html(total);
-           var c18 = 3795;
+           var c18 = 9150;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -277,7 +277,7 @@
           var total = parseFloat(column_e)*parseInt(true_false);
           $('#coumne_e_total').html(total);
 
-           var c18 = 3795;
+           var c18 = 9150;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -303,7 +303,7 @@
 
 
          });
-         var c18 = 3795;
+         var c18 = 9150;
          var c19 = $('#total').html();
          var c20 = $('#coumne_e_total').html();
 

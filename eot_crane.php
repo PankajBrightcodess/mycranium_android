@@ -297,11 +297,11 @@
                  </select> 
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DSL</span> <span style="color: red;">*</span></div>
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>
                     <select class="form-control multipleselect" multiple="multiple" id="myselect" name="scope_supply[]">
                     
                     <option value="crane">CRANE</option>
-                    <option value="shrouded">SHROUDED BUS BAR</option>
+                    <option value="shrouded">DSL</option>
                     <option value="sq">SQ. BAR/RAIL WITH FIXING ITEMS</option>
                     <option value="gg">GANTRY GIRDER</option>
                     <option value="recommended">RECOMMENDED SPARE PARTS</option>

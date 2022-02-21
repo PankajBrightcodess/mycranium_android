@@ -304,7 +304,7 @@
                  </select> 
                 </div>
                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DSL</span> <span style="color: red;">*</span></div>  <!-- SCOPE OF SUPPLY -->
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>  <!-- SCOPE OF SUPPLY -->
                      <select class="form-control multipleselect" multiple="multiple" name="scope_supply[]">
                     <option value="crane">CRANE</option>
                     <!-- <option value="shrouded">SHROUDED BUS BAR</option> -->
