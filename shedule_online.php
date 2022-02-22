@@ -98,72 +98,17 @@
                     <td colspan="3"><select class="form-control city" id="city" name="dist" required>
                   </select></td>
                 </tr>
-                <tr>
-                    <td>3</td>
-                    <td>NO. OF DAYS REQUIRED FOR ASSESSMENT/HEALTH CHECK-UP</td>
-                    <td width="20%"><input type="text" class="form-control" onkeyup="addrecord()"  name="days" id="days"></td>
-                    <td></td>
-                </tr>
-                 <tr>
-                    <td>4</td>
-                    <td>Total ASSESSMENT CHARGES @ INR 7500.00 + GST @18% PER MAN PER DAY BASIS</td>
-                    <td width="20%">INR <span id="total">0.00</span></td>
-                    <td></td>
-                </tr>
-                 <tr>
-                    <td>5</td>
-                    <td>PAYMENT TERMS</td>
-                    
-                    <td colspan="2">100% ADVANCE THROUGH ONLINE MODE</td>
-                </tr>
-                 <tr>
-                    <td>6</td>
-                    <td>SERVICE DELIVERY</td>
-                    <td colspan="2">WITHIN 72 HOURS FROM THE DATE OF PAYMENT RECEIPT</td>
-                </tr>
-                <tr>
-                    <td colspan="4"></td>
-                </tr>
                
-                <tr>
-                    <td>1</td>
-                    <td colspan="3"><strong>PAY ONLINE:-</strong></td>
-                </tr>
-                 <tr>
-                    <td></td>
-                    <td colspan="3">SUBMISSION OF DECLARATION BY THE CLIENT</td>
-                </tr>
-                 <tr>
-                    <td colspan="4"></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td colspan="3"><strong>PAYMENT MODE:-</strong></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td colspan="3">DEBIT CARD/CREDIT CARD</td>
-                </tr>
-                 <tr>
-                    <td></td>
-                    <td colspan="3">NET BANKING</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td colspan="3">UPI</td>
-                </tr>
-                 <tr>
-                    <td></td>
-                    <td colspan="3">WALLETS</td>
-                </tr>
-                 <tr>
-                    <td></td>
-                    <td colspan="3">OTHERS</td>
-                </tr>
+              
+                
+                 
+               
+               
+               
                 </thead>
               </table>
-              <a href="" class="btn btn-sm btn-success" style="text-align: center;">SUBMIT</a>
-              <a href="" class="btn btn-sm btn-warning" style="text-align: center; float: right;">PROCEED FOR PAYMENT</a>
+              <!-- <a href="" class="btn btn-sm btn-success" style="text-align: center;">SUBMIT</a>
+              <a href="" class="btn btn-sm btn-warning" style="text-align: center; float: right;">PROCEED FOR PAYMENT</a> -->
             </div>
           </div>
           <div class="card user-data-card">

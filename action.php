@@ -871,9 +871,49 @@ if(isset($_POST['state'])){
       print_r($data['state_code']);
 }
 
-if(isset($_POST['preview'])){
-	echo '<pre>';
-	print_r($_POST);die;
+if(isset($_POST['Preview'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
+	$company_name=$_POST['company_name'];
+	$address=$_POST['address'];
+	$address_2=$_POST['address_2'];
+	$contact=$_POST['contact'];
+	$contact_2=$_POST['contact_2'];
+	$country=$_POST['country'];
+	$country_2=$_POST['country_2'];
+	$gstin=$_POST['gstin'];
+	$gstin_optional=$_POST['gstin_optional'];
+	$state=$_POST['state'];
+	$state_new=$_POST['state_new'];
+	$statecode=$_POST['statecode'];
+	$statecode_optional=$_POST['statecode_optional'];
+	$model_no=$_POST['model_no'];
+	$rate=$_POST['rate'];
+	$extralift=$_POST['extralift'];
+	$qnty=$_POST['qnty'];
+	$total_val=$_POST['total_val'];
+	$true_false=$_POST['true_false'];
+	$column_e=$_POST['column_e'];
+	$coumne_e_total_val=$_POST['coumne_e_total_val'];
+	$traviling_moter_no_val=$_POST['traviling_moter_no_val'];
+	$basic_total_val=$_POST['basic_total_val'];
+	$igst_18_val=$_POST['igst_18_val'];
+	$cgst_9_val=$_POST['cgst_9_val'];
+	$sgst_9_val=$_POST['sgst_9_val'];
+	$total_amounts_val=$_POST['total_amounts_val'];
+	$query="INSERT INTO `myc_chain_pully_details`(`company_name`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`extralift`,`qnty`,`total_val`,`true_false`,`column_e`,`coumne_e_total_val`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`) VALUES ('$company_name','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate','$extralift','$qnty','$total_val','$true_false','$column_e','$coumne_e_total_val','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val')";
+		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_inst_id']=$conn->insert_id; 
+
+
+		if($sql){
+			 header("Location:preview.php");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
 }
 
 ?>
