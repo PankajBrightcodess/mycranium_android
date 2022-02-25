@@ -36,6 +36,10 @@ include_once('connection.php');
                   <label for="password"><i class="lni lni-lock"></i></label>
                   <input class="form-control" id="password" name="password" type="password" required placeholder="Password">
                 </div>
+                 <!-- <div class="form-group text-start mb-4"><span>Password</span>
+                  <label for="password"><i class="lni lni-lock"></i></label>
+                  <input class="form-control" id="password" name="password" type="password" required placeholder="Password">
+                </div> -->
                 <input type="submit" name="login" class="btn btn-warning btn-lg w-100" value="Log In">
                 
               </form>

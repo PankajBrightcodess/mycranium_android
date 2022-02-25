@@ -41,7 +41,7 @@
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
       </div>
     </div>
-
+    <form action="action.php" method="POST" enctype="multipart/form-data">
     <div class="page-content-wrapper">
       <div class="container">
         <!-- Profile Wrapper-->
@@ -58,7 +58,7 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <form action="action.php" method="POST" enctype="multipart/form-data">
+              
                 <div class="mb-3">
                     <div class="title "><i class="lni lni-map-marker"></i><span>Company Name</span></div>
                     <input type="text" name="comp_name" placeholder="Company Name" class="form-control">
@@ -102,11 +102,11 @@
                 </div> 
                 <div class="mb-3">
                   <div class="title other"><i class="lni lni-map-marker"></i><span>City </span>
-                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To the fill Manually">
+                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To be filled manually">
                   </div>
                  </div>
                 <!-- <button class="btn btn-success" name="eotcrane_upload" type="submit">Upload</button> -->
-              </form>
+             
             </div>
           </div>
         </div>
@@ -129,7 +129,6 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <form action="action.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-2">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>UPLOAD TECHNICAL SPECIFICATIONS /REQUIREMENTS</span></div>
                   <input class="form-control mb-2" type="file" name="file1">
@@ -142,7 +141,7 @@
                   <textarea class="form-control" rows="2" placeholder="Remarks"></textarea>
                 </div>
                 <button class="btn btn-success" name="jib_upload" type="submit">Upload</button>
-              </form>
+              
             </div>
           </div>
         </div>
@@ -168,43 +167,10 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <div class="mb-3">
-                <span style="color: red;"><strong>*</strong></span> Marked are mandatory to be filled.<hr>
+              <div class="mb-3">  <!-- Marked are mandatory to be filled. -->
+                <span style="color: red;"><strong>*</strong></span>Marked columns are to be fill mandatory. <hr>
               </div>
-              <form action="action.php" method="POST">
-                
-                  <!-- <div class="mb-3">
-                    <div class="title mb-2"><i class="lni lni-map-marker"></i><span>PROJECT LOCATION</span> <span style="color: red;">*</span></div>
-                   <div class="title "><span>Country</span></div>
-                  <select class="form-control country" name="country" required> 
-                    <option value="">---SELECT---</option>
-                    <option value="India">India</option>
-                    <?php 
-                          if(!empty($country)){
-                            foreach ($country as $key => $value) {
-                              ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?></option><?php
-                            }
-                          }
-                    ?>
-                  </select>
-                  <div class="title "><span>State</span></div>
-                  <select class="form-control state" name="state" required> 
-                    <option value="">---SELECT---</option>
-                    <?php 
-                          if(!empty($state)){
-                            foreach ($state as $key => $value) {
-                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
-                            }
-                          }
-                    ?>
-                  </select>
-                  <div class="title "><span>City/Dist</span></div>
-                  <select class="form-control city" id="city" name="dist" required>
-                  </select>
-                   <div class="title other"><span>Other country Details</span>
-                     <input type="text" class="form-control " id="other" name="other_country_details" placeholder="to be mention other country details">
-                  </div>
-                </div> -->
+             
                 
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span> <span style="color: red;">*</span></div>
@@ -264,7 +230,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TYPE OF HOIST</span></div>
-                  <select class="form-control">
+                  <select class="form-control" name="type_of_hoist">
                     <option value="">--SELECT--</option>
                     <option value="ele_wire_rope_hoist">ELECTRIC WIRE ROPE HOIST</option>
                     <option value="ele_chain_hoist">ELECTRIC CHAIN HOIST</option>
@@ -291,9 +257,9 @@
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" name="MH" placeholder="Please Fill Manual In Case Of Manual Operation" name="">
+                  <input type="text" class="form-control mb-2" name="MH" placeholder="Please Fill Manual In Case of Manual Operation" name="">
                   <div class="title mb-2"><span>CT (CROSS TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case Of Manual Operation" name="CT">  
+                  <input type="text" class="form-control mb-2" placeholder="Please Fill Manual In Case of Manual Operation" name="CT">  
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SWIVELING</span></div>
@@ -338,12 +304,12 @@
                    <input type="text" name="other_remarks" class="form-control">
                 </div>
                 <button class="btn btn-success w-100" name="jib_text" type="submit">SUBMIT</button>
-              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </form>
     <div class="space"></div>
     <!-- Internet Connection Status-->
     <div class="internet-connection-status" id="internetStatus"></div>

@@ -110,6 +110,7 @@ if(isset($_POST['signup'])){
  	  $query = "SELECT * FROM `myc_customer` WHERE `email_id`='$email' AND `password`='$password'";
  	  $run=mysqli_query($conn,$query);
  	  $data=mysqli_fetch_assoc($run);
+ 	  // print_r($data);die;
  	  $id = $data['id'];
  	  $name = $data['name'];
  	  $comp_name = $data['comp_name'];
@@ -129,7 +130,6 @@ if(isset($_POST['signup'])){
  	  $cookie_value['address']= $data['address'];
  	  $cookie_values = json_encode($cookie_value);
  	  setcookie("Cookie",$cookie_values,time() + (86400 * 30),"/");
- 	 
        echo "COOKIE IS CREATED SUCCESSFULLY !";
  	  if(!empty($data)){
 	    	header('Location:home.php?id='.$id.'&name='.$name.'&company_name='.$comp_name.'&gst_no='.$gst_no.'&contact_no='.$contact_no.'&email_id='.$email_id.'&address='.$address.'');
@@ -144,7 +144,15 @@ if(isset($_POST['signup'])){
 
  if(isset($_POST['eotcrane_upload'])){
  	     // echo '<pre>';
+ 	     // print_r($_POST);
  	     // print_r($_FILES);die;
+ 	      $comp_name = $_POST['comp_name'];
+ 	      $address = $_POST['address'];
+ 	      $country = $_POST['country'];
+ 	      $state = $_POST['state'];
+ 	      $dist = $_POST['dist'];
+ 	      $other_country_details = $_POST['other_country_details'];
+
 	 	$photo1 = $_FILES['file1']['name'];
 		$photo1 = explode('.',$photo1);
 		$image1= time().$photo1[0];
@@ -203,14 +211,15 @@ if(isset($_POST['signup'])){
 		$image4 = $image4.".jpg";	
 		$image5 = $image5.".jpg";	
 		$added_on = date('Y-m-d');
-		$cstmr_id = $_COOKIE['Cookie'];
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cstmr_id=$use_id['id'];
 		$device= "EOT CRANE & SEMI EOT CRANE";
-		// echo '<pre>';
-		// print_r($device);die;
-		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$added_on')";
+		
+		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$comp_name','$address','$country','$state','$dist','$other_country_details','$added_on')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_upload_id']=$conn->insert_id; 
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:preview_uploadfile.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -221,12 +230,19 @@ if(isset($_POST['signup'])){
 }
 
 if(isset($_POST['eotcrane_text'])){
+
 	$qry = "SELECT `id` FROM `myc_eotrequestform` ORDER BY `id` DESC LIMIT 1";
 	$run=mysqli_query($conn,$qry);
 	$data=mysqli_fetch_assoc($run);
 	if(!empty($data)){
 		$refno = 'REF-100'.$data['id'];
 		$project_loc = $_POST['project_loc'];
+		$comp_name = $_POST['comp_name'];
+		$address = $_POST['address'];
+		$country = $_POST['country'];
+		$state = $_POST['state'];
+		$dist = $_POST['dist'];
+		$other_country_details = $_POST['other_country_details'];
 		$mainhost = $_POST['mainhost'];
 		$auxhoist = $_POST['auxhoist'];
 		$location = $_POST['location'];
@@ -248,10 +264,12 @@ if(isset($_POST['eotcrane_text'])){
 		$scope_supply = json_encode($_POST['scope_supply']);
 		$installation = $_POST['installation'];
 		$other_remarks = $_POST['other_remarks'];
-		$query="INSERT INTO `myc_eotrequestform`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
+		$query="INSERT INTO `myc_eotrequestform`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details
+			','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
 			$sql=mysqli_query($conn,$query);
+			$_SESSION['eotcrane_lasttext_id']=$conn->insert_id; 
 			if($sql){
-				 header("Location:$_SERVER[HTTP_REFERER]");
+				 header("Location:eot_preview.php");
 				$_SESSION['msg']="Successfully Added!!!";	
 			}
 			else{
@@ -263,6 +281,12 @@ if(isset($_POST['eotcrane_text'])){
 	else{
 		$refno = 'REF-100';
 		$project_loc = $_POST['project_loc'];
+		$comp_name = $_POST['comp_name'];
+		$address = $_POST['address'];
+		$country = $_POST['country'];
+		$state = $_POST['state'];
+		$dist = $_POST['dist'];
+		$other_country_details = $_POST['other_country_details'];
 		$mainhost = $_POST['mainhost'];
 		$auxhoist = $_POST['auxhoist'];
 		$location = $_POST['location'];
@@ -284,24 +308,32 @@ if(isset($_POST['eotcrane_text'])){
 		$scope_supply = json_encode($_POST['scope_supply']);
 		$installation = $_POST['installation'];
 		$other_remarks = $_POST['other_remarks'];
-		$query="INSERT INTO `myc_eotrequestform`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
-			$sql=mysqli_query($conn,$query);
-			if($sql){
-				 header("Location:$_SERVER[HTTP_REFERER]");
-				$_SESSION['msg']="Successfully Added!!!";	
-			}
-			else{
-				$_SESSION['msg']="Not added result !!!";
-				header("Location:$_SERVER[HTTP_REFERER]");
-			}
+		$query="INSERT INTO `myc_eotrequestform`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`column_to_column`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details
+			','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$abv_floor_mh','$blw_floor_ah','$travel_length','$column_to_column','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
+		$sql=mysqli_query($conn,$query);
+		$_SESSION['eotcrane_lasttext_id']=$conn->insert_id;
+		if($sql){
+			 header("Location:eot_preview.php");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
 
 	}
 	
 }
 
  if(isset($_POST['gantry_upload'])){
- 	     // echo '<pre>';
- 	     // print_r($_FILES);die;
+
+ 	      $comp_name = $_POST['comp_name'];
+ 	      $address = $_POST['address'];
+ 	      $country = $_POST['country'];
+ 	      $state = $_POST['state'];
+ 	      $dist = $_POST['dist'];
+ 	      $other_country_details = $_POST['other_country_details'];
+
 	 	$photo1 = $_FILES['file1']['name'];
 		$photo1 = explode('.',$photo1);
 		$image1= time().$photo1[0];
@@ -360,14 +392,16 @@ if(isset($_POST['eotcrane_text'])){
 		$image4 = $image4.".jpg";	
 		$image5 = $image5.".jpg";	
 		$added_on = date('Y-m-d');
-		$cstmr_id = $_COOKIE['Cookie'];
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cstmr_id=$use_id['id'];
 		$device= "GANTRY CRANE & SEMI GANTRY CRANE";
 		// echo '<pre>';
 		// print_r($device);die;
-		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$added_on')";
+		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$comp_name','$address','$country','$state','$dist','$other_country_details','$added_on')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_upload_id']=$conn->insert_id; 
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:preview_uploadfile.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -378,6 +412,8 @@ if(isset($_POST['eotcrane_text'])){
 }
 
 if(isset($_POST['gantry_text'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
 
 	$qry = "SELECT `id` FROM `myc_gantrycrane` ORDER BY `id` DESC LIMIT 1";
 	$run=mysqli_query($conn,$qry);
@@ -385,6 +421,12 @@ if(isset($_POST['gantry_text'])){
 	if(!empty($data)){
 	$refno = 'REF-200'.$data['id'];	
 	$project_loc = $_POST['project_loc'];
+	$comp_name = $_POST['comp_name'];
+	$address = $_POST['address'];
+	$country = $_POST['country'];
+	$state = $_POST['state'];
+	$dist = $_POST['dist'];
+	$other_country_details = $_POST['other_country_details'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
 	$location = $_POST['location'];
@@ -394,7 +436,7 @@ if(isset($_POST['gantry_text'])){
 	$application = $_POST['application'];
 	$span = $_POST['span'];
 	$cantilever = $_POST['cantilever'];
-	$abv_floor_mh = $_POST['abv_floor_mh'];
+	$abv_floor_mh = $_POST['blw_floor_mh'];
 	$blw_floor_ah = $_POST['blw_floor_ah'];
 	$travel_length = $_POST['travel_length'];
 	$speed_mh = $_POST['speed_mh'];
@@ -406,10 +448,11 @@ if(isset($_POST['gantry_text'])){
 	$scope_supply = json_encode($_POST['scope_supply']);
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
+	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['gantry_lasttext_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:gantry_preview.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -419,6 +462,12 @@ if(isset($_POST['gantry_text'])){
 	}else{
 	$refno = 'REF-200';	
 	$project_loc = $_POST['project_loc'];
+	$comp_name = $_POST['comp_name'];
+	$address = $_POST['address'];
+	$country = $_POST['country'];
+	$state = $_POST['state'];
+	$dist = $_POST['dist'];
+	$other_country_details = $_POST['other_country_details'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
 	$location = $_POST['location'];
@@ -428,7 +477,7 @@ if(isset($_POST['gantry_text'])){
 	$application = $_POST['application'];
 	$span = $_POST['span'];
 	$cantilever = $_POST['cantilever'];
-	$abv_floor_mh = $_POST['abv_floor_mh'];
+	$abv_floor_mh = $_POST['blw_floor_mh'];
 	$blw_floor_ah = $_POST['blw_floor_ah'];
 	$travel_length = $_POST['travel_length'];
 	$speed_mh = $_POST['speed_mh'];
@@ -440,10 +489,11 @@ if(isset($_POST['gantry_text'])){
 	$scope_supply = json_encode($_POST['scope_supply']);
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
+	$query="INSERT INTO `myc_gantrycrane`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`span`,`cantilever`,`abv_floor_mh`,`blw_floor_ah`,`travel_length`,`speed_mh`,`speed_ah`,`speed_ct`,`speed_lt`,`cust_id`,`vfd`,`scope_supply`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$span','$cantilever','$abv_floor_mh','$blw_floor_ah','$travel_length','$speed_mh','$speed_ah','$speed_ct','$speed_lt','$cust_id','$vfd','$scope_supply','$installation','$other_remarks','$refno')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['gantry_lasttext_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:gantry_preview.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -455,6 +505,16 @@ if(isset($_POST['gantry_text'])){
 }
 // ''''''''''''''''''''''''''''''''''''''Gantry Crane End''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 if(isset($_POST['jib_upload'])){
+		// echo '<pre>';
+		// print_r($_POST);
+		// print_r($_FILES);die;
+
+	      $comp_name = $_POST['comp_name'];
+ 	      $address = $_POST['address'];
+ 	      $country = $_POST['country'];
+ 	      $state = $_POST['state'];
+ 	      $dist = $_POST['dist'];
+ 	      $other_country_details = $_POST['other_country_details'];
  	   
 	 	$photo1 = $_FILES['file1']['name'];
 		$photo1 = explode('.',$photo1);
@@ -514,14 +574,16 @@ if(isset($_POST['jib_upload'])){
 		$image4 = $image4.".jpg";	
 		$image5 = $image5.".jpg";	
 		$added_on = date('Y-m-d');
-		$cstmr_id = $_COOKIE['Cookie'];
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cstmr_id=$use_id['id'];
 		$device= "JIB CRANE";
 		// echo '<pre>';
 		// print_r($device);die;
-		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$added_on')";
+		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$comp_name','$address','$country','$state','$dist','$other_country_details','$added_on')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_upload_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:preview_uploadfile.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -533,12 +595,21 @@ if(isset($_POST['jib_upload'])){
 
 
 if(isset($_POST['jib_text'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
 	$qry = "SELECT `id` FROM `myc_jibcrane` ORDER BY `id` DESC LIMIT 1";
 	$run=mysqli_query($conn,$qry);
 	$data=mysqli_fetch_assoc($run);
 	if(!empty($data)){
 		$refno = 'REF-300'.$data['id'];
 	$project_loc = $_POST['project_loc'];
+	$comp_name = $_POST['comp_name'];
+	$address = $_POST['address'];
+	$country = $_POST['country'];
+	$state = $_POST['state'];
+	$dist = $_POST['dist'];
+	$other_country_details = $_POST['other_country_details'];
+	$type_of_hoist = $_POST['type_of_hoist'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
 	$location = $_POST['location'];
@@ -554,14 +625,17 @@ if(isset($_POST['jib_text'])){
 	$swivel = $_POST['swivel'];
 	$swivel_degree = $_POST['swivel_degree'];
 	$scope_supply = json_encode($_POST['scope_supply']);
-	$cust_id = $_COOKIE['Cookie'];
+	$use_id =  json_decode($_COOKIE['Cookie'],true); 
+      $cust_id=$use_id['id'];
+	// $cust_id = $_COOKIE['Cookie'];
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks','$refno')";
-	
+	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`type_of_hoist`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`,`ref_no`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details','$type_of_hoist','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks','$refno')";
+		// print_r($query);die;
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['jib_lasttext_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:jib_preview.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -572,6 +646,12 @@ if(isset($_POST['jib_text'])){
      else{
      	$refno = 'REF-300';
 	$project_loc = $_POST['project_loc'];
+	$comp_name = $_POST['comp_name'];
+	$address = $_POST['address'];
+	$country = $_POST['country'];
+	$state = $_POST['state'];
+	$dist = $_POST['dist'];
+	$other_country_details = $_POST['other_country_details'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
 	$location = $_POST['location'];
@@ -587,14 +667,16 @@ if(isset($_POST['jib_text'])){
 	$swivel = $_POST['swivel'];
 	$swivel_degree = $_POST['swivel_degree'];
 	$scope_supply = json_encode($_POST['scope_supply']);
-	$cust_id = $_COOKIE['Cookie'];
+	$use_id =  json_decode($_COOKIE['Cookie'],true); 
+      $cust_id=$use_id['id'];
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks','$refno')";
+	$query="INSERT INTO `myc_jibcrane`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`mainhost`,`auxhoist`,`location`,`crane_type`,`class_duty`,`design_standered`,`application`,`hoist_type`,`arm`,`lifting_height`,`mh`,`ct`,`swivel`,`swivel_degree`,`scope_supply`,`cust_id`,`installation`,`other_remarks`,`refno`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details','$mainhost','$auxhoist','$location','$crane_type','$class_duty','$design_standered','$application','$hoist_type ','$arm','$lifting_height','$MH','$CT','$swivel','$swivel_degree','$scope_supply','$cust_id','$installation','$other_remarks','$refno')";
 	
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['jib_lasttext_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:jib_preview.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -719,6 +801,14 @@ if(isset($_POST['monorail_text'])){
 // ''''''''''''''''''''''''''''''''''''''ELECTRIC WIRE''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 if(isset($_POST['electric_upload'])){
 
+		$comp_name = $_POST['comp_name'];
+ 	      $address = $_POST['address'];
+ 	      $country = $_POST['country'];
+ 	      $state = $_POST['state'];
+ 	      $dist = $_POST['dist'];
+ 	      $other_country_details = $_POST['other_country_details'];
+
+
 	 	$photo1 = $_FILES['file1']['name'];
 		$photo1 = explode('.',$photo1);
 		$image1= time().$photo1[0];
@@ -781,10 +871,11 @@ if(isset($_POST['electric_upload'])){
 		$device= "ELECTRIC WIRE ROPE HOIST";
 		// echo '<pre>';
 		// print_r($device);die;
-		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$added_on')";
+		$query="INSERT INTO `myc_upload`(`file1`,`file2`,`file3`,`file4`,`file5`,`custmr_id`,`device_id`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`added_on`) VALUES ('$image1','$image2','$image3','$image4','$image5','$cstmr_id','$device','$comp_name','$address','$country','$state','$dist','$other_country_details','$added_on')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_upload_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:preview_uploadfile.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -798,8 +889,16 @@ if(isset($_POST['electric_upload'])){
 
 
 if(isset($_POST['electric_text'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
 
 	$project_loc = $_POST['project_loc'];
+	$comp_name = $_POST['comp_name'];
+	$address = $_POST['address'];
+	$country = $_POST['country'];
+	$state = $_POST['state'];
+	$dist = $_POST['dist'];
+	$other_country_details = $_POST['other_country_details'];
 	$mainhost = $_POST['mainhost'];
 	$auxhoist = $_POST['auxhoist'];
 	$location = $_POST['location'];
@@ -811,13 +910,15 @@ if(isset($_POST['electric_text'])){
 	$MH = $_POST['MH'];
 	$travel = $_POST['travel'];
 	$scope_supply = json_encode($_POST['scope_supply']);
-	$cust_id = $_COOKIE['Cookie'];
+	$use_id =  json_decode($_COOKIE['Cookie'],true); 
+      $cust_id=$use_id['id'];
 	$installation = $_POST['installation'];
 	$other_remarks = $_POST['other_remarks'];
-	$query="INSERT INTO `myc_electricwire`(`project_loc`,`mainhost`,`auxhoist`,`location`,`crane_type`,`design_standered`,`application`,`travel_length`,`lifting`,`MH`,`travel`,`scope_supply`,`cust_id`,`installation`,`other_remarks`) VALUES ('$project_loc','$mainhost','$auxhoist','$location','$crane_type','$design_standered','$application','$travel_length','$lifting_height ','$MH','$travel','$scope_supply','$cust_id','$installation','$other_remarks')";
+	$query="INSERT INTO `myc_electricwire`(`project_loc`,`comp_name`,`address`,`country`,`state`,`dist`,`other_country_details`,`mainhost`,`auxhoist`,`location`,`crane_type`,`design_standered`,`application`,`travel_length`,`lifting`,`MH`,`travel`,`scope_supply`,`cust_id`,`installation`,`other_remarks`) VALUES ('$project_loc','$comp_name','$address','$country','$state','$dist','$other_country_details','$mainhost','$auxhoist','$location','$crane_type','$design_standered','$application','$travel_length','$lifting_height ','$MH','$travel','$scope_supply','$cust_id','$installation','$other_remarks')";
 		$sql=mysqli_query($conn,$query);
+		$_SESSION['electricwire_lasttext_id']=$conn->insert_id;
 		if($sql){
-			 header("Location:$_SERVER[HTTP_REFERER]");
+			 header("Location:electric_preview.php");
 			$_SESSION['msg']="Successfully Added!!!";	
 		}
 		else{
@@ -914,6 +1015,39 @@ if(isset($_POST['Preview'])){
 			$_SESSION['msg']="Not added result !!!";
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
+}
+
+if(isset($_POST['submit_shadule'])){
+	echo '<pre>';
+	// print_r($_POST);die;
+	$comp_name= $_POST['comp_name'];
+	$address= $_POST['address'];
+	$country= $_POST['country'];
+	$state= $_POST['state'];
+	$dist= $_POST['dist'];
+	$details_of_item= $_POST['details_of_item'];
+	$qty= $_POST['qty'];
+	$days= $_POST['days'];
+	$total_val= $_POST['total_val'];
+	$use_id =  json_decode($_COOKIE['Cookie'],true); 
+      $id=$use_id['id'];
+      $added_on = date('Y-m-d');
+      // print_r($_POST);die;
+      $query="INSERT INTO `myc_shadule_online`(`comp_name`,`address`,`country`,`state`,`dist`,`details_of_item`,`qty`,`days`,`total_val`,`user_id`,`added_on`) VALUES ('$comp_name','$address','$country','$state','$dist','$details_of_item','$qty','$days','$total_val','$id','$added_on')";
+		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_id']=$conn->insert_id; 
+		// print_r($_SESSION['last_id']);die;
+
+
+		if($sql){
+			 header("Location:schedule_preview.php");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+      
 }
 
 ?>

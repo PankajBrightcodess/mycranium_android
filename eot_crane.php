@@ -41,8 +41,10 @@
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
       </div>
     </div>
+    <form action="action.php" method="POST" enctype="multipart/form-data">
      <div class="page-content-wrapper">
       <div class="container">
+
         <!-- Profile Wrapper-->
         <div class="profile-wrapper-area py-5" style="padding-bottom: 1rem!important">
           <!-- User Information-->
@@ -57,7 +59,7 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <form action="action.php" method="POST" enctype="multipart/form-data">
+              
                 <div class="mb-3">
                        <div class="title "><i class="lni lni-map-marker"></i><span>Company Name</span></div>
                         <input type="text" name="comp_name" placeholder="Company Name" class="form-control">
@@ -101,11 +103,11 @@
                 </div> 
                 <div class="mb-3">
                   <div class="title other"><i class="lni lni-map-marker"></i><span>City </span>
-                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To the fill Manually">
+                      <input type="text" class="form-control " id="other" name="other_country_details" placeholder="To be filled manually">
                   </div>
                  </div>
                 <!-- <button class="btn btn-success" name="eotcrane_upload" type="submit">Upload</button> -->
-              </form>
+             
             </div>
           </div>
         </div>
@@ -128,7 +130,7 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-              <form action="action.php" method="POST" enctype="multipart/form-data">
+              <!-- <form action="action.php" method="POST" enctype="multipart/form-data"> -->
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>UPLOAD TECHNICAL SPECIFICATIONS /REQUIREMENTS</span></div>
                   <input class="form-control mb-3" type="file" name="file1">
@@ -141,7 +143,7 @@
                   <textarea class="form-control" rows="2" placeholder="Remarks"></textarea>
                 </div>
                 <button class="btn btn-success" name="eotcrane_upload" type="submit">Upload</button>
-              </form>
+           <!--    </form> -->
             </div>
           </div>
         </div>
@@ -149,7 +151,7 @@
     </div>
     <div class="row">
             <div class="col-12 text-center"><h2>OR</h2></div>
-          </div>
+    </div>
     <div class="page-content-wrapper">
       <div class="container">
         <!-- Profile Wrapper-->
@@ -168,34 +170,10 @@
           <div class="card user-data-card">
             <div class="card-body">
               <div class="mb-3">
-                <span style="color: red;"><strong>*</strong></span> Marked are mandatory to be filled.<hr>
+                <span style="color: red;"><strong>*</strong></span>Marked columns are to be fill mandatory. <!--  Marked are mandatory to be filled. --><hr>
               </div>
-              <form action="action.php" method="POST" enctype="multipart/form-data">
-             <!--    <div class="mb-3">
-                  <div class="title "><span>Country</span></div>
-                    <select class="form-control country" name="country" required> 
-                      <option value="">---SELECT---</option>
-                      <option value="India">India</option>
-                      <?php 
-                            if(!empty($country)){
-                              foreach ($country as $key => $value) {
-                                ?><option value="<?php echo $value['country']?>"><?php echo $value['country']?> </option><?php
-                              }
-                            }
-                      ?>
-                    </select>
-                  <div class="title "><span>State</span></div>
-                  <select class="form-control state" name="state" required> 
-                    <option value="">---SELECT---</option>
-                    <?php 
-                          if(!empty($state)){
-                            foreach ($state as $key => $value) {
-                              ?><option value="<?php echo $value['id']?>"><?php echo $value['name']?></option><?php
-                            }
-                          }
-                    ?>
-                  </select>
-                </div> -->
+              <!-- <form action="action.php" method="POST" enctype="multipart/form-data"> -->
+             
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span> <span style="color: red;">*</span></div>
                   <select class="form-control" name="location">
@@ -260,7 +238,7 @@
                   <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
                   <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
                  <!--  <input type="text" class="form-control mb-2 abv_floor_ah" placeholder=""  name="abv_floor_ah"> -->
-                    <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="please write N/A, in case, it is not application" name="blw_floor_ah">
+                    <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="Please write N/A, in case it is not applicable" name="blw_floor_ah">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
@@ -268,7 +246,7 @@
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>COLUMN TO COLUMN DISTANCE (IN METERS)</span></div>
-                  <input class="form-control" type="text" placeholder="To be filled in case of Gantry Girder Requirement" name="travel_length">
+                  <input class="form-control" type="text" placeholder="To be filled in case Gantry Girder is also required" name="travel_length">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
@@ -277,13 +255,13 @@
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" name="speed_mh" placeholder="Please Fill Manual In Case Of Manual Operation" >
+                  <input type="text" class="form-control mb-2" name="speed_mh" placeholder="Please Fill Manual In Case of Manual Operation" >
                   <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" class="form-control mb-2 speed_ah"  name="speed_ah" placeholder="Please Fill Manual In Case Of Manual Operation" >
+                  <input type="text" class="form-control mb-2 speed_ah"  name="speed_ah" placeholder="Please Fill Manual In Case of Manual Operation" >
                   <div class="title mb-2"><span>CT (CROSS TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" name="speed_ct" placeholder="Please Fill Manual In Case Of Manual Operation" >
+                  <input type="text" class="form-control mb-2" name="speed_ct" placeholder="Please Fill Manual In Case of Manual Operation" >
                   <div class="title mb-2"><span>LT (LONG TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" name="speed_lt" placeholder="Please Fill Manual In Case Of Manual Operation" >
+                  <input type="text" class="form-control mb-2" name="speed_lt" placeholder="Please Fill Manual In Case of Manual Operation" >
                 </div>
                 <?php $abcd =  json_decode($_COOKIE['Cookie'],true); $id=$abcd['id'];?>
                 <div class="mb-0"><input type="hidden" name="id" value="<?php echo $id;?>"></div>
@@ -324,12 +302,13 @@
                    <input type="text" name="other_remarks" class="form-control">
                 </div>
                 <button class="btn btn-success w-100" name="eotcrane_text" type="submit">SUBMIT</button>
-              </form>
+             
             </div>
           </div>
         </div>
       </div>
     </div>
+     </form>
     <div class="space"></div>
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>

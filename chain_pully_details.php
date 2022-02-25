@@ -185,12 +185,12 @@
                    <tr id="igst">
                      <td colspan="3"><span><strong>IGST @ 18%</strong></span></td>
                      <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18">0.00</span></strong><input type="hidden" id="igst_18_val" name="igst_18_val"></td>
-                     <td colspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
+                     <td colspan="2" >Outside Jharkhand State</td>
                   </tr>
                   <tr id="cgst">
                      <td colspan="3"><span><strong>CGST @ 9%</strong></span></td>
                      <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9">0.00</span></strong><input type="hidden" name="cgst_9_val" id="cgst_9_val"> </td>
-                     <td colspan="2" rowspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
+                     <td colspan="2" rowspan="2" >Within Jharkhand State</td>
                   </tr>
                    <tr id="sgst">
                      <td colspan="3"><span><strong>SGST @ 9%</strong></span></td>
