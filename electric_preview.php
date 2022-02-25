@@ -42,7 +42,7 @@
             </svg></a></div>
         <!-- Page Title-->
         <div class="page-heading">
-          <h6 class="mb-0">JIB CRANE</h6>
+          <h6 class="mb-0">ELECTRIC WIRE ROPE HOIST</h6>
         </div>
         <!-- Navbar Toggler-->
         <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
