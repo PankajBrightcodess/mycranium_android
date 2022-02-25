@@ -246,7 +246,7 @@
                 </div>
                  <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>COLUMN TO COLUMN DISTANCE (IN METERS)</span></div>
-                  <input class="form-control" type="text" placeholder="To be filled in case Gantry Girder is also required" name="travel_length">
+                  <input class="form-control" type="text" placeholder="To be filled in case Gantry Girder is also required" name="column_to_column">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
