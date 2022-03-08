@@ -25,7 +25,7 @@
             <div class="card-body p-4 d-flex align-items-center">
              
               <div class="user-info">
-                <h5 class="mb-0 text-center border-1">TRIPLE SPUR GEAR CHAIN PULLEY BLOCK, WITH ALLOY STEEL GRADE-80</h5>
+                <h5 class="mb-0 text-center border-1">ELECTRIC CHAIN HOIST</h5>
               </div>
             </div>
           </div>
@@ -36,10 +36,10 @@
               <table class="table table-bordered " style="font-size: 10px;">
                 <thead>
                   <tr>
-                    <td colspan="8">TRIPLE SPUR GEAR CHAIN PULLEY BLOICK, WITH ALLOY STEEL GRADE-80</td>
+                    <td colspan="8">ELECTRIC CHAIN HOIST</td>
                   </tr>
                   <tr>
-                    <td colspan="8">LOAD CHANIN AND GR, 30 MILD STEEL HAND CHAIN IN STANDARD LENGTH OF 03 MTRS</td>
+                    <td colspan="8">ATANDARD LIFT OF 3 MTRS.</td>
                   </tr>
                 <tr>
                    <td>CAPICITY IN TONS</td>
@@ -65,53 +65,43 @@
                 <tbody>
                    <tr>
                        <td>01 TON</td>
-                       <td>CS-CPB-1T</td>
-                       <td>INR 4,250.00</td>
-                       <td>INR 484.00</td>
-                       <td>INR 4,800.00</td>
-                       <td>CS-GT_CPB-1T</td>
+                       <td>CS-ECH-1T</td>
+                       <td>INR 54,500.00</td>
+                       <td>INR 150.00</td>
+                       <td>INR 33,300.00</td>
+                       <td>CS-GT_ECH-1T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="electric_chain_details_1.php" style="color:red;">BUY NOW</a></td> 
                     </tr> 
                     <tr>
                        <td>02 TON</td>
                        <td>CS-CPB-2T</td>
-                       <td>INR 6,500.00</td>
-                       <td>INR 484.00</td>
-                       <td>INR 6,300.00</td>
-                       <td>CS-GT_CPB-2T</td>
+                       <td>INR 60,500.00</td>
+                       <td>INR 150.00</td>
+                       <td>INR 34,500.00</td>
+                       <td>CS-GT_ECH-2T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pulley_details_1.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="#" style="color:red;">BUY NOW</a></td> 
                     </tr> 
                     <tr>
                        <td>03 TON</td>
-                       <td>CS-CPB-3T</td>
-                       <td>INR 7,750.00</td>
-                       <td>INR 855.00</td>
-                       <td>INR 8,000.00</td>
-                       <td>CS-GT_CPB-3T</td>
+                       <td>CS-ECH-3T</td>
+                       <td>INR 72,500.00</td>
+                       <td>INR 150.00</td>
+                       <td>INR 42,500.00</td>
+                       <td>CS-GT_ECH-3T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details_2.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="#" style="color:red;">BUY NOW</a></td> 
                     </tr>
                     <tr>
                        <td>05 TON</td>
                        <td>CS-CPB-5T</td>
-                       <td>INR 10,000.00</td>
-                       <td>INR 965.00</td>
-                       <td>INR 13,750.00</td>
-                       <td>CS-GT_CPB-5T</td>
+                       <td>INR 112,500.00</td>
+                       <td>INR 150.00</td>
+                       <td>INR 48,500.00</td>
+                       <td>CS-GT_ECH-5T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details_3.php" style="color:red;">BUY NOW</a></td> 
-                    </tr>
-                    <tr>
-                       <td>10 TON</td>
-                       <td>CS-CPB-10T</td>
-                       <td>INR 22,550.00</td>
-                       <td>INR 2,000.00</td>
-                       <td>INR 31,000.00</td>
-                       <td>CS-GT_CPB-10T</td>
-                       <td>WITHIN 15 DAYS</td>
-                       <td><a href="chain_pully_details_4.php" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="#" style="color:red;">BUY NOW</a></td> 
                     </tr>
                 </tbody>
               </table>

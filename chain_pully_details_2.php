@@ -148,8 +148,8 @@
                      <td colspan="2" >                      
                       <span><strong>CS-CPB-3T</strong></span>
                     <input type="hidden" name="model_no" value="CS-CPB-3T"></td>
-                    <td colspan="1"><span><strong>INR 6,900.00</strong></span>
-                      <input type="hidden" name="rate" value="6900.00"></td>
+                    <td colspan="1"><span><strong>INR 7,750.00</strong></span>
+                      <input type="hidden" name="rate" value="7750.00"></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
@@ -166,8 +166,8 @@
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
                         <input type="hidden" value="8000" name="column_e" id="column_e">
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong><input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"></td>
-                     <td colspan="2" id="traviling_moter_no">CS-GT-0303
-                      <input type="hidden" name="traviling_moter_no_val" value="CS-GT-0303">
+                     <td colspan="2" id="traviling_moter_no">CS-GT_CPB-3T
+                      <input type="hidden" name="traviling_moter_no_val" value="CS-GT_CPB-3T">
                      </td>
                   </tr>
                    <tr>
@@ -262,7 +262,7 @@
           var total = parseFloat(extralift)*parseInt(qnty);
           $('#total').html(total);
           $('#total_val').val(total);
-           var c18 = 6900;
+           var c18 = 7750;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -307,7 +307,7 @@
           var total = parseFloat(column_e)*parseInt(true_false);
           $('#coumne_e_total').html(total);
            $('#coumne_e_total_val').val(total);
-           var c18 = 6900;
+           var c18 = 7750;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -342,7 +342,7 @@
 
 
          });
-         var c18 = 6900;
+         var c18 = 7750;
          var c19 = $('#total').html();
          var c20 = $('#coumne_e_total').html();
 

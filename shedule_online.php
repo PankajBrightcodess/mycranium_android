@@ -167,11 +167,11 @@
                     <td>SERVICE DELIVERY</td>
                     <td colspan="2">WITHIN 72 HOURS FROM THE DATE OF PAYMENT RECEIPT</td>
                 </tr>
-                <tr>
+              <!--   <tr>
                     <td colspan="4"></td>
-                </tr>
+                </tr> -->
                
-                <tr>
+              <!--   <tr>
                     <td>1</td>
                     <td colspan="3"><strong>PAY ONLINE:-</strong></td>
                 </tr>
@@ -205,10 +205,10 @@
                  <tr>
                     <td></td>
                     <td colspan="3">OTHERS</td>
-                </tr>
+                </tr> -->
                 </thead>
               </table>
-               <input type="submit" name="submit_shadule" class="btn btn-sm btn-success" value="SUBMIT">
+               <input type="submit" name="submit_shadule" class="btn btn-sm btn-success" value="SUBMIT & REVIEW">
               <!-- <a href="" class="btn btn-sm btn-success" style="text-align: center;"></a> -->
               <!-- <a href="" class="btn btn-sm btn-warning" style="text-align: center; float: right;">PROCEED FOR PAYMENT</a> -->
             </div>

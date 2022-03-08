@@ -147,8 +147,8 @@
                      <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
                      <td colspan="2" >                      
                       <span><strong>CS-CPB-2T</strong></span><input type="hidden" name="model_no" value="CS-CPB-2T"></td>
-                    <td colspan="1"><span><strong>INR 5,880.00</strong></span></td>
-                     <td colspan="2" ><input type="hidden" name="rate" value="5880.00"></td>
+                    <td colspan="1"><span><strong>INR 6,500.00</strong></span></td>
+                     <td colspan="2" ><input type="hidden" name="rate" value="6500.00"></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
@@ -164,7 +164,7 @@
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
                         <input type="hidden" value="6300" name="column_e" id="column_e">
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong><input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"></td>
-                     <td colspan="2" id="traviling_moter_no">CS-GT-0203 <input type="hidden" name="traviling_moter_no_val" value="CS-GT-0203"></td>
+                     <td colspan="2" id="traviling_moter_no">CS-GT_CPB-2T<input type="hidden" name="traviling_moter_no_val" value="CS-GT_CPB-2T"></td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
@@ -266,7 +266,7 @@
           var total = parseFloat(extralift)*parseInt(qnty);
           $('#total').html(total);
           $('#total_val').val(total);
-           var c18 = 5880;
+           var c18 = 6500;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -311,7 +311,7 @@
           var total = parseFloat(column_e)*parseInt(true_false);
           $('#coumne_e_total').html(total);
           $('#coumne_e_total_val').val(total);
-           var c18 = 5880;
+           var c18 = 6500;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -346,7 +346,7 @@
 
 
          });
-         var c18 = 5880;
+         var c18 = 6500;
          var c19 = $('#total').html();
          var c20 = $('#coumne_e_total').html();
 

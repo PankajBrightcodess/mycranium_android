@@ -148,8 +148,8 @@
                      <td colspan="2" >                      
                       <span><strong>CS-CPB-5T</strong></span>
                       <input type="hidden" name="model_no" value="CS-CPB-5T"></td>
-                    <td colspan="1"><span><strong>INR 9,150.00</strong></span>
-                      <input type="hidden" name="rate" value="9150.00"></td>
+                    <td colspan="1"><span><strong>INR 10,000.00</strong></span>
+                      <input type="hidden" name="rate" value="10000.00"></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
@@ -166,7 +166,7 @@
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
                         <input type="hidden" value="13750" name="column_e" id="column_e">
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong><input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"></td>
-                     <td colspan="2" >CS-GT-0503<input type="hidden" name="traviling_moter_no_val" value="CS-GT-0503"></td>
+                     <td colspan="2" >CS-GT_CPB-5T<input type="hidden" name="traviling_moter_no_val" value="CS-GT_CPB-5T"></td>
                   </tr>
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
@@ -262,7 +262,7 @@
           var total = parseFloat(extralift)*parseInt(qnty);
           $('#total').html(total);
           $('#total_val').val(total);
-           var c18 = 9150;
+           var c18 = 10000;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -311,7 +311,7 @@
           $('#coumne_e_total').html(total);
           $('#coumne_e_total_val').val(total);
 
-           var c18 = 9150;
+           var c18 = 10000;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
 
@@ -348,7 +348,7 @@
 
 
          });
-         var c18 = 9150;
+         var c18 = 10000;
          var c19 = $('#total').html();
          var c20 = $('#coumne_e_total').html();
 

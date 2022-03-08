@@ -149,8 +149,8 @@
                       <span><strong id="model_no">CS-CPB-1T</strong></span>
                       <input type="hidden" name="model_no" value="CS-CPB-1T">
                     </td>
-                    <td colspan="1"><span><strong id="rate">INR 3,795.00</strong></span>
-                      <input type="hidden" name="rate" value="3795.00">
+                    <td colspan="1"><span><strong id="rate">INR 4,250.00</strong></span>
+                      <input type="hidden" name="rate" value="4250.00">
                     </td>
                      <td colspan="2" ></td>
                   </tr>
@@ -172,8 +172,8 @@
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong>
                       <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val">
                     </td>
-                     <td colspan="2" id="traviling_moter_no">CS-GT-0103
-                      <input type="hidden" name="traviling_moter_no_val" value="CS-GT-0103">
+                     <td colspan="2" id="traviling_moter_no">CS-GT_CPB-1T
+                      <input type="hidden" name="traviling_moter_no_val" value="CS-GT_CPB-1T">
                      </td>
                   </tr>
                    <tr>
@@ -286,7 +286,7 @@
           $('#total').html(total);
           $('#total_val').val(total);
 
-           var c18 = 3795;
+           var c18 = 4250;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
            var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
@@ -329,7 +329,7 @@
           var total = parseFloat(column_e)*parseInt(true_false);
           $('#coumne_e_total').html(total);
           $('#coumne_e_total_val').val(total);
-           var c18 = 3795;
+           var c18 = 4250;
            var c19 = $('#total').html();
            var c20 = $('#coumne_e_total').html();
            var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
@@ -362,7 +362,7 @@
                $('#igst').show();
              }
          });
-         var c18 = 3795;
+         var c18 = 4250;
          var c19 = $('#total').html();
          var c20 = $('#coumne_e_total').html();
 

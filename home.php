@@ -1,5 +1,8 @@
 <?php include 'header-link.php'; ?>
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+
+// echo $_COOKIE["Cookie"];
+?>
 
     <section class="page-content-wrapper">
       <div class="container">
@@ -342,7 +345,7 @@
                 <div class="col-12 text-center">
                 
                     <button class="btn btn-primary form-control" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      Online Quotation Request For Cranes And Hoists
+                      ONLINE QUOTATION REQUEST-EOT/GANTRY/JIB CRANES & HOISTS<!-- Online Quotation Request For Cranes And Hoists -->
                     </button>
                   <div class="collapse" id="collapseExample">
                     <div class="card card-body ">
@@ -360,7 +363,7 @@
                         <a href="monorail.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Monorail With Electric Wire Rope Hoist</a>
                       </div> -->
                        <div class="col-12 mb-2">
-                        <a href="electricwire.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Electric Wire Rope Hoist</a>
+                        <a href="electricwire.php" style="float: left;"><i class="lni lni-pointer-right"></i>&nbsp;&nbsp; Electric Wire Rope Hoist(Upto 50T)</a>
                       </div>
                     </div>
                   </div>
@@ -381,7 +384,8 @@
                 <div class="col-12 text-center">
                 
                     <a href="shedule_online.php"><button class="btn btn-primary form-control" type="button" >
-                      Online request for Assessment/Health Check-up/inspection Of Your Cranes & Hoists 
+                      ONLINE ASSESSMENT/HEALTH CHECK-UP/INSPECTION REQUEST-EOT/GANTRY/JIB CRANES & HOISTS
+                      <!-- Online request for Assessment/Health Check-up/inspection Of Your Cranes & Hoists  -->
                     </button></a>
                 </div>
               </div>
@@ -400,8 +404,9 @@
               <div class="card horizontal-product-card">
                 <div class="col-12 text-center">
                 
-                    <a href="#"><button class="btn btn-primary form-control" type="button" >
-                      Standard Price List Of Electric Chain Hoist (500kg to 2000kg) 
+                    <a href="electric_chain.php"><button class="btn btn-primary form-control" type="button" >
+                      STANDARD PRICE LIST-ELECTRIC CHAIN HOIST
+                      <!-- Standard Price List Of Electric Chain Hoist (500kg to 2000kg)  -->
                     </button></a>
                 </div>
               </div>
@@ -421,7 +426,8 @@
                 <div class="col-12 text-center">
                 
                     <a href="chain_pulley.php"><button class="btn btn-primary form-control" type="button" >
-                      Standard Price List Of Chain Pulley Blocks and Other Accessories 
+                      STANDARD PRICE LIST- CHAIN PULLEY BLOCK WITH TRAVELLING TROLLEY
+                      <!-- Standard Price List Of Chain Pulley Blocks and Other Accessories  -->
                     </button></a>
                 </div>
               </div>

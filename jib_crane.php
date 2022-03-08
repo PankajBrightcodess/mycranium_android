@@ -129,7 +129,19 @@
           <!-- User Meta Data-->
           <div class="card user-data-card">
             <div class="card-body">
-                <div class="mb-2">
+               <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
+                  <select class="form-control" name="crane_type">
+                    <option value="">---SELECT---</option>
+                    <option value="single_girder_eot_crane">SINGLE GIRDER EOT CRANE(UPTO 15T)</option>
+                    <option value="double_girder_eot_crane">DOUBLE GIRDER EOT CRANE(UPTO 110T)</option>
+                    <option value="single_girder_semi_eot_crane">SINGLE GIRDER SEMI EOT CRANE(UPTO 15T)</option>
+                    <option value="double_girder_semi_eot_crane">DOUBLE GIRDER SEMI EOT CRANE(UPTO 25T)</option>
+                    <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE(UPTO 15T)</option>
+                    <!-- <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
+                  </select>
+                </div>
+                <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-envelope"></i><span>UPLOAD TECHNICAL SPECIFICATIONS /REQUIREMENTS</span></div>
                   <input class="form-control mb-2" type="file" name="file1">
                   <input class="form-control mb-2" type="file" name="file2">
@@ -188,8 +200,8 @@
                     <option value="double_girder_jib_crane">DOUBLE GIRDER JIB CRANE</option>
                     <option value="single_girder_semi_jib_crane">SINGLE GIRDER SEMI JIB CRANE</option>
                     <option value="double_girder_semi_jib_crane">DOUBLE GIRDER SEMI JIB CRANE</option> --> 
-                    <option value="pillar_mounted_jib_crane">PILLAR MOUNTED JIB CRANE</option>
-                    <option value="wall_mounted_jib_crane">WALL MOUNTED JIB CRANE</option>
+                    <option value="pillar_mounted_jib_crane">PILLAR MOUNTED JIB CRANE(UPTO 5T)</option>
+                    <option value="wall_mounted_jib_crane">WALL MOUNTED JIB CRANE(UPTO 3T)</option>
                     <!-- <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE</option>
                     <option value="double_girder_under_slung_crane">DOUBLE GIRDER UNDER SLUNG CRANE</option> -->
                   </select>
@@ -303,7 +315,7 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>OTHER REMARKS, IF ANY</span></div>
                    <input type="text" name="other_remarks" class="form-control">
                 </div>
-                <button class="btn btn-success w-100" name="jib_text" type="submit">SUBMIT</button>
+                <button class="btn btn-success w-100" name="jib_text" type="submit">SUBMIT & REVIEW</button>
             </div>
           </div>
         </div>
