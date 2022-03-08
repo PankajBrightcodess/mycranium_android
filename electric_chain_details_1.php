@@ -144,7 +144,7 @@
                      <td colspan="2" >REMARKS FOR BRIGHT CODE<span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
                   </tr>
                    <tr>
-                     <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
+                     <td colspan="1"><span><strong>ELECTRIC CHAIN HOIST</strong></span></td>
                      <td colspan="2" >                      
                       <span><strong id="model_no">CS-ECH-1T</strong></span>
                       <input type="hidden" name="model_no" value="CS-ECH-1T">
@@ -165,7 +165,7 @@
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
-                     <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
+                     <td colspan="1"><span><strong>TRAVELLING TYROLLEY</strong></span></td>
                      <td colspan="2" >                      
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
                         <input type="hidden" value="33300" name="column_e" id="column_e">
