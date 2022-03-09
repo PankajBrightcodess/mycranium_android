@@ -300,13 +300,19 @@
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>OTHER REMARKS, IF ANY</span></div>
                    <input type="text" name="other_remarks" class="form-control">
                 </div> -->
-                <button class="btn btn-success w-100" name="eotcrane_preview" type="submit">PROCEED FOR PAYMENT</button>
+                <input type="hidden" name="lastid" value="<?php echo $preview['id'];?>">
+                <input type="hidden" name="lastid" value="<?php echo $preview['id'];?>">
+                <input type="hidden" name="category" value="EOT CRANE & SEMI EOT CRANE">
+                <input type="hidden" name="company_name" value="<?php echo $preview['comp_name'];?>">
+                <input type="hidden" name="amount" value="1">
+                <button class="btn btn-success w-100" name="eot_payment" type="submit">PROCEED FOR PAYMENT</button>
              
             </div>
           </div>
         </div>
       </div>
     </div>
+  </form>
     <div class="space"></div>
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>

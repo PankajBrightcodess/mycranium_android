@@ -67,7 +67,7 @@
                       <input type="text" name="address" id="address" placeholder="Address" class="form-control"><br>
                       <input type="text" name="contact" id="contact_no" placeholder="Mobile No" class="form-control"></td>
                      <td colspan="1"><span><strong style="color:red;">DELIVERY/PROJECT ADDRESS WITH COMPANY/PERSON'S NAME</strong></span></td>
-                      <td colspan="2" style="width: 50%;"><input type="text" id="comp_name_2" class="form-control" placeholder="Company/Person Name" style="width: 150px;" name="company_name"><br>
+                      <td colspan="2" style="width: 50%;"><input type="text" id="comp_name_2" class="form-control" placeholder="Company/Person Name" style="width: 150px;" name="company_owner"><br>
                       <input type="text" name="address_2" id="address_2" placeholder="Address" class="form-control"><br>
                       <input type="text" name="contact_2" id="contact_2" placeholder="Mobile No" class="form-control"></td>
                   </tr>

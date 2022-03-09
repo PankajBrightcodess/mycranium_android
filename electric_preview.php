@@ -289,7 +289,6 @@
                    <input type="text" name="other_remarks" class="form-control">
                 </div> -->
                 <!-- <button class="btn btn-success w-100" name="eotcrane_text" type="submit">SUBMIT</button> -->
-                 <button class="btn btn-success w-100" name="electric_preview" type="submit">PROCEED FOR PAYMENT</button>
              
             </div>
           </div>

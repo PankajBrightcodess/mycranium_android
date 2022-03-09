@@ -65,7 +65,7 @@
           <!-- User Meta Data-->
           <div class="card user-data-card table-responsive">
             <div class="card-body">
-              <!-- <form action="action.php" method="POST"  > -->
+              <form action="action.php" method="POST"  >
               <table class="table table-bordered " style="font-size: 10px;">
                 <thead>
                   <tr>
@@ -126,7 +126,7 @@
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
                      <td colspan="2" >
-                     <input type="hidden" name="extralift" id="extralift" value="484">   <strong><span id="total"><?php echo $data['qnty']?></span></strong>                   
+                     <!-- <input type="hidden" name="extralift" id="extralift" value="484">  -->  <strong><span id="total"><?php echo $data['qnty']?></span></strong>                   
                     </td>
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total"><?php echo $data['total_val']?></span></strong>
                     </td>
@@ -137,7 +137,7 @@
                      <td colspan="2" >                      
                       <span><strong><span id="total"><?php echo $data['true_false']?></span></strong></td>
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total"><?php echo $data['column_e']?>.00</span></strong>
-                      <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val">
+                      <!-- <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"> -->
                     </td>
                      <td colspan="2" id="traviling_moter_no"><?php echo $data['traviling_moter_no_val']?>
                       <!-- <input type="hidden" name="traviling_moter_no_val" value="CS-GT-0103"> -->
@@ -177,7 +177,9 @@
                   <tr>
                      <td colspan="6">
                       <!-- <input type="button" class="btn btn-sm btn-success text-white form-control preview"  value="" data-toggle="modal" data-target="#exampleModalCenter" name=""> -->
-                      <input type="button" name="pay_now" class="btn btn-sm btn-success" value="Pay Now">
+                      <input type="hidden" name="lastid" value="<?php echo $data['id']?>">
+                      <input type="hidden" name="amount" value="<?php echo $data['total_amounts_val']?>">
+                      <input type="submit" name="pay_now" class="btn btn-sm btn-success" value="Pay Now">
                    <!--    <button type="button" class="btn btn-success text-white form-control">Preview</button> -->
                     </td> 
                   </tr>

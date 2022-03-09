@@ -324,6 +324,27 @@ if(isset($_POST['eotcrane_text'])){
 	}
 	
 }
+if(isset($_POST['eot_payment'])){
+	
+	$lastid = $_SESSION['eotcrane_lasttext_id'];
+	$amount = $_POST['amount'];
+	$length = 15;
+	 $order_no=substr(str_shuffle(str_repeat($x='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+	 $added_on = date('Y-m-d');
+	 // print_r($data);die;
+	  $query="UPDATE `myc_eotrequestform` SET `amount`='$amount',`order_no`='$order_no'  WHERE `id`='$lastid'";
+	$run=mysqli_query($conn,$query);
+	$_SESSION['tabless'] = myc_eotrequestform;
+	if($run){
+		$_SESSION['last_updated_id']=$lastid;
+		 header('Location:payment_2.php');
+		$_SESSION['msg']="Student Updated Successfully !!!";	
+	}
+	else{
+		$_SESSION['msg']="Student Not Updated!!!";
+		header("location:$_SERVER[HTTP_REFERER]");
+	}
+}
 
  if(isset($_POST['gantry_upload'])){
 
@@ -501,6 +522,29 @@ if(isset($_POST['gantry_text'])){
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
 
+	}
+}
+if(isset($_POST['ganty_payment'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
+	
+	$lastid = $_SESSION['gantry_lasttext_id'];
+	$amount = $_POST['amount'];
+	$length = 15;
+	 $order_no=substr(str_shuffle(str_repeat($x='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+	 $added_on = date('Y-m-d');
+	 // print_r($data);die;
+	  $query="UPDATE `myc_gantrycrane` SET `amount`='$amount',`order_no`='$order_no'  WHERE `id`='$lastid'";
+	$run=mysqli_query($conn,$query);
+	$_SESSION['tabless'] = myc_gantrycrane;
+	if($run){
+		$_SESSION['last_updated_id']=$lastid;
+		 header('Location:payment_2.php');
+		$_SESSION['msg']="Student Updated Successfully !!!";	
+	}
+	else{
+		$_SESSION['msg']="Student Not Updated!!!";
+		header("location:$_SERVER[HTTP_REFERER]");
 	}
 }
 // ''''''''''''''''''''''''''''''''''''''Gantry Crane End''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -966,16 +1010,16 @@ if(isset($_POST['city'])){
 
 if(isset($_POST['state'])){
 	$id = $_POST['id'];
-	$qury="SELECT `state_code` FROM `myc_area` where `id`='$id'AND `type`='state' ORDER BY `name` ASC";
+	$qury="SELECT `state_code` FROM `myc_area` where `id`='$id' AND `type`='state' ORDER BY `name` ASC";
       $run=mysqli_query($conn,$qury);
       $data=mysqli_fetch_assoc($run);
       print_r($data['state_code']);
 }
 
 if(isset($_POST['Preview'])){
-	// echo '<pre>';
-	// print_r($_POST);die;
+	
 	$company_name=$_POST['company_name'];
+	$company_owner=$_POST['company_owner'];
 	$address=$_POST['address'];
 	$address_2=$_POST['address_2'];
 	$contact=$_POST['contact'];
@@ -1002,11 +1046,12 @@ if(isset($_POST['Preview'])){
 	$cgst_9_val=$_POST['cgst_9_val'];
 	$sgst_9_val=$_POST['sgst_9_val'];
 	$total_amounts_val=$_POST['total_amounts_val'];
-	$query="INSERT INTO `myc_chain_pully_details`(`company_name`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`extralift`,`qnty`,`total_val`,`true_false`,`column_e`,`coumne_e_total_val`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`) VALUES ('$company_name','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate','$extralift','$qnty','$total_val','$true_false','$column_e','$coumne_e_total_val','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val')";
+	$query="INSERT INTO `myc_chain_pully_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`country`,`country_2`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`extralift`,`qnty`,`total_val`,`true_false`,`column_e`,`coumne_e_total_val`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$country','$country_2','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate','$extralift','$qnty','$total_val','$true_false','$column_e','$coumne_e_total_val','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val')";
+	echo '<pre>';
+	// print_r(mysqli_query($conn,$query));die;
 		$sql=mysqli_query($conn,$query);
+	// print_r($sql);die;
 		$_SESSION['last_inst_id']=$conn->insert_id; 
-
-
 		if($sql){
 			 header("Location:preview.php");
 			$_SESSION['msg']="Successfully Added!!!";	
@@ -1049,6 +1094,108 @@ if(isset($_POST['submit_shadule'])){
 		}
       
 }
+
+if(isset($_POST['electric_chain_submit'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
+	$company_name = $_POST['company_name'];
+	$company_owner = $_POST['company_owner'];
+	$address = $_POST['address'];
+	$address_2 = $_POST['address_2'];
+	$contact = $_POST['contact'];
+	$contact_2 = $_POST['contact_2'];
+	$country = $_POST['country'];
+	$country_2 = $_POST['country_2'];
+	$gstin = $_POST['gstin'];
+	$gstin_optional = $_POST['gstin_optional'];
+	$state = $_POST['state'];
+	$state_new = $_POST['state_new'];
+	$statecode = $_POST['statecode'];
+	$statecode_optional = $_POST['statecode_optional'];
+	$model_no = $_POST['model_no'];
+	$rate = $_POST['rate'];
+	$extralift = $_POST['extralift'];
+	$qnty = $_POST['qnty'];
+	$total_val = $_POST['total_val'];
+	$true_false = $_POST['true_false'];
+	$column_e = $_POST['column_e'];
+	$coumne_e_total_val = $_POST['coumne_e_total_val'];
+	$traviling_moter_no_val = $_POST['traviling_moter_no_val'];
+	$basic_total_val = $_POST['basic_total_val'];
+	$igst_18_val = $_POST['igst_18_val'];
+	$cgst_9_val = $_POST['cgst_9_val'];
+	$sgst_9_val = $_POST['sgst_9_val'];
+	$total_amounts_val = $_POST['total_amounts_val'];
+	$use_id =  json_decode($_COOKIE['Cookie'],true); 
+      $user_id=$use_id['id'];
+      $added_on = date('Y-m-d');
+      // print_r($id);die;
+      $query="INSERT INTO `myc_electric_chain_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`country`,`country_2`,`gstin`,`gstin_optional`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`extralift`,`qnty`,`total_val`,`true_false`,`column_e`,`coumne_e_total_val`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`,`user_id`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$country','$country_2','$gstin','$gstin_optional','$state','$state_new','$statecode','$statecode_optional','$model_no','$rate','$extralift','$qnty','$total_val','$true_false','$column_e','$coumne_e_total_val','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val','$user_id')";
+		$sql=mysqli_query($conn,$query);
+		$_SESSION['last_id']=$conn->insert_id; 
+		// print_r($_SESSION['last_id']);die;
+
+
+		if($sql){
+			 header("Location:electric_chain_details_preview.php");
+			$_SESSION['msg']="Successfully Added!!!";	
+		}
+		else{
+			$_SESSION['msg']="Not added result !!!";
+			header("Location:$_SERVER[HTTP_REFERER]");
+		}
+}
+
+if(isset($_POST['pay_now_electric'])){
+	$ids = $_POST['last_ids'];
+	$amount = $_POST['amount'];
+	$length = 15;
+	 $order_no=substr(str_shuffle(str_repeat($x='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+	 $query="UPDATE `myc_electric_chain_details` SET `amount`='$amount',`order_no`='$order_no' WHERE `id`='$ids'";
+	$run=mysqli_query($conn,$query);
+	// $_SESSION['last_updated_id']=$conn->insert_id; 
+	// print_r($_SESSION['last_updated_id']);die;
+	if($run){
+		 $_SESSION['last_updated_id'] = $ids;
+		 $_SESSION['tablesss'] = myc_electric_chain_details;
+		 // print_r($_SESSION['last_updated_id']);die;
+		 header('Location:payment.php');
+		$_SESSION['msg']="Student Updated Successfully !!!";	
+	}
+	else{
+		$_SESSION['msg']="Student Not Updated!!!";
+		header("location:$_SERVER[HTTP_REFERER]");
+	}	
+
+}
+
+if(isset($_POST['pay_now'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
+	$ids = $_POST['lastid'];
+	$amount = $_POST['amount'];
+	$length = 15;
+	 $order_no=substr(str_shuffle(str_repeat($x='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+	 $query="UPDATE `myc_chain_pully_details` SET `amount`='$amount',`order_no`='$order_no' WHERE `id`='$ids'";
+	$run=mysqli_query($conn,$query);
+	// $_SESSION['last_updated_id']=$conn->insert_id; 
+	// print_r($_SESSION['last_updated_id']);die;
+	if($run){
+		 $_SESSION['last_updated_id'] = $ids;
+		 $_SESSION['tablesss'] = myc_chain_pully_details;
+		 // print_r($_SESSION['last_updated_id']);die;
+		 header('Location:payment.php');
+		$_SESSION['msg']="Student Updated Successfully !!!";	
+	}
+	else{
+		$_SESSION['msg']="Student Not Updated!!!";
+		header("location:$_SERVER[HTTP_REFERER]");
+	}
+}
+
+
+
+
 
 ?>
 

@@ -81,7 +81,7 @@
                        <td>INR 34,500.00</td>
                        <td>CS-GT_ECH-2T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="#" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="electric_chain_details_2.php" style="color:red;">BUY NOW</a></td> 
                     </tr> 
                     <tr>
                        <td>03 TON</td>
@@ -91,7 +91,7 @@
                        <td>INR 42,500.00</td>
                        <td>CS-GT_ECH-3T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="#" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="electric_chain_details_3.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                     <tr>
                        <td>05 TON</td>
@@ -101,7 +101,7 @@
                        <td>INR 48,500.00</td>
                        <td>CS-GT_ECH-5T</td>
                        <td>WITHIN 15 DAYS</td>
-                       <td><a href="#" style="color:red;">BUY NOW</a></td> 
+                       <td><a href="electric_chain_details_4.php" style="color:red;">BUY NOW</a></td> 
                     </tr>
                 </tbody>
               </table>
