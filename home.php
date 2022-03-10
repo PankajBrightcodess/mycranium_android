@@ -394,9 +394,9 @@
               <div class="card horizontal-product-card">
                 <div class="col-12 text-center">
                 
-                    <a href="shedule_online.php"><button class="btn btn-primary form-control" type="button" >
+                    <a href="shedule_online.php"><button class="btn btn-primary form-control" style="height: 80px!important;" type="button" >
                       ONLINE ASSESSMENT/HEALTH CHECK-UP/INSPECTION REQUEST-EOT/GANTRY/JIB CRANES & HOISTS
-                      <!-- Online request for Assessment/Health Check-up/inspection Of Your Cranes & Hoists  -->
+                      
                     </button></a>
                 </div>
               </div>
