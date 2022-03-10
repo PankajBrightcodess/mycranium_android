@@ -1,4 +1,15 @@
- <?php include 'header-link.php'; ?>
+<?php 
+  session_start();
+  include_once('connection.php');
+  $msg = "";
+    if (isset($_SESSION['msg'])) {
+        $msg = $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    if ($msg != "") {
+        echo "<script> alert('$msg')</script>";
+    }?>
+<?php include 'header-link.php'; ?>
 <?php include 'header.php'; 
 
 // echo $_COOKIE["Cookie"];

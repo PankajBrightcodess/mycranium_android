@@ -11,7 +11,7 @@ $msg = "";
     }
       if(isset($_POST['razorpay_payment_id'])){
       $payment_details=json_encode($_POST);
-      $razorpay_payment_id = $_POST['razorpay_payment_id'];
+      $razorpay_payment_id = $_POST['razorpay_payment_id']; 
       // $payment_date = date('Y/m/d');
       $payment_status = 1;
       $id = $_SESSION['last_updated_id'];
@@ -19,6 +19,14 @@ $msg = "";
       // unset($_SESSION['last_inst_id']);
       $sql="UPDATE $table SET payment_status = '$payment_status',payment_id = '$razorpay_payment_id', payment_details = '$payment_details' WHERE `id`='$id'";
       $conn->query($sql);
+      if(!empty($_POST['payment_2'])){
+         $use_id =  json_decode($_COOKIE['Cookie'],true); 
+         $cust_id=$use_id['id'];
+         $start_date = date('Y-m-d');
+         $expire_date = date("Y-m-d",strtotime("+90 day"));
+         $sql1 = "INSERT INTO `myc_subscription`(`cust_id`,`start_date`,`expire_date`) VALUES ('$cust_id','$start_date','$expire_date')";
+         $qrys=mysqli_query($conn,$sql1);
+      }
     }
 ?>
 <!doctype html>

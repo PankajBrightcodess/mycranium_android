@@ -336,15 +336,31 @@ if(isset($_POST['eot_payment'])){
 	$run=mysqli_query($conn,$query);
 	$_SESSION['tables'] = myc_eotrequestform;
 	if($run){
-		$_SESSION['last_updated_id']=$lastid;
-		 header('Location:payment_2.php');
-		$_SESSION['msg']="Student Updated Successfully !!!";	
+		// ''''''''''''subscription check''''''''''''''''
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cust_id=$use_id['id'];
+            $exp_date = date('Y-m-d');
+            $qry = "SELECT `id` FROM `myc_subscription` WHERE `cust_id`='$cust_id' AND `expire_date`>'$exp_date'";
+	      $run=mysqli_query($conn,$qry);
+	      $data=mysqli_fetch_assoc($run);
+
+	      if(empty($data)){
+	      	$_SESSION['last_updated_id']=$lastid;
+		      header('Location:payment_2.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+	      else{
+	      	header('Location:home.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+			
 	}
 	else{
 		$_SESSION['msg']="Student Not Updated!!!";
 		header("location:$_SERVER[HTTP_REFERER]");
 	}
-}
+ }
+
 
  if(isset($_POST['gantry_upload'])){
 
@@ -538,9 +554,26 @@ if(isset($_POST['ganty_payment'])){
 	$run=mysqli_query($conn,$query);
 	$_SESSION['tables'] = myc_gantrycrane;
 	if($run){
-		$_SESSION['last_updated_id']=$lastid;
-		 header('Location:payment_2.php');
-		$_SESSION['msg']="Student Updated Successfully !!!";	
+		// ''''''''''''subscription check''''''''''''''''
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cust_id=$use_id['id'];
+            $exp_date = date('Y-m-d');
+            $qry = "SELECT `id` FROM `myc_subscription` WHERE `cust_id`='$cust_id' AND `expire_date`>'$exp_date'";
+	      $run=mysqli_query($conn,$qry);
+	      $data=mysqli_fetch_assoc($run);
+
+	      if(empty($data)){
+	      	$_SESSION['last_updated_id']=$lastid;
+		      header('Location:payment_2.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+	      else{
+	      	header('Location:home.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+		// $_SESSION['last_updated_id']=$lastid;
+		//  header('Location:payment_2.php');
+		// $_SESSION['msg']="Student Updated Successfully !!!";	
 	}
 	else{
 		$_SESSION['msg']="Student Not Updated!!!";
@@ -745,9 +778,26 @@ if(isset($_POST['jib_payment'])){
 	$run=mysqli_query($conn,$query);
 	$_SESSION['tables'] = myc_jibcrane;
 	if($run){
-		$_SESSION['last_updated_id']=$lastid;
-		 header('Location:payment_2.php');
-		$_SESSION['msg']="Student Updated Successfully !!!";	
+		// ''''''''''''subscription check''''''''''''''''
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cust_id=$use_id['id'];
+            $exp_date = date('Y-m-d');
+            $qry = "SELECT `id` FROM `myc_subscription` WHERE `cust_id`='$cust_id' AND `expire_date`>'$exp_date'";
+	      $run=mysqli_query($conn,$qry);
+	      $data=mysqli_fetch_assoc($run);
+
+	      if(empty($data)){
+	      	$_SESSION['last_updated_id']=$lastid;
+		      header('Location:payment_2.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+	      else{
+	      	header('Location:home.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+		// $_SESSION['last_updated_id']=$lastid;
+		//  header('Location:payment_2.php');
+		// $_SESSION['msg']="Student Updated Successfully !!!";	
 	}
 	else{
 		$_SESSION['msg']="Student Not Updated!!!";
@@ -1006,9 +1056,26 @@ if(isset($_POST['electric_payment'])){
 	  $run=mysqli_query($conn,$query);
 	  $_SESSION['tables'] = myc_electricwire;
 	if($run){
-		$_SESSION['last_updated_id']=$lastid;
-		 header('Location:payment_2.php');
-		$_SESSION['msg']="Student Updated Successfully !!!";	
+		// ''''''''''''subscription check''''''''''''''''
+		$use_id =  json_decode($_COOKIE['Cookie'],true); 
+            $cust_id=$use_id['id'];
+            $exp_date = date('Y-m-d');
+            $qry = "SELECT `id` FROM `myc_subscription` WHERE `cust_id`='$cust_id' AND `expire_date`>'$exp_date'";
+	      $run=mysqli_query($conn,$qry);
+	      $data=mysqli_fetch_assoc($run);
+
+	      if(empty($data)){
+	      	$_SESSION['last_updated_id']=$lastid;
+		      header('Location:payment_2.php');
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      }
+	      else{
+		      $_SESSION['msg']="Student Updated Successfully !!!";
+	      	header('Location:home.php');
+	      }
+		// $_SESSION['last_updated_id']=$lastid;
+		//  header('Location:payment_2.php');
+		// $_SESSION['msg']="Student Updated Successfully !!!";	
 	}
 	else{
 		$_SESSION['msg']="Student Not Updated!!!";
@@ -1017,7 +1084,7 @@ if(isset($_POST['electric_payment'])){
 }
 // --------------------------electric wire------------------------------
 if(isset($_POST['update'])){
-
+	
 	$id = $_POST['id'];
 	$name = $_POST['name'];		
 	$comp_name = $_POST['comp_name'];		
@@ -1108,7 +1175,7 @@ if(isset($_POST['Preview'])){
 }
 
 if(isset($_POST['submit_shadule'])){
-	echo '<pre>';
+	// echo '<pre>';
 	// print_r($_POST);die;
 	$comp_name= $_POST['comp_name'];
 	$address= $_POST['address'];

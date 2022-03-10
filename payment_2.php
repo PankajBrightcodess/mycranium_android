@@ -84,6 +84,8 @@ $name = "Customer of $custname - $orderno";
                                     <div class="col-10 col-md-8 text-center">
                                         <form action='payment-success.php' id="razorpay-form" method="post">
                                         <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id" />
+                                        <input type="hidden" name="payment_2" value="pay_2" />
+
                                         <input type="hidden" name="merchant_order_id" id="merchant_order_id" value="<?php echo $merchant_order_id; ?>"/>
                                         <input type="hidden" name="merchant_trans_id" id="merchant_trans_id" value="<?php echo $txnid; ?>"/>
                                         <input type="hidden" name="merchant_product_info_id" id="merchant_product_info_id" value="<?php echo $productinfo; ?>"/>

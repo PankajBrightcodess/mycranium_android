@@ -43,7 +43,7 @@
           <!-- <li><a href="shedule_online.php"><i class="lni lni-heart"></i>Schedule Online For Assessment</a></li> -->
           <li><a href="assesment_download.php"><i class="lni lni-cloud-download"></i>Download Assessment Report</a></li>
           <li><a href="download_quotation.php"><i class="lni lni-download"></i>Download Your Quotation</a></li>
-          <li><a href="#"><i class="lni lni-heart"></i>Subscription</a></li>
+          <li><a href="subscription_report.php"><i class="lni lni-heart"></i>Subscription</a></li>
           <li><a href="#"><i class="lni lni-book"></i>Projects</a></li>
           <li><a href="profile.php"><i class="lni lni-user"></i>My Profile</a></li>
           <li><a href="signout.php"><i class="lni lni-power-switch"></i>Sign Out</a></li>

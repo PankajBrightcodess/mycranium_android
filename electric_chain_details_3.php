@@ -58,7 +58,7 @@
           <!-- User Meta Data-->
           <div class="card user-data-card table-responsive">
             <div class="card-body">
-              <form action="#" method="POST">
+              <form action="action.php" method="POST">
               <table class="table table-bordered " style="font-size: 10px;">
                 <thead>
                   <tr>

@@ -2,9 +2,9 @@
 session_start();
 
 include'connection.php';
-        $tb = $_SESSION['tablesss'];  
+        $tb = $_SESSION['tables'];  
                      
- $sql = "select * from ".$_SESSION['tablesss']." where id = '$_SESSION[last_updated_id]'";
+ $sql = "select * from ".$_SESSION['tables']." where id = '$_SESSION[last_updated_id]'";
  // print_r($sql);
 $res = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($res);
