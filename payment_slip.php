@@ -12,7 +12,7 @@ session_start();
   //     header("Location:index.php");
   // }
   
-include('admin/connection.php');
+include('connection.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -75,7 +75,7 @@ include('admin/connection.php');
              $id = $_SESSION['last_updated_id'];
              // print_r($_SESSION['tablesss']);
               
-              $query = "select * from ".$_SESSION['tabless']." where id='$id'";
+              $query = "select * from ".$_SESSION['tables']." where id='$id'";
               // print_r($query);die;
              $ex=mysqli_query($conn,$query);
               $resultset=mysqli_fetch_array($ex);
@@ -88,15 +88,15 @@ include('admin/connection.php');
                <td style="text-align:center;"><?php if(!empty($resultset['company_name']))
                {
                  echo $resultset['company_name'];
-              }else if(!empty($resultset['[comp_name]'])){
-                echo $resultset['[comp_name]']
-              };?></td>
+              }else if(!empty($resultset['comp_name'])){
+                echo $resultset['comp_name'];
+              }?></td>
                <td style="text-align:center"><?php echo $resultset['payment_id'];?></td>
                <td style="text-align:center"><?php echo $resultset['amount'].'/-';?></td>
                <td style="text-align:center"><?php echo 'Success';?></td>
              </tr>
                 <?php 
-                unset($_SESSION['tabless']);
+                unset($_SESSION['table']);
                  }
                 ?>
            </table></center>

@@ -2,15 +2,16 @@
 session_start();
 
 include'connection.php';
-        // print_r($_SESSION['tabless']);
-        //   print_r($_SESSION['last_updated_id']);     die;      
- $sql = "select * from ".$_SESSION['tabless']." where id = '$_SESSION[last_updated_id]'";
+        // print_r($_SESSION['tables']);die; 
+        //   print_r($_SESSION['last_updated_id']);     die; 
+        $table = $_SESSION['tables'];     
+ $sql = "SELECT * FROM $table WHERE id = '$_SESSION[last_updated_id]'";
  // print_r($sql);die;
 $res = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($res);
 
 $custid = $row['cust_id'];
-$sql1 = "select * from myc_customer where id = '$custid'";
+$sql1 = "SELECT * FROM myc_customer WHERE id = '$custid'";
  // print_r($sql);die;
 $res1 = mysqli_query($conn, $sql1);
 $row1 = mysqli_fetch_assoc($res1);

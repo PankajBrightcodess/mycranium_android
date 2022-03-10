@@ -15,7 +15,7 @@ $msg = "";
       // $payment_date = date('Y/m/d');
       $payment_status = 1;
       $id = $_SESSION['last_updated_id'];
-      $table = $_SESSION['tablesss'];
+      $table = $_SESSION['tables'];
       // unset($_SESSION['last_inst_id']);
       $sql="UPDATE $table SET payment_status = '$payment_status',payment_id = '$razorpay_payment_id', payment_details = '$payment_details' WHERE `id`='$id'";
       $conn->query($sql);

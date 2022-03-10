@@ -334,7 +334,7 @@ if(isset($_POST['eot_payment'])){
 	 // print_r($data);die;
 	  $query="UPDATE `myc_eotrequestform` SET `amount`='$amount',`order_no`='$order_no'  WHERE `id`='$lastid'";
 	$run=mysqli_query($conn,$query);
-	$_SESSION['tabless'] = myc_eotrequestform;
+	$_SESSION['tables'] = myc_eotrequestform;
 	if($run){
 		$_SESSION['last_updated_id']=$lastid;
 		 header('Location:payment_2.php');
@@ -536,7 +536,7 @@ if(isset($_POST['ganty_payment'])){
 	 // print_r($data);die;
 	  $query="UPDATE `myc_gantrycrane` SET `amount`='$amount',`order_no`='$order_no'  WHERE `id`='$lastid'";
 	$run=mysqli_query($conn,$query);
-	$_SESSION['tabless'] = myc_gantrycrane;
+	$_SESSION['tables'] = myc_gantrycrane;
 	if($run){
 		$_SESSION['last_updated_id']=$lastid;
 		 header('Location:payment_2.php');
@@ -547,7 +547,7 @@ if(isset($_POST['ganty_payment'])){
 		header("location:$_SERVER[HTTP_REFERER]");
 	}
 }
-// ''''''''''''''''''''''''''''''''''''''Gantry Crane End''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+// ''''''''''''''''''''''Gantry Crane End''''''''''''''''''''''''''''''
 if(isset($_POST['jib_upload'])){
 		// echo '<pre>';
 		// print_r($_POST);
@@ -730,7 +730,31 @@ if(isset($_POST['jib_text'])){
 
      }
 }
-// ''''''''''''''''''''''''''''''''''''''JIB CRANE''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+if(isset($_POST['jib_payment'])){
+	// echo '<pre>';
+
+	// print_r($_POST);die;
+	
+	$lastid = $_SESSION['jib_lasttext_id'];
+	$amount = $_POST['amount'];
+	$length = 15;
+	 $order_no=substr(str_shuffle(str_repeat($x='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+	 $added_on = date('Y-m-d');
+	 // print_r($data);die;
+	  $query="UPDATE `myc_jibcrane` SET `amount`='$amount',`order_no`='$order_no',`added_on`='$added_on'  WHERE `id`='$lastid'";
+	$run=mysqli_query($conn,$query);
+	$_SESSION['tables'] = myc_jibcrane;
+	if($run){
+		$_SESSION['last_updated_id']=$lastid;
+		 header('Location:payment_2.php');
+		$_SESSION['msg']="Student Updated Successfully !!!";	
+	}
+	else{
+		$_SESSION['msg']="Student Not Updated!!!";
+		header("location:$_SERVER[HTTP_REFERER]");
+	}
+}
+// ''''''''''''''''''''''''''''JIB CRANE''''''''''''''''''''''''''''''''''''''''
 if(isset($_POST['monorail_upload'])){
 
 	 	$photo1 = $_FILES['file1']['name'];
@@ -842,7 +866,7 @@ if(isset($_POST['monorail_text'])){
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
 }
-// ''''''''''''''''''''''''''''''''''''''ELECTRIC WIRE''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+// '''''''''''''''''''''''''''ELECTRIC WIRE''''''''''''''''''''''''''''''
 if(isset($_POST['electric_upload'])){
 
 		$comp_name = $_POST['comp_name'];
@@ -970,7 +994,28 @@ if(isset($_POST['electric_text'])){
 			header("Location:$_SERVER[HTTP_REFERER]");
 		}
 }
-
+if(isset($_POST['electric_payment'])){
+	
+	$lastid = $_SESSION['electricwire_lasttext_id'];
+	$amount = $_POST['amount'];
+	$length = 15;
+	 $order_no=substr(str_shuffle(str_repeat($x='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+	 $added_on = date('Y-m-d');
+	  $query="UPDATE `myc_electricwire` SET `amount`='$amount',`order_no`='$order_no',`added_on`='$added_on'  WHERE `id`='$lastid'";
+	  // print_r($query);die;
+	  $run=mysqli_query($conn,$query);
+	  $_SESSION['tables'] = myc_electricwire;
+	if($run){
+		$_SESSION['last_updated_id']=$lastid;
+		 header('Location:payment_2.php');
+		$_SESSION['msg']="Student Updated Successfully !!!";	
+	}
+	else{
+		$_SESSION['msg']="Student Not Updated!!!";
+		header("location:$_SERVER[HTTP_REFERER]");
+	}
+}
+// --------------------------electric wire------------------------------
 if(isset($_POST['update'])){
 
 	$id = $_POST['id'];
@@ -1157,7 +1202,7 @@ if(isset($_POST['pay_now_electric'])){
 	// print_r($_SESSION['last_updated_id']);die;
 	if($run){
 		 $_SESSION['last_updated_id'] = $ids;
-		 $_SESSION['tablesss'] = myc_electric_chain_details;
+		 $_SESSION['tables'] = myc_electric_chain_details;
 		 // print_r($_SESSION['last_updated_id']);die;
 		 header('Location:payment.php');
 		$_SESSION['msg']="Student Updated Successfully !!!";	
@@ -1182,7 +1227,7 @@ if(isset($_POST['pay_now'])){
 	// print_r($_SESSION['last_updated_id']);die;
 	if($run){
 		 $_SESSION['last_updated_id'] = $ids;
-		 $_SESSION['tablesss'] = myc_chain_pully_details;
+		 $_SESSION['tables'] = myc_chain_pully_details;
 		 // print_r($_SESSION['last_updated_id']);die;
 		 header('Location:payment.php');
 		$_SESSION['msg']="Student Updated Successfully !!!";	

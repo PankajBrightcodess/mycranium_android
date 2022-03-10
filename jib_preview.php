@@ -301,13 +301,18 @@
                    <input type="text" name="other_remarks" class="form-control">
                 </div> -->
                 <!-- <button class="btn btn-success w-100" name="eotcrane_text" type="submit">SUBMIT</button> -->
-                 <button class="btn btn-success w-100" name="jib_preview" type="submit">PROCEED FOR PAYMENT</button>
+                <input type="hidden" name="lastid" value="<?php echo $preview['id'];?>">
+                <input type="hidden" name="category" value="JIB CRANE">
+                <input type="hidden" name="company_name" value="<?php echo $preview['comp_name'];?>">
+                <input type="hidden" name="amount" value="1">
+                 <button class="btn btn-success w-100" name="jib_payment" type="submit">PROCEED FOR PAYMENT</button>
              
             </div>
           </div>
         </div>
       </div>
     </div>
+  </form>
     <div class="space"></div>
     <!-- Internet Connection Status-->
    <?php include 'footer.php';?>

@@ -1,4 +1,4 @@
-<?php include 'header-link.php'; ?>
+ <?php include 'header-link.php'; ?>
 <?php include 'header.php'; 
 
 // echo $_COOKIE["Cookie"];

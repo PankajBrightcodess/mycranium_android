@@ -96,7 +96,7 @@
       </div>
     </div>
   
-      <div class="page-content-wrapper">
+    <div class="page-content-wrapper">
       <div class="container">
         <!-- Profile Wrapper-->
         <div class="profile-wrapper-area">
@@ -167,129 +167,11 @@
                   </thead>
                   
                 </table>
-             
-                <!-- <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-money-location"></i><span>LOCATION</span> <span style="color: red;">*</span></div>
-                  <select class="form-control" name="location">
-                    <option value="">---SELECT---</option>
-                    <option value="indoor">INDOOR</option>
-                    <option value="outdoor">OUTDOOR</option>
-                  </select>
-                </div> -->
-                 <!-- <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-angellist"></i><span>TYPE OF CRANE</span> <span style="color: red;">*</span></div>
-                  <select class="form-control crane_type" name="crane_type">
-                    <option value="">---SELECT---</option>
-                    <option value="single_girder_eot_crane">SINGLE GIRDER EOT CRANE(UPTO 15T)</option>
-                    <option value="double_girder_eot_crane">DOUBLE GIRDER EOT CRANE(UPTO 110T)</option>
-                    <option value="single_girder_semi_eot_crane">SINGLE GIRDER SEMI EOT CRANE(UPTO 15T)</option>
-                    <option value="double_girder_semi_eot_crane">DOUBLE GIRDER SEMI EOT CRANE(UPTO 25T)</option>
-                    <option value="single_girder_under_slung_crane">SINGLE GIRDER UNDER SLUNG CRANE(UPTO 15T)</option>
-                  </select>
-                </div> -->
-                  <!-- <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-steam"></i><span>CAPACITY (IN TON)</span> <span style="color: red;">*</span></div>
-                  <div class="title mb-2"><span>MH (MAIN HOIST)</span> <span style="color: red;">*</span></div>
-                  <input type="text" name="mainhost" placeholder="" class="form-control mb-2">
-                  <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" name="auxhoist" placeholder="Please write N/A, in case it is not applicable" class="form-control ahaux mb-2">
-                </div> -->
-                <!-- <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-envelope"></i><span>CLASS OF DUTY</span> <span style="color: red;">*</span></div>
-                   <select class="form-control" name="class_duty">
-                    <option value="">---SELECT---</option>
-                    <option value="m1">M1 (CLASS-I)</option>
-                    <option value="m2">M2 (CLASS-I)</option>
-                    <option value="m3">M3 (CLASS-I)</option>
-                    <option value="m4">M4 (CLASS-II)</option>
-                    <option value="m5">M5 (CLASS-II)</option>
-                    <option value="m6">M6 (CLASS-III)</option>
-                    <option value="m7">M7 (CLASS-IV)</option>
-                    <option value="m8">M8 (CLASS-IV)</option>
-                  </select>
-                </div> -->
-                <!--  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>DESIGN STANDARD</span> <span style="color: red;">*</span></div>
-                   <select class="form-control" name="design_standered">
-                    <option value="">---SELECT---</option>
-                    <option value="is">IS 3177</option>
-                    <option value="fem">FEM</option>
-                    <option value="din">DIN</option>
-                  </select>
-                </div> -->
-               <!--   <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>APPLICATION</span></div>
-                   <input type="text" class="form-control" name="application" placeholder="">
-                </div> -->
-               <!--  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPAN (IN METERS)</span> <span style="color: red;">*</span></div>
-                  <input class="form-control" name="span"  type="text">
-                </div> -->
-               <!--   <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>LIFTING HEIGHT (IN METERS)</span><span style="color: red;">*</span></div>
-                  <div class="title mb-2"><span>MH (MAIN HOIST)</span><span style="color: red;">*</span></div>
-                  <input type="text" class="form-control mb-2" placeholder="" name="abv_floor_mh">
-                  <div class="title mb-2"><span>AH (MAIN HOIST)</span></div>
-                    <input type="text" class="form-control mb-2 blw_floor_ah" placeholder="Please write N/A, in case it is not applicable" name="blw_floor_ah">
-                </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>TRAVEL LENGTH (IN METERS)</span></div>
-                  <input class="form-control" type="text" name="travel_length">
-                </div>
-                 <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>COLUMN TO COLUMN DISTANCE (IN METERS)</span></div>
-                  <input class="form-control" type="text" placeholder="To be filled in case Gantry Girder is also required" name="travel_length">
-                </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SPEED (OPTIONAL)- IN MTRS./MIN.</span></div>
-                  
-                  
-                </div> -->
-             <!--    <div class="mb-3">
-                  <div class="title mb-2"><span>MH (MAIN HOIST)</span></div>
-                  <input type="text" class="form-control mb-2" name="speed_mh" placeholder="Please Fill Manual In Case of Manual Operation" >
-                  <div class="title mb-2"><span>AH (AUX. HOIST)</span></div>
-                  <input type="text" class="form-control mb-2 speed_ah"  name="speed_ah" placeholder="Please Fill Manual In Case of Manual Operation" >
-                  <div class="title mb-2"><span>CT (CROSS TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" name="speed_ct" placeholder="Please Fill Manual In Case of Manual Operation" >
-                  <div class="title mb-2"><span>LT (LONG TRAVEL)</span></div>
-                  <input type="text" class="form-control mb-2" name="speed_lt" placeholder="Please Fill Manual In Case of Manual Operation" >
-                </div> -->
-               <!--  <?php $abcd =  json_decode($_COOKIE['Cookie'],true); $id=$abcd['id'];?>
-                <div class="mb-0"><input type="hidden" name="id" value="<?php echo $id;?>"></div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>MICRO SPEED (OPTIONAL)</span></div>
-                  
-                
-                  <select class="form-control multipleselect vpd_ah" multiple="multiple"  name="vfd[]">
-                 </select> 
-                </div>
-                <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>SCOPE OF SUPPLY</span> <span style="color: red;">*</span></div>
-                    <select class="form-control multipleselect" multiple="multiple" id="myselect" name="scope_supply[]">
-                    
-                    <option value="crane">CRANE</option>
-                    <option value="shrouded">DSL</option>
-                    <option value="sq">SQ. BAR/RAIL WITH FIXING ITEMS</option>
-                    <option value="gg">GANTRY GIRDER</option>
-                    <option value="recommended">RECOMMENDED SPARE PARTS</option>
-                    <option value="mandatory">MANDATORY SPARE PARTS</option>
-                  </select>
-                </div> -->
-               <!--  <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>INSTALLATION</span> <span style="color: red;">*</span></div>
-                   <select class="form-control  install" name="installation">
-                    <option value="">---SELECT---</option>
-                    <option value="yes">YES</option>
-                    <option value="no">NO</option>
-                  </select>
-                </div> -->
-               <!--   <div class="mb-3">
-                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>OTHER REMARKS, IF ANY</span></div>
-                   <input type="text" name="other_remarks" class="form-control">
-                </div> -->
-                <!-- <button class="btn btn-success w-100" name="eotcrane_text" type="submit">SUBMIT</button> -->
-             
+                <input type="hidden" name="lastid" value="<?php echo $preview['id'];?>">
+                <input type="hidden" name="category" value="ELECTRIC WIRE ROPE HOIST">
+                <input type="hidden" name="company_name" value="<?php echo $preview['comp_name'];?>">
+                <input type="hidden" name="amount" value="2">
+                 <button class="btn btn-success w-100" name="electric_payment" type="submit">PROCEED FOR PAYMENT</button>
             </div>
           </div>
         </div>
