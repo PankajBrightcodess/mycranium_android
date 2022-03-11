@@ -16,10 +16,11 @@ $sql1 = "SELECT * FROM myc_customer WHERE id = '$custid'";
 $res1 = mysqli_query($conn, $sql1);
 $row1 = mysqli_fetch_assoc($res1);
 
-echo '<pre>';
-print_r($row);
-print_r($row1);die;
+// echo '<pre>';
+// print_r($row);
+// print_r($row1);die;
 include 'payment_constant.php';
+
 $someprice = $row['amount'];        
 // 
 $paisaprice = $someprice*100;
@@ -30,6 +31,9 @@ $txnid = time();
 $surl = "payment-success.php";
 $furl ="payment-success.php" ;
 $key_id = API_KEY;
+echo '<pre>';
+print_r($row);
+print_r($key_id);die;
 $currency_code = 'INR';
 $total = $paisaprice; 
 $amount = $someprice;
