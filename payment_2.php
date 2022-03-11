@@ -170,6 +170,7 @@ function random_number($l){
     var razorpay_submit_btn, razorpay_instance;
 
     function razorpaySubmit(el){
+        debugger;
         if(typeof Razorpay == 'undefined'){
         setTimeout(razorpaySubmit, 200);
         if(!razorpay_submit_btn && el){
