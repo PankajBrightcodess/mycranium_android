@@ -16,9 +16,9 @@ $sql1 = "SELECT * FROM myc_customer WHERE id = '$custid'";
 $res1 = mysqli_query($conn, $sql1);
 $row1 = mysqli_fetch_assoc($res1);
 
-// echo '<pre>';
-// print_r($row);
-// print_r($row1);die;
+echo '<pre>';
+print_r($row);
+print_r($row1);die;
 include 'payment_constant.php';
 $someprice = $row['amount'];        
 // 
