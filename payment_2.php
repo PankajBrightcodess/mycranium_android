@@ -31,9 +31,7 @@ $txnid = time();
 $surl = "payment-success.php";
 $furl ="payment-success.php" ;
 $key_id = API_KEY;
-echo '<pre>';
-print_r($row1);
-print_r($key_id);die;
+
 $currency_code = 'INR';
 $total = $paisaprice; 
 $amount = $someprice;

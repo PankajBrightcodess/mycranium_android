@@ -9,6 +9,8 @@ $msg = "";
     if ($msg != "") {
         echo "<script> alert('$msg')</script>";
     }
+    echo '<pre>';
+    print_r($_POST);die;
       if(isset($_POST['razorpay_payment_id'])){
       $payment_details=json_encode($_POST);
       $razorpay_payment_id = $_POST['razorpay_payment_id']; 
@@ -20,7 +22,7 @@ $msg = "";
       $sql="UPDATE $table SET payment_status = '$payment_status',payment_id = '$razorpay_payment_id', payment_details = '$payment_details' WHERE `id`='$id'";
       $conn->query($sql);
       if(!empty($_POST['payment_2'])){
-        print_r('hello');die;
+
          $use_id =  json_decode($_COOKIE['Cookie'],true); 
          $cust_id=$use_id['id'];
          $start_date = date('Y-m-d');
