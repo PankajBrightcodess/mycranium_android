@@ -131,39 +131,86 @@
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong style="color:red;">STATE CODE(AS PER GST RULE)</strong></span></td>
-                     <td colspan="2" >                      
+                     <td colspan="1" >                      
                       <input type="text" class="form-control " id="state_code" name="statecode"></td>
+
                     <td colspan="1"><span><strong style="color:red;">STATE CODE(AS PER GST RULE)</strong></span></td>
                      <td colspan="2" >
                       <input type="text" class="form-control" id="state_code_optional" name="statecode_optional"></td>
                   </tr>
                   <tr style="background: yellow; color: red;">
                     <td colspan="1"><span><strong style="color:red;">DESCRIPTIONS</strong></span></td>
-                     <td colspan="2" ><span><strong style="color:red;">MODEL NO.</strong></span></td>
+                     <td colspan="1" ><span><strong style="color:red;">ACTION</strong></span></td>
+                     <td colspan="1" ><span><strong style="color:red;">QTY.</strong></span></td>
                     <td colspan="1"><span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
-                     <td colspan="2" >REMARKS FOR BRIGHT CODE<span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
+                     <td colspan="2" ><span><strong style="color:red;">REMARKS</strong></span></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
-                     <td colspan="2" >                      
-                      <span><strong>CS-CPB-3T</strong></span>
-                    <input type="hidden" name="model_no" value="CS-CPB-3T"></td>
+                     <td colspan="1" >                      
+                      <span><strong>N/A</strong></span></td>
+                      <td colspan="1" >                      
+                          <select class="form-control" name="qty" id="qty">
+                            <option value="">--SELECT--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select>
+                    </td>
                     <td colspan="1"><span><strong>INR 7,750.00</strong></span>
                       <input type="hidden" name="rate" value="7750.00"></td>
-                     <td colspan="2" ></td>
+                     <td colspan="2" > <span><strong>CS-CPB-3T</strong></span>
+                       <input type="hidden" name="model_no" value="CS-CPB-3T"></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
-                     <td colspan="2" >
+                     <td colspan="1" >
                      <input type="hidden" name="extralift" id="extralift" value="855">                      
-                     <select class="form-control" name="qnty" id="qnty"><option>--SELECT--</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>
+                     <select class="form-control" name="extra_lift" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
+                       <td colspan="1" >                      
+                          <select class="form-control" name="qty" id="qty">
+                            <option value="">--SELECT--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select>
+                    </td>
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total">0.00</span></strong><input type="hidden" name="total_val" value=""></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
-                     <td colspan="2" >                      
+                     <td colspan="1" >                      
                       <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
+                    <td colspan="1" >                      
+                          <select class="form-control" name="qty" id="qty">
+                            <option value="">--SELECT--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select>
+                    </td>
                         <input type="hidden" value="8000" name="column_e" id="column_e">
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong><input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"></td>
                      <td colspan="2" id="traviling_moter_no">CS-GT_CPB-3T
