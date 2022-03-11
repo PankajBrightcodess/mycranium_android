@@ -20,6 +20,7 @@ $msg = "";
       $sql="UPDATE $table SET payment_status = '$payment_status',payment_id = '$razorpay_payment_id', payment_details = '$payment_details' WHERE `id`='$id'";
       $conn->query($sql);
       if(!empty($_POST['payment_2'])){
+        print_r('hello');die;
          $use_id =  json_decode($_COOKIE['Cookie'],true); 
          $cust_id=$use_id['id'];
          $start_date = date('Y-m-d');
