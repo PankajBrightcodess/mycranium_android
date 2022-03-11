@@ -11,8 +11,8 @@ $row = mysqli_fetch_assoc($res);
 // echo '<pre>';
 // print_r($row);die;
 include 'payment_constant.php';
-$someprice = 1;        
-// $row['amount']
+$someprice = $row['amount'];        
+// 
 $paisaprice = $someprice*100;
 $orderno = $row['order_no'];
 $custname = $row['company_name'];
