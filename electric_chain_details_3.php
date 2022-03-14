@@ -1,14 +1,14 @@
 <?php 
   session_start();
   include_once('connection.php');
-  $msg = "";
-    if (isset($_SESSION['msg'])) {
-        $msg = $_SESSION['msg'];
-        unset($_SESSION['msg']);
-    }
-    if ($msg != "") {
-        echo "<script> alert('$msg')</script>";
-    }
+  // $msg = "";
+  //   if (isset($_SESSION['msg'])) {
+  //       $msg = $_SESSION['msg'];
+  //       unset($_SESSION['msg']);
+  //   }
+  //   if ($msg != "") {
+  //       echo "<script> alert('$msg')</script>";
+  //   }
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
     // print_r($id);die;
