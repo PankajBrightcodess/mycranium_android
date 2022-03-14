@@ -1167,8 +1167,8 @@ if(isset($_POST['Preview'])){
       $user_id=$use_id['id'];
 	$added_on=date('Y-m-d');
 	$query="INSERT INTO `myc_chain_pully_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`country`,`country_2`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`rate_qnty`,`extra_lift_true_false`,`extra_lift_qnty`,`extralift`,`geared_trolley`,`geared_trolley_qty`,`column_e`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`,`amount`,`user_id`,`added_on`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$country','$country_2','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate','$rate_qnty','$extra_lift_true_false','$extra_lift_qnty','$extralift','$geared_trolley','$geared_trolley_qty','$column_e','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val','$amount','$user_id','$added_on')";
-	echo '<pre>';
-	print_r($query);die;
+	// echo '<pre>';
+	// print_r($query);die;
 	// print_r(mysqli_query($conn,$query));die;
 		$sql=mysqli_query($conn,$query);
 	// print_r($sql);die;
