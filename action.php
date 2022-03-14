@@ -1129,12 +1129,14 @@ if(isset($_POST['state'])){
 }
 
 if(isset($_POST['Preview'])){
+	// echo '<pre>';
+	// print_r($_POST);die;
 	
 	$company_name=$_POST['company_name'];
-	$company_owner=$_POST['company_owner'];
 	$address=$_POST['address'];
-	$address_2=$_POST['address_2'];
 	$contact=$_POST['contact'];
+	$company_owner=$_POST['company_owner'];
+	$address_2=$_POST['address_2'];
 	$contact_2=$_POST['contact_2'];
 	$country=$_POST['country'];
 	$country_2=$_POST['country_2'];
@@ -1146,20 +1148,27 @@ if(isset($_POST['Preview'])){
 	$statecode_optional=$_POST['statecode_optional'];
 	$model_no=$_POST['model_no'];
 	$rate=$_POST['rate'];
+	$extra_lift_true_false=$_POST['extra_lift_true_false'];
+	$extra_lift_qnty=$_POST['extra_lift_qnty'];
 	$extralift=$_POST['extralift'];
-	$qnty=$_POST['qnty'];
-	$total_val=$_POST['total_val'];
-	$true_false=$_POST['true_false'];
+	$geared_trolley=$_POST['geared_trolley'];
+	$geared_trolley_qty=$_POST['geared_trolley_qty'];
 	$column_e=$_POST['column_e'];
-	$coumne_e_total_val=$_POST['coumne_e_total_val'];
 	$traviling_moter_no_val=$_POST['traviling_moter_no_val'];
+	$rate_qnty=$_POST['rate_qnty'];
+	// $coumne_e_total_val=$_POST['coumne_e_total_val'];
 	$basic_total_val=$_POST['basic_total_val'];
 	$igst_18_val=$_POST['igst_18_val'];
 	$cgst_9_val=$_POST['cgst_9_val'];
 	$sgst_9_val=$_POST['sgst_9_val'];
 	$total_amounts_val=$_POST['total_amounts_val'];
-	$query="INSERT INTO `myc_chain_pully_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`country`,`country_2`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`extralift`,`qnty`,`total_val`,`true_false`,`column_e`,`coumne_e_total_val`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$country','$country_2','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate','$extralift','$qnty','$total_val','$true_false','$column_e','$coumne_e_total_val','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val')";
-	echo '<pre>';
+	$amount = $_POST['total_amounts_val'];
+	$use_id =  json_decode($_COOKIE['Cookie'],true); 
+      $user_id=$use_id['id'];
+	$added_on=date('Y-m-d');
+	$query="INSERT INTO `myc_chain_pully_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`country`,`country_2`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`rate_qnty`,`extra_lift_true_false`,`extra_lift_qnty`,`extralift`,`geared_trolley`,`geared_trolley_qty`,`column_e`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`,`amount`,`user_id`,`added_on`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$country','$country_2','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate'.'$rate_qnty','$extra_lift_true_false','$extra_lift_qnty','$extralift','$geared_trolley','$geared_trolley_qty','$column_e','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val','$amount','$user_id','$added_on')";
+	// echo '<pre>';
+	// print_r($query);die;
 	// print_r(mysqli_query($conn,$query));die;
 		$sql=mysqli_query($conn,$query);
 	// print_r($sql);die;
@@ -1208,41 +1217,44 @@ if(isset($_POST['submit_shadule'])){
 }
 
 if(isset($_POST['electric_chain_submit'])){
-	// echo '<pre>';
-	// print_r($_POST);die;
-	$company_name = $_POST['company_name'];
-	$company_owner = $_POST['company_owner'];
-	$address = $_POST['address'];
-	$address_2 = $_POST['address_2'];
-	$contact = $_POST['contact'];
-	$contact_2 = $_POST['contact_2'];
-	$country = $_POST['country'];
-	$country_2 = $_POST['country_2'];
-	$gstin = $_POST['gstin'];
-	$gstin_optional = $_POST['gstin_optional'];
-	$state = $_POST['state'];
-	$state_new = $_POST['state_new'];
-	$statecode = $_POST['statecode'];
-	$statecode_optional = $_POST['statecode_optional'];
-	$model_no = $_POST['model_no'];
-	$rate = $_POST['rate'];
-	$extralift = $_POST['extralift'];
-	$qnty = $_POST['qnty'];
-	$total_val = $_POST['total_val'];
-	$true_false = $_POST['true_false'];
-	$column_e = $_POST['column_e'];
-	$coumne_e_total_val = $_POST['coumne_e_total_val'];
-	$traviling_moter_no_val = $_POST['traviling_moter_no_val'];
-	$basic_total_val = $_POST['basic_total_val'];
-	$igst_18_val = $_POST['igst_18_val'];
-	$cgst_9_val = $_POST['cgst_9_val'];
-	$sgst_9_val = $_POST['sgst_9_val'];
-	$total_amounts_val = $_POST['total_amounts_val'];
+	
+	$company_name=$_POST['company_name'];
+	$address=$_POST['address'];
+	$contact=$_POST['contact'];
+	$company_owner=$_POST['company_owner'];
+	$address_2=$_POST['address_2'];
+	$contact_2=$_POST['contact_2'];
+	$country=$_POST['country'];
+	$country_2=$_POST['country_2'];
+	$gstin=$_POST['gstin'];
+	$gstin_optional=$_POST['gstin_optional'];
+	$state=$_POST['state'];
+	$state_new=$_POST['state_new'];
+	$statecode=$_POST['statecode'];
+	$statecode_optional=$_POST['statecode_optional'];
+	$model_no=$_POST['model_no'];
+	$rate=$_POST['rate'];
+	$extra_lift_true_false=$_POST['extra_lift_true_false'];
+	$extra_lift_qnty=$_POST['extra_lift_qnty'];
+	$extralift=$_POST['extralift'];
+	$geared_trolley=$_POST['geared_trolley'];
+	$geared_trolley_qty=$_POST['geared_trolley_qty'];
+	$column_e=$_POST['column_e'];
+	$traviling_moter_no_val=$_POST['traviling_moter_no_val'];
+	$rate_qnty=$_POST['rate_qnty'];
+	// $coumne_e_total_val=$_POST['coumne_e_total_val'];
+	$basic_total_val=$_POST['basic_total_val'];
+	$igst_18_val=$_POST['igst_18_val'];
+	$cgst_9_val=$_POST['cgst_9_val'];
+	$sgst_9_val=$_POST['sgst_9_val'];
+	$total_amounts_val=$_POST['total_amounts_val'];
+	$amount = $_POST['total_amounts_val'];
 	$use_id =  json_decode($_COOKIE['Cookie'],true); 
       $user_id=$use_id['id'];
       $added_on = date('Y-m-d');
-      // print_r($id);die;
-      $query="INSERT INTO `myc_electric_chain_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`country`,`country_2`,`gstin`,`gstin_optional`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`extralift`,`qnty`,`total_val`,`true_false`,`column_e`,`coumne_e_total_val`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`,`user_id`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$country','$country_2','$gstin','$gstin_optional','$state','$state_new','$statecode','$statecode_optional','$model_no','$rate','$extralift','$qnty','$total_val','$true_false','$column_e','$coumne_e_total_val','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val','$user_id')";
+ // 
+      $query="INSERT INTO `myc_electric_chain_details`(`company_name`,`company_owner`,`address`,`address_2`,`contact`,`contact_2`,`gstin`,`gstin_optional`,`country`,`country_2`,`state`,`state_new`,`statecode`,`statecode_optional`,`model_no`,`rate`,`rate_qnty`,`extra_lift_true_false`,`extra_lift_qnty`,`extralift`,`geared_trolley`,`geared_trolley_qty`,`column_e`,`traviling_moter_no_val`,`basic_total_val`,`igst_18_val`,`cgst_9_val`,`sgst_9_val`,`total_amounts_val`,`amount`,`user_id`,`added_on`) VALUES ('$company_name','$company_owner','$address','$address_2','$contact','$contact_2','$gstin','$gstin_optional','$country','$country_2','$state','$state_new ','$statecode','$statecode_optional','$model_no','$rate','$rate_qnty','$extra_lift_true_false','$extra_lift_qnty','$extralift','$geared_trolley','$geared_trolley_qty','$column_e','$traviling_moter_no_val','$basic_total_val','$igst_18_val','$cgst_9_val','$sgst_9_val','$total_amounts_val','$amount','$user_id','$added_on')";
+
 		$sql=mysqli_query($conn,$query);
 		$_SESSION['last_id']=$conn->insert_id; 
 		// print_r($_SESSION['last_id']);die;

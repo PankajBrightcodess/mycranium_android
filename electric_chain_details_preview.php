@@ -23,13 +23,12 @@
       $state[]=$data;
     }
 
-    $elec_id = $_SESSION['last_id'];
-    // print_r($elec_id);die;
+   $elec_id = $_SESSION['last_id'];
      $qry="SELECT * FROM `myc_electric_chain_details` where `id`='$elec_id'";
     $runs=mysqli_query($conn,$qry);
     $data=mysqli_fetch_assoc($runs);
-      // echo '<pre>';
-      // print_r($data);die;
+    // echo '<pre>';
+    // print_r($data);die;
 
 
 ?>
@@ -68,7 +67,7 @@
           <!-- User Meta Data-->
           <div class="card user-data-card table-responsive">
             <div class="card-body">
-              <form action="action.php" method="POST">
+              <form action="action.php" method="POST"  >
               <table class="table table-bordered " style="font-size: 10px;">
                 <thead>
                   <tr>
@@ -79,7 +78,7 @@
                       <br>
                     <span><strong><?php echo $data['contact']?></strong></span></td>
                      <td colspan="1"><span><strong style="color:red;">DELIVERY/PROJECT ADDRESS WITH COMPANY/PERSON'S NAME</strong></span></td>
-                      <td colspan="2" style="width: 50%;"><span><strong><?php echo $data['company_owner']?></strong></span><br>
+                      <td colspan="2" style="width: 50%;"><span><strong><?php echo $data['company_name']?></strong></span><br>
                       <span><strong><?php echo $data['address_2']?></strong></span><br>
                       <span><strong><?php echo $data['contact_2']?></strong></span></td>
                   </tr>
@@ -113,14 +112,14 @@
                   </tr>
                   <tr style="background: yellow; color: red;">
                     <td colspan="1"><span><strong style="color:red;">DESCRIPTIONS</strong></span></td>
-                     <td colspan="2" ><span><strong style="color:red;">MODEL NO.</strong></span></td>
+                     <td colspan="2" ><span><strong style="color:red;">QTY.</strong></span></td>
                     <td colspan="1"><span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
-                     <td colspan="2" >REMARKS FOR BRIGHT CODE<span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
+                     <td colspan="2" ><span><strong style="color:red;">REMARKS</strong></span></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
                      <td colspan="2" >                      
-                      <span><strong id="model_no"><?php echo $data['model_no']?></strong></span>
+                      <span><strong><?php echo $data['rate_qnty']?></strong></span>
                     </td>
                     <td colspan="1"><span><strong id="rate">INR <?php echo $data['rate']?></strong></span>
                     </td>
@@ -129,19 +128,18 @@
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
                      <td colspan="2" >
-                     <input type="hidden" name="extralift" id="extralift" value="484">   <strong><span id="total"><?php echo $data['qnty']?></span></strong>                   
+                     <!-- <input type="hidden" name="extralift" id="extralift" value="484">  -->  <strong><span id="total"><?php echo $data['extra_lift_qnty']?></span></strong>                   
                     </td>
-                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total"><?php echo $data['total_val']?></span></strong>
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total"><?php echo $data['extralift']?></span></strong>
                     </td>
-                     <td colspan="2" ></td>
+                     <td colspan="2" ><strong id="model_no"><?php echo $data['model_no']?></strong></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
                      <td colspan="2" >                      
-                      <span><strong><span id="total"><?php echo $data['true_false']?></span></strong></td>
+                      <span><strong><span id="total"><?php echo $data['geared_trolley_qty']?></span></strong></td>
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total"><?php echo $data['column_e']?>.00</span></strong>
                       <!-- <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"> -->
-
                     </td>
                      <td colspan="2" id="traviling_moter_no"><?php echo $data['traviling_moter_no_val']?>
                       <!-- <input type="hidden" name="traviling_moter_no_val" value="CS-GT-0103"> -->
@@ -150,27 +148,27 @@
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
                      
-                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="basic_total"><?php echo $data['basic_total_val'];?></span></strong></td>
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="basic_total"><?php echo $data['basic_total_val']?></span></strong></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr id="igst">
                      <td colspan="3"><span><strong>IGST @ 18%</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18"><?php echo $data['igst_18_val'];?></span></strong></td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18"><?php if(!empty($data['igst_18_val'])){ echo $data['igst_18_val'];}?></span></strong></td>
                      <td colspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
                   <tr id="cgst">
                      <td colspan="3"><span><strong>CGST @ 9%</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9"><?php echo $data['cgst_9_val'];?></span></strong></td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9"><?php if(!empty($data['cgst_9_val'])){ echo $data['cgst_9_val'];}?></span></strong></td>
                      <td colspan="2" rowspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
                    <tr id="sgst">
                      <td colspan="3"><span><strong>SGST @ 9%</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="sgst_9"><?php echo $data['sgst_9_val'];?></span></strong></td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="sgst_9"><?php if(!empty($data['sgst_9_val'])){ echo $data['sgst_9_val'];}?></span></strong></td>
                      
                   </tr>
                   <tr>
                      <td colspan="3"><span><strong>TOTAL AMOUNT</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total_amounts"><?php echo $data['total_amounts_val'];?></span></strong> </td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total_amounts"><?php echo $data['total_amounts_val']?></span></strong> </td>
                      <td colspan="2"> </td> 
                   </tr>
                   <tr>
@@ -181,9 +179,9 @@
                   <tr>
                      <td colspan="6">
                       <!-- <input type="button" class="btn btn-sm btn-success text-white form-control preview"  value="" data-toggle="modal" data-target="#exampleModalCenter" name=""> -->
+                      <input type="hidden" name="lastid" value="<?php echo $data['id']?>">
                       <input type="hidden" name="amount" value="<?php echo $data['total_amounts_val']?>">
-                      <input type="hidden" name="last_ids" value="<?php echo $data['id']?>">
-                      <input type="submit" name="pay_now_electric" class="btn btn-sm btn-success" value="Pay Now">
+                      <input type="submit" name="pay_now" class="btn btn-sm btn-success" value="Pay Now">
                    <!--    <button type="button" class="btn btn-success text-white form-control">Preview</button> -->
                     </td> 
                   </tr>

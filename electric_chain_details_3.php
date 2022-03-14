@@ -62,7 +62,7 @@
               <table class="table table-bordered " style="font-size: 10px;">
                 <thead>
                   <tr>
-                     <td colspan="1"><span><strong style="color:red;">BILLING ADDRESS WITH COMPANY/PERSON'S NAME</strong></span></td>
+                     <td colspan="1"><span><strong style="color:red;">BILLING ADDRESS WITH COMPANY NAME</strong></span></td>
                      <td colspan="2"><input type="text" style="width: 150px;" class="form-control" placeholder="Company/Person Name" id="company_name" name="company_name"><br>
                       <input type="text" name="address" id="address" placeholder="Address" class="form-control"><br>
                       <input type="text" name="contact" id="contact_no" placeholder="Mobile No" class="form-control"></td>
@@ -142,65 +142,69 @@
                      <td colspan="1" ><span><strong style="color:red;">ACTION</strong></span></td>
                      <td colspan="1" ><span><strong style="color:red;">QTY.</strong></span></td>
                     <td colspan="1"><span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
-                     <td colspan="2" ><span><strong style="color:red;">REMARKS</strong></span></td>
+                     <td colspan="2"><span><strong style="color:red;">REMARKS</strong></span></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>ELECTRIC CHAIN HOIST</strong></span></td>
                      <td colspan="1" >                      
                       <span><strong>N/A</strong></span>
+                      
                     </td>
                     <td colspan="1" >                      
-                         <select class="form-control" name="qty" id="qty">
-                            <option value="">--SELECT--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
+                    <select class="form-control" name="rate_qnty" id="rate_qnty">
+                      <option value="">--SELECT--</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
                     </td>
-                    <td colspan="1"><span><strong id="rate">INR 72,500.00</strong></span>
-                      <input type="hidden" name="rate" value="72500.00">
+                    <td colspan="1"><span><strong >INR <span id="rate">72,500.00</span></strong></span>
+                      <input type="hidden" name="rate" id="rates"  value="72500.00">
                     </td>
-                     <td colspan="2" ><span><strong id="model_no">CS-ECH-3T</strong></span>
-                      <input type="hidden" name="model_no" value="CS-ECH-3T"></td>
+                     <td colspan="2" ><span><strong id="model_no">CS-ECH-3T </strong></span>
+                     <input type="hidden" name="model_no" value="CS-ECH-3T"></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
                      <td colspan="1" >
-                     <input type="hidden" name="extralift" id="extralift" value="150">                      
-                     <select class="form-control" name="extra_lift"><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
+                                          
+                     <select class="form-control" name="extra_lift" id="extra_lift_true_false"><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
                      <td colspan="1" >                      
-                         <select class="form-control" name="qty" id="qty">
-                            <option value="">--SELECT--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
+                    <select class="form-control" name="extra_lift_qnty" id="extra_lift_qnty">
+                      <option value="">--SELECT--</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                   
                     </td>
-                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total">0.00</span></strong>
-                      <input type="hidden" name="total_val" value="">
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="extra_lift_total">0.00</span></strong>
+                       <input type="hidden" name="extralift" id="extralift" value="0"> 
+              <!--         <input type="hidden" name="total_val" value=""> -->  <!-- id="total" -->
                     </td>
                      <td colspan="2" ></td>
-                  </tr>   
+                  </tr>
                    <tr>
-                     <td colspan="1"><span><strong>TRAVELLING TYROLLEY</strong></span></td>
+                     <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
                      <td colspan="1" >                      
-                      <span><select class="form-control" name="true_false" id="true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
-                        <td colspan="1" >                      
-                         <select class="form-control" name="qty" id="qty">
+                      <span><select class="form-control" name="geared_trolley" id="geared_trolley_true_false" ><option>--SELECT--</option><option value="1">Yes</option><option value="0">No</option></select></td>
+                      <td colspan="1" >                      
+                          <select class="form-control" name="geared_trolley_qty" id="geared_trolley_qty">
                             <option value="">--SELECT--</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -214,9 +218,10 @@
                             <option value="10">10</option>
                           </select>
                     </td>
-                        <input type="hidden" value="42500" name="column_e" id="column_e">
-                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total">0.00</span></strong>
-                      <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val">
+                       
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="geared_trolley_total">0.00</span></strong>
+                       <input type="hidden" value="0" name="column_e" id="geared">
+                      <!-- <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"> -->
                     </td>
                      <td colspan="2" id="traviling_moter_no">CS-GT_ECH-3T
                       <input type="hidden" name="traviling_moter_no_val" value="CS-GT_ECH-3T">
@@ -225,7 +230,7 @@
                    <tr>
                      <td colspan="3"><span><strong>BASIC TOTAL</strong></span></td>
                      
-                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="basic_total">0.00</span></strong><input type="hidden" name="basic_total_val" id="basic_total_val" ></td>
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="basic_total">0.00</span></strong><input type="hidden" value="72500" name="basic_total_val" id="basic_total_val" ></td>
                      <td colspan="2" ></td>
                   </tr>
                    <tr id="igst">
@@ -284,9 +289,9 @@
           var result = value+(value*18/100);
           $('#total').html(result);
         };
-
+         // .........................main..............................
          $('.state').change(function(e){
-   
+            debugger;
          var id=$(this).val();
         $.ajax({
                 type:'POST',
@@ -295,29 +300,6 @@
                 success: function(data){
                       console.log(data);
                     $('#state_code').val(data);
-                    var state_code = $('#state_code').val();
-                    
-                     if(state_code==20){
-                         var cgst_9= $('#cgst_9').html();
-                         var sgst_9= $('#sgst_9').html();
-                         var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
-                         $('#total_amounts').html(total_amount);
-                         $('#total_amounts_val').html(total_amount);
-                          $('#cgst').show();
-                          $('#sgst').show();
-                          $('#igst').hide();
-                       }
-                       else{
-                         var basic_18= $('#igst_18').html();
-                         var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
-                         $('#total_amounts').html(total_amount);
-                         $('#total_amounts_val').html(total_amount);
-                         $('#cgst').hide();
-                         $('#sgst').hide();
-                         $('#igst').show();
-                        
-                       }
-
                     },
                     error: function(){ 
                        alert("error");
@@ -325,98 +307,236 @@
         });
     return false;  
     });
-         $('#qnty').change(function(e){
-          var qnty = $(this).val();
-          var extralift = $('#extralift').val();
-          var total = parseFloat(extralift)*parseInt(qnty);
-          $('#total').html(total);
-          $('#total_val').val(total);
+       $('#rate_qnty').change(function(e){
+          // debugger;
+          var rateqnty = $(this).val();
+          var c18 = 72500;
+          var rate = parseFloat(c18)*parseFloat(rateqnty);
+          $('#rate').html(rate);
+          $('#rates').val(rate);
+          var ratevalue = $('#rates').val();
+          var extra = $('#extralift').val();
+          var gear = $('#geared').val();
+          var state_code = $('#state_code').val();
+          var total_value = parseFloat(ratevalue)+parseFloat(extra)+parseFloat(gear);
+          $('#basic_total').html(total_value);
+          $('#basic_total_val').val(total_value);
+          if(state_code==20){
+             var basic_total = $('#basic_total_val').val();
+             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+             var basic_9=  parseFloat(basic_9s).toFixed(2);
+             $('#cgst_9').html(basic_9);
+             $('#cgst_9_val').val(basic_9);
+             $('#sgst_9').html(basic_9);
+             $('#sgst_9_val').val(basic_9);
+             $('#cgst').show();
+             $('#sgst').show();
+             $('#igst').hide();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_9s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
 
-           var c18 = 72500;
-           var c19 = $('#total').html();
-           var c20 = $('#coumne_e_total').html();
-           var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
-           $('#basic_total').html(total_basic);
-           $('#basic_total_val').val(total_basic);
-           // ''''''''basic total 18%''''
-           var basic_18 = parseFloat(total_basic) + (parseFloat(total_basic)*18/100);
-           $('#igst_18').html(basic_18);
-           $('#igst_18_val').val(basic_18);
-           // ''''''''basic total 9%''''
-           var basic_9 = parseFloat(total_basic) + (parseFloat(total_basic)*9/100);
-           $('#cgst_9').html(basic_9);
-           $('#cgst_9_val').val(basic_9);
-           ////total amount
-           if(state_code==20){
-               var cgst_9= $('#cgst_9').html();
-              var sgst_9= $('#sgst_9').html();
-              var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
-               $('#total_amounts').html(total_amount);
-               $('#total_amounts_val').val(total_amount);
+          }else{
+             var basic_total = $('#basic_total_val').val();
+             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18=  parseFloat(basic_18s).toFixed(2);
+             $('#igst_18').html(basic_18);
+             $('#igst_18_val').val(basic_18);
+             $('#cgst').hide();
+             $('#sgst').hide();
+             $('#igst').show();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_18s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }
+      });
+        $('#extra_lift_qnty').change(function(e){
+          
+          var check_value = $('#extra_lift_true_false').val();
+          if(check_value==1){
+            var extraliftqnty = $(this).val();
+            var e5 = 150;
+            var extra = parseFloat(e5)*parseFloat(extraliftqnty);
+            $('#extralift').val(extra);
+            $('#extra_lift_total').html(extra);
+            var ratevalue = $('#rates').val();
+            var extra = $('#extralift').val();
+            var gear = $('#geared').val();
+            var state_code = $('#state_code').val();
+            var total_value = parseFloat(ratevalue)+parseFloat(extra)+parseFloat(gear);
+            $('#basic_total').html(total_value);
+            $('#basic_total_val').val(total_value);
+            if(state_code==20){
+             var basic_total = $('#basic_total_val').val();
+             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+              var basic_9=  parseFloat(basic_9s).toFixed(2);
+             $('#cgst_9').html(basic_9);
+             $('#cgst_9_val').val(basic_9);
+             $('#sgst_9').html(basic_9);
+             $('#sgst_9_val').val(basic_9);
+             $('#cgst').show();
+             $('#sgst').show();
+             $('#igst').hide();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_9s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }else{
+             var basic_total = $('#basic_total_val').val();
+             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18=  parseFloat(basic_18s).toFixed(2);
+             $('#igst_18').html(basic_18);
+             $('#igst_18_val').val(basic_18);
+             $('#cgst').hide();
+             $('#sgst').hide();
+             $('#igst').show();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_18s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }
+          }
+          
+      });
+      $('#extra_lift_true_false').change(function(e){
+         
+            var extralift_true_false = $(this).val();
+            var e5 = 150;
+            var extra = parseFloat(e5)*parseFloat(extralift_true_false);
+            $('#extralift').val(extra);
+            $('#extra_lift_total').html(extra);
+            var ratevalue = $('#rates').val();
+            var extra = $('#extralift').val();
+            var gear = $('#geared').val();
+            var state_code = $('#state_code').val();
+            var total_value = parseFloat(ratevalue)+parseFloat(extra)+parseFloat(gear);
+            $('#basic_total').html(total_value);
+            $('#basic_total_val').val(total_value);
+            if(state_code==20){
+             var basic_total = $('#basic_total_val').val();
+             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+              var basic_9=  parseFloat(basic_9s).toFixed(2);
+             $('#cgst_9').html(basic_9);
+             $('#cgst_9_val').val(basic_9);
+             $('#sgst_9').html(basic_9);
+             $('#sgst_9_val').val(basic_9);
+             $('#cgst').show();
+             $('#sgst').show();
+             $('#igst').hide();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_9s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }else{
+             var basic_total = $('#basic_total_val').val();
+             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18=  parseFloat(basic_18s).toFixed(2);
+             $('#igst_18').html(basic_18);
+             $('#igst_18_val').val(basic_18);
+             $('#cgst').hide();
+             $('#sgst').hide();
+             $('#igst').show();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_18s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }
+     
+          
+      });
+      $('#geared_trolley_qty').change(function(e){
+        // debugger;
+          var check_value1 = $('#geared_trolley_true_false').val();
+          if(check_value1==1){
+            var geared_trolley = $(this).val();
+            var f5 = 42500;
+            var geared = parseFloat(f5)*parseFloat(geared_trolley);
+            $('#geared').val(geared);
+            $('#geared_trolley_total').html(geared);
+            var ratevalue = $('#rates').val();
+            var extra = $('#extralift').val();
+            var gear = $('#geared').val();
+            var state_code = $('#state_code').val();
+            var total_value = parseFloat(ratevalue)+parseFloat(extra)+parseFloat(gear);
+            $('#basic_total').html(total_value);
+            $('#basic_total_val').val(total_value);
+            if(state_code==20){
+             var basic_total = $('#basic_total_val').val();
+             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+              var basic_9=  parseFloat(basic_9s).toFixed(2);
+             $('#cgst_9').html(basic_9);
+             $('#cgst_9_val').val(basic_9);
+             $('#sgst_9').html(basic_9);
+             $('#sgst_9_val').val(basic_9);
+             $('#cgst').show();
+             $('#sgst').show();
+             $('#igst').hide();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_9s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }else{
+             var basic_total = $('#basic_total_val').val();
+             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18=  parseFloat(basic_18s).toFixed(2);
+             $('#igst_18').html(basic_18);
+             $('#igst_18_val').val(basic_18);
+             $('#cgst').hide();
+             $('#sgst').hide();
+             $('#igst').show();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_18s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }
+         }
+      });
+       $('#geared_trolley_true_false').change(function(e){
 
-               $('#cgst').show();
-               $('#sgst').show();
-               $('#igst').hide();
-             }
-           else{
-              var basic_18= $('#igst_18').html();
-               var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
-               $('#total_amounts').html(total_amount);
-               $('#total_amounts_val').val(total_amount);
-               $('#cgst').hide();
-               $('#sgst').hide();
-               $('#igst').show();
-             }
-         });
-
-         $('#true_false').change(function(e){
-          var true_false = $(this).val();
-          var column_e = $('#column_e').val();
-          var total = parseFloat(column_e)*parseInt(true_false);
-          $('#coumne_e_total').html(total);
-          $('#coumne_e_total_val').val(total);
-           var c18 = 72500;
-           var c19 = $('#total').html();
-           var c20 = $('#coumne_e_total').html();
-           var total_basic  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
-           $('#basic_total').html(total_basic);
-           $('#basic_total_val').val(total_basic);
-
-           //''''''''sgst 9%'''''''
-            var basic_09 = parseFloat(c20) + (parseFloat(c20)*9/100);
-           $('#sgst_9').html(basic_09);
-           $('#sgst_9_val').val(basic_09);
-
-           // .....total amount.........
-           if(state_code==20){
-              var cgst_9= $('#cgst_9').html();
-              var sgst_9= $('#sgst_9').html();
-              var total_amount = parseFloat(c18) +parseFloat(cgst_9)+parseFloat(sgst_9)+parseFloat(total);
-               $('#total_amounts').html(total_amount);
-               $('#total_amounts_val').val(total_amount);
-               $('#cgst').show();
-               $('#sgst').show();
-               $('#igst').hide();
-             }
-           else{
-               var basic_18= $('#igst_18').html();
-               var total_amount = parseFloat(c18) +parseFloat(basic_18)+parseFloat(total);
-               $('#total_amounts').html(total_amount);
-               $('#total_amounts_val').val(total_amount);
-               $('#cgst').hide();
-               $('#sgst').hide();
-               $('#igst').show();
-             }
-         });
-         var c18 = 72500;
-         var c19 = $('#total').html();
-         var c20 = $('#coumne_e_total').html();
-
-         var total  = parseFloat(c18) + parseFloat(c19) + parseFloat(c20);
-         $('#basic_total').html(total);
-         $('#basic_total_val').val(total_basic);
-
-      
+          var geared_trolley_true_false = $(this).val();
+          var f5 = 42500;
+          var geared = parseFloat(f5)*parseFloat(geared_trolley_true_false);
+          $('#geared').val(geared);
+          $('#geared_trolley_total').html(geared);
+          var ratevalue = $('#rates').val();
+          var extra = $('#extralift').val();
+          var gear = $('#geared').val();
+          var state_code = $('#state_code').val();
+          var total_value = parseFloat(ratevalue)+parseFloat(extra)+parseFloat(gear);
+          $('#basic_total').html(total_value);
+          $('#basic_total_val').val(total_value);
+          if(state_code==20){
+             var basic_total = $('#basic_total_val').val();
+             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+              var basic_9=  parseFloat(basic_9s).toFixed(2);
+             $('#cgst_9').html(basic_9);
+             $('#cgst_9_val').val(basic_9);
+             $('#sgst_9').html(basic_9);
+             $('#sgst_9_val').val(basic_9);
+             $('#cgst').show();
+             $('#sgst').show();
+             $('#igst').hide();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_9s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }else{
+             var basic_total = $('#basic_total_val').val();
+             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18 =  parseFloat(basic_18s).toFixed(2);
+             $('#igst_18').html(basic_18);
+             $('#igst_18_val').val(basic_18);
+             $('#cgst').hide();
+             $('#sgst').hide();
+             $('#igst').show();
+             var total_amounts = parseFloat(basic_total) +(parseFloat(basic_18s)*2);
+             var total_amount=  parseFloat(total_amounts).toFixed(2);
+             $('#total_amounts').html(total_amount);
+             $('#total_amounts_val').val(total_amount);
+          }
+      });
     $('.state_new').change(function(e){
       var id=$(this).val();
       $.ajax({

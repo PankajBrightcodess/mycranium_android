@@ -27,6 +27,8 @@
      $qry="SELECT * FROM `myc_chain_pully_details` where `id`='$pulley_id'";
     $runs=mysqli_query($conn,$qry);
     $data=mysqli_fetch_assoc($runs);
+    // echo '<pre>';
+    // print_r($data);die;
 
 
 ?>
@@ -110,14 +112,14 @@
                   </tr>
                   <tr style="background: yellow; color: red;">
                     <td colspan="1"><span><strong style="color:red;">DESCRIPTIONS</strong></span></td>
-                     <td colspan="2" ><span><strong style="color:red;">MODEL NO.</strong></span></td>
+                     <td colspan="2" ><span><strong style="color:red;">QTY.</strong></span></td>
                     <td colspan="1"><span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
-                     <td colspan="2" >REMARKS FOR BRIGHT CODE<span><strong style="color:red;">AMOUNT(INR)</strong></span></td>
+                     <td colspan="2" ><span><strong style="color:red;">REMARKS</strong></span></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>CHAIN PULLEY BLOCK</strong></span></td>
                      <td colspan="2" >                      
-                      <span><strong id="model_no"><?php echo $data['model_no']?></strong></span>
+                      <span><strong><?php echo $data['rate_qnty']?></strong></span>
                     </td>
                     <td colspan="1"><span><strong id="rate">INR <?php echo $data['rate']?></strong></span>
                     </td>
@@ -126,16 +128,16 @@
                    <tr>
                      <td colspan="1"><span><strong>EXTRA LIFT REQUIREMENT(IN MTRS)</strong></span></td>
                      <td colspan="2" >
-                     <!-- <input type="hidden" name="extralift" id="extralift" value="484">  -->  <strong><span id="total"><?php echo $data['qnty']?></span></strong>                   
+                     <!-- <input type="hidden" name="extralift" id="extralift" value="484">  -->  <strong><span id="total"><?php echo $data['extra_lift_qnty']?></span></strong>                   
                     </td>
-                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total"><?php echo $data['total_val']?></span></strong>
+                    <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="total"><?php echo $data['extralift']?></span></strong>
                     </td>
-                     <td colspan="2" ></td>
+                     <td colspan="2" ><strong id="model_no"><?php echo $data['model_no']?></strong></td>
                   </tr>
                    <tr>
                      <td colspan="1"><span><strong>GEARED TROLLEY</strong></span></td>
                      <td colspan="2" >                      
-                      <span><strong><span id="total"><?php echo $data['true_false']?></span></strong></td>
+                      <span><strong><span id="total"><?php echo $data['geared_trolley_qty']?></span></strong></td>
                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="coumne_e_total"><?php echo $data['column_e']?>.00</span></strong>
                       <!-- <input type="hidden" id="coumne_e_total_val" name="coumne_e_total_val"> -->
                     </td>
@@ -151,17 +153,17 @@
                   </tr>
                    <tr id="igst">
                      <td colspan="3"><span><strong>IGST @ 18%</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18"><?php echo $data['igst_18_val']?></span></strong></td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="igst_18"><?php if(!empty($data['igst_18_val'])){ echo $data['igst_18_val'];}?></span></strong></td>
                      <td colspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
                   <tr id="cgst">
                      <td colspan="3"><span><strong>CGST @ 9%</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9"><?php echo $data['cgst_9_val']?></span></strong></td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="cgst_9"><?php if(!empty($data['cgst_9_val'])){ echo $data['cgst_9_val'];}?></span></strong></td>
                      <td colspan="2" rowspan="2" >WILL BE APPLICABLE IN CASE, THE BILLING ADDRESS IN OUTSIDE STATE</td>
                   </tr>
                    <tr id="sgst">
                      <td colspan="3"><span><strong>SGST @ 9%</strong></span></td>
-                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="sgst_9"><?php echo $data['sgst_9_val']?></span></strong></td>
+                     <td colspan="1"><strong><span>INR &nbsp;&nbsp;</span><span id="sgst_9"><?php if(!empty($data['sgst_9_val'])){ echo $data['sgst_9_val'];}?></span></strong></td>
                      
                   </tr>
                   <tr>
