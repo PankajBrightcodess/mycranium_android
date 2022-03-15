@@ -322,7 +322,7 @@
           $('#basic_total_val').val(total_value);
           if(state_code==20){
              var basic_total = $('#basic_total_val').val();
-             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+             var basic_9s = (parseFloat(basic_total)*9/100);
              var basic_9=  parseFloat(basic_9s).toFixed(2);
              $('#cgst_9').html(basic_9);
              $('#cgst_9_val').val(basic_9);
@@ -338,7 +338,7 @@
 
           }else{
              var basic_total = $('#basic_total_val').val();
-             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18s =  (parseFloat(basic_total)*18/100);
              var basic_18=  parseFloat(basic_18s).toFixed(2);
              $('#igst_18').html(basic_18);
              $('#igst_18_val').val(basic_18);
@@ -369,7 +369,7 @@
             $('#basic_total_val').val(total_value);
             if(state_code==20){
              var basic_total = $('#basic_total_val').val();
-             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+             var basic_9s = (parseFloat(basic_total)*9/100);
               var basic_9=  parseFloat(basic_9s).toFixed(2);
              $('#cgst_9').html(basic_9);
              $('#cgst_9_val').val(basic_9);
@@ -384,7 +384,7 @@
              $('#total_amounts_val').val(total_amount);
           }else{
              var basic_total = $('#basic_total_val').val();
-             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18s = (parseFloat(basic_total)*18/100);
              var basic_18=  parseFloat(basic_18s).toFixed(2);
              $('#igst_18').html(basic_18);
              $('#igst_18_val').val(basic_18);
@@ -415,7 +415,7 @@
             $('#basic_total_val').val(total_value);
             if(state_code==20){
              var basic_total = $('#basic_total_val').val();
-             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+             var basic_9s = (parseFloat(basic_total)*9/100);
               var basic_9=  parseFloat(basic_9s).toFixed(2);
              $('#cgst_9').html(basic_9);
              $('#cgst_9_val').val(basic_9);
@@ -430,7 +430,7 @@
              $('#total_amounts_val').val(total_amount);
           }else{
              var basic_total = $('#basic_total_val').val();
-             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18s = (parseFloat(basic_total)*18/100);
              var basic_18=  parseFloat(basic_18s).toFixed(2);
              $('#igst_18').html(basic_18);
              $('#igst_18_val').val(basic_18);
@@ -463,7 +463,7 @@
             $('#basic_total_val').val(total_value);
             if(state_code==20){
              var basic_total = $('#basic_total_val').val();
-             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+             var basic_9s = (parseFloat(basic_total)*9/100);
               var basic_9=  parseFloat(basic_9s).toFixed(2);
              $('#cgst_9').html(basic_9);
              $('#cgst_9_val').val(basic_9);
@@ -478,7 +478,7 @@
              $('#total_amounts_val').val(total_amount);
           }else{
              var basic_total = $('#basic_total_val').val();
-             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18s = (parseFloat(basic_total)*18/100);
              var basic_18=  parseFloat(basic_18s).toFixed(2);
              $('#igst_18').html(basic_18);
              $('#igst_18_val').val(basic_18);
@@ -508,7 +508,7 @@
           $('#basic_total_val').val(total_value);
           if(state_code==20){
              var basic_total = $('#basic_total_val').val();
-             var basic_9s = parseFloat(basic_total) + (parseFloat(basic_total)*9/100);
+             var basic_9s = (parseFloat(basic_total)*9/100);
               var basic_9=  parseFloat(basic_9s).toFixed(2);
              $('#cgst_9').html(basic_9);
              $('#cgst_9_val').val(basic_9);
@@ -523,7 +523,7 @@
              $('#total_amounts_val').val(total_amount);
           }else{
              var basic_total = $('#basic_total_val').val();
-             var basic_18s = parseFloat(basic_total) + (parseFloat(basic_total)*18/100);
+             var basic_18s = (parseFloat(basic_total)*18/100);
              var basic_18 =  parseFloat(basic_18s).toFixed(2);
              $('#igst_18').html(basic_18);
              $('#igst_18_val').val(basic_18);
