@@ -9,8 +9,8 @@ $msg = "";
     if ($msg != "") {
         echo "<script> alert('$msg')</script>";
     }
-    echo '<pre>';
-    print_r($_POST);die;
+    // echo '<pre>';
+    // print_r($_POST);die;
       if(isset($_POST['razorpay_payment_id'])){
       $payment_details=json_encode($_POST);
       $razorpay_payment_id = $_POST['razorpay_payment_id']; 
