@@ -15,7 +15,7 @@ print_r($_COOKIE);
     
 ?>
 <?php include 'header-link.php'; ?>
-<!-- <?php include 'header.php'; ?>  -->
+ <?php include 'header.php'; ?>  
 
 
     <!-- Header Area-->
