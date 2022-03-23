@@ -2,8 +2,8 @@
 session_start();
 include_once('connection.php');
  
-print_r($_COOKIE);
-    echo '<pre>'; 
+// print_r($_COOKIE);
+//     echo '<pre>'; 
     print_r($_COOKIE['Cookie']);
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
