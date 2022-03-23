@@ -131,6 +131,7 @@ if(isset($_POST['signup'])){
  	  $cookie_values = json_encode($cookie_value);
  	  setcookie("Cookie",$cookie_values,time() + (86400 * 30),"/");
        echo "COOKIE IS CREATED SUCCESSFULLY !";
+       print_r($_COOKIE['Cookie']);die;
  	  if(!empty($data)){
 	    	header('Location:home.php?id='.$id.'&name='.$name.'&company_name='.$comp_name.'&gst_no='.$gst_no.'&contact_no='.$contact_no.'&email_id='.$email_id.'&address='.$address.'');
 	    	// header("location:$_SERVER[HTTP_REFERER]");
