@@ -1,23 +1,21 @@
+<?php include 'header-link.php'; ?>
+ <?php include 'header.php'; ?>  
 <?php 
 session_start();
 include_once('connection.php');
  
 // print_r($_COOKIE);
 //     echo '<pre>'; 
-    print_r($_COOKIE['Cookie']);
+    // print_r($_COOKIE['Cookie']);
     $abcd =  json_decode($_COOKIE['Cookie'],true); 
     $id=$abcd['id'];
     $query="SELECT * FROM `myc_customer` WHERE `id`=$id";
     $run=mysqli_query($conn,$query);
     $data=mysqli_fetch_assoc($run);
-    echo '<pre>';
+    
     // print_r($data);
     
 ?>
-<?php include 'header-link.php'; ?>
- <?php include 'header.php'; ?>  
-
-
     <!-- Header Area-->
     <div class="header-area" id="headerArea">
       <div class="container h-100 d-flex align-items-center justify-content-between">
